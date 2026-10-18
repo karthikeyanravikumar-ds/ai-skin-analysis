@@ -1,0 +1,800 @@
+import os
+import sys
+import json
+from pathlib import Path
+
+PROJECT_ROOT = os.path.abspath(
+    os.path.join(os.path.dirname(__file__), "..", "..")
+)
+
+if PROJECT_ROOT not in sys.path:
+    sys.path.insert(0, PROJECT_ROOT)
+
+import cv2
+import numpy as np
+import torch
+
+from PIL import Image
+from torchvision import transforms
+
+from ai.models.cnn_model import SkinDiseaseCNN
+from ai.gemini.explanation import generate_explanation
+from ai.safety.symptom_engine import analyze_symptoms, validate_symptoms
+from ai.safety.confidence_engine import assess_confidence
+from ai.safety.decision_engine import make_safety_decision
+from ai.preprocessing.image_quality import assess_image_quality
+
+
+# ============================================================
+# CONFIGURATION
+# ============================================================
+
+MODEL_PATH = Path(PROJECT_ROOT) / "models" / "trained" / "best_model.pth"
+
+OUTPUT_DIR = Path(PROJECT_ROOT) / "reports" / "inference"
+
+IMAGE_SIZE = 224
+
+
+CLASS_NAMES = [
+    "acne_vulgaris",
+    "impetigo",
+    "molluscum_contagiosum",
+    "psoriasis",
+    "urticaria",
+    "vitiligo",
+    "warts"
+]
+
+
+DISPLAY_NAMES = {
+    "acne_vulgaris": "Acne Vulgaris",
+    "impetigo": "Impetigo",
+    "molluscum_contagiosum": "Molluscum Contagiosum",
+    "psoriasis": "Psoriasis",
+    "urticaria": "Urticaria",
+    "vitiligo": "Vitiligo",
+    "warts": "Warts"
+}
+
+
+# ============================================================
+# DEVICE
+# ============================================================
+
+device = torch.device(
+    "cuda" if torch.cuda.is_available()
+    else "cpu"
+)
+
+
+# ============================================================
+# DIRECTORIES
+# ============================================================
+
+OUTPUT_DIR.mkdir(
+    parents=True,
+    exist_ok=True
+)
+
+
+# ============================================================
+# IMAGE TRANSFORM
+# ============================================================
+
+transform = transforms.Compose([
+    transforms.Resize(
+        (IMAGE_SIZE, IMAGE_SIZE)
+    ),
+    transforms.ToTensor(),
+    transforms.Normalize(
+        [0.485, 0.456, 0.406],
+        [0.229, 0.224, 0.225]
+    )
+])
+
+
+# ============================================================
+# LOAD MODEL
+# ============================================================
+
+print("=" * 70)
+print("AI SKIN ANALYSIS - UNIFIED AI INFERENCE")
+print("=" * 70)
+
+print(
+    f"\nDevice: {device}"
+)
+
+print(
+    f"Loading model: {MODEL_PATH}"
+)
+
+
+checkpoint = torch.load(
+    MODEL_PATH,
+    map_location=device,
+    weights_only=False
+)
+
+
+model = SkinDiseaseCNN(
+    num_classes=7
+)
+
+model.load_state_dict(
+    checkpoint["model_state_dict"]
+)
+
+model = model.to(device)
+
+model.eval()
+
+
+print(
+    f"Best validation Macro-F1: "
+    f"{checkpoint['best_val_macro_f1']:.4f}"
+)
+
+
+# ============================================================
+# GRAD-CAM HOOKS
+# ============================================================
+
+target_layer = model.backbone.features[-1]
+
+activations = None
+gradients = None
+
+
+def forward_hook(module, input, output):
+
+    global activations
+
+    activations = output
+
+
+def backward_hook(module, grad_input, grad_output):
+
+    global gradients
+
+    gradients = grad_output[0]
+
+
+forward_handle = target_layer.register_forward_hook(
+    forward_hook
+)
+
+backward_handle = target_layer.register_full_backward_hook(
+    backward_hook
+)
+
+
+# ============================================================
+# GRAD-CAM GENERATION
+# ============================================================
+
+def generate_gradcam(
+    original_image,
+    input_tensor,
+    predicted_class
+):
+
+    global activations
+    global gradients
+
+    activations = None
+    gradients = None
+
+    model.zero_grad()
+
+    output = model(
+        input_tensor
+    )
+
+    score = output[
+        0,
+        predicted_class
+    ]
+
+    score.backward()
+
+    acts = (
+        activations
+        .detach()
+        .cpu()
+        .numpy()[0]
+    )
+
+    grads = (
+        gradients
+        .detach()
+        .cpu()
+        .numpy()[0]
+    )
+
+    weights = np.mean(
+        grads,
+        axis=(1, 2)
+    )
+
+    cam = np.zeros(
+        acts.shape[1:],
+        dtype=np.float32
+    )
+
+    for channel, weight in enumerate(weights):
+
+        cam += (
+            weight *
+            acts[channel]
+        )
+
+    cam = np.maximum(
+        cam,
+        0
+    )
+
+    if cam.max() > 0:
+
+        cam = cam / cam.max()
+
+    original_np = np.array(
+        original_image
+    )
+
+    height, width = original_np.shape[:2]
+
+    cam = cv2.resize(
+        cam,
+        (width, height)
+    )
+
+    heatmap = np.uint8(
+        cam * 255
+    )
+
+    heatmap = cv2.applyColorMap(
+        heatmap,
+        cv2.COLORMAP_JET
+    )
+
+    original_bgr = cv2.cvtColor(
+        original_np,
+        cv2.COLOR_RGB2BGR
+    )
+
+    overlay = cv2.addWeighted(
+        original_bgr,
+        0.60,
+        heatmap,
+        0.40,
+        0
+    )
+
+    return (
+        heatmap,
+        overlay
+    )
+
+
+# ============================================================
+# PREDICTION FUNCTION
+# ============================================================
+
+def predict_image(image_path, include_gemini=True, symptoms=None):
+
+    image_path = Path(
+        image_path
+    )
+
+    if not image_path.exists():
+
+        raise FileNotFoundError(
+            f"Image not found: {image_path}"
+        )
+
+    print(
+        f"\nInput image:\n{image_path}"
+    )
+
+
+    # --------------------------------------------------------
+    # Technical Image Quality Assessment
+    # --------------------------------------------------------
+
+    quality_result = assess_image_quality(image_path)
+    base_name = image_path.stem
+
+    if not quality_result.get("is_valid", False):
+        print("\n[IMAGE QUALITY ERROR] Image is invalid or corrupted.")
+        error_result = {
+            "input_image": str(
+                image_path
+            ),
+            "error": "Image file is unreadable, corrupted, or not a valid image.",
+            "image_quality": quality_result,
+            "is_preliminary": True,
+            "medical_disclaimer": (
+                "This result is for preliminary educational guidance only "
+                "and is not a medical diagnosis."
+            )
+        }
+
+        json_path = (
+            OUTPUT_DIR /
+            f"{base_name}_result.json"
+        )
+
+        with open(
+            json_path,
+            "w",
+            encoding="utf-8"
+        ) as file:
+            json.dump(
+                error_result,
+                file,
+                indent=4,
+                ensure_ascii=False
+            )
+
+        return error_result, json_path
+
+
+    # --------------------------------------------------------
+    # Load image
+    # --------------------------------------------------------
+
+    original_image = Image.open(
+        image_path
+    ).convert("RGB")
+
+
+    # --------------------------------------------------------
+    # Preprocess
+    # --------------------------------------------------------
+
+    input_tensor = transform(
+        original_image
+    ).unsqueeze(0).to(device)
+
+
+    # --------------------------------------------------------
+    # CNN prediction
+    # --------------------------------------------------------
+
+    model.eval()
+
+    with torch.no_grad():
+
+        output = model(
+            input_tensor
+        )
+
+        probabilities = torch.softmax(
+            output,
+            dim=1
+        )
+
+        predicted_class = torch.argmax(
+            probabilities,
+            dim=1
+        ).item()
+
+        confidence = probabilities[
+            0,
+            predicted_class
+        ].item()
+
+
+    predicted_name = CLASS_NAMES[
+        predicted_class
+    ]
+
+    display_name = DISPLAY_NAMES[
+        predicted_name
+    ]
+
+
+    # --------------------------------------------------------
+    # Confidence & Uncertainty Interpretation
+    # --------------------------------------------------------
+
+    uncertainty_result = assess_confidence(
+        confidence=confidence,
+        image_quality=quality_result
+    )
+
+    confidence_level = uncertainty_result["level"]
+
+
+    # --------------------------------------------------------
+    # Grad-CAM
+    # --------------------------------------------------------
+
+    heatmap, overlay = generate_gradcam(
+        original_image,
+        input_tensor,
+        predicted_class
+    )
+
+
+    # --------------------------------------------------------
+    # Output filenames
+    # --------------------------------------------------------
+
+    heatmap_path = (
+        OUTPUT_DIR /
+        f"{base_name}_heatmap.jpg"
+    )
+
+    gradcam_path = (
+        OUTPUT_DIR /
+        f"{base_name}_gradcam.jpg"
+    )
+
+    cv2.imwrite(
+        str(heatmap_path),
+        heatmap
+    )
+
+    cv2.imwrite(
+        str(gradcam_path),
+        overlay
+    )
+
+
+    # --------------------------------------------------------
+    # Gemini explanation
+    # --------------------------------------------------------
+
+    if include_gemini:
+        print(
+            "\nGenerating Gemini explanation..."
+        )
+
+        explanation = generate_explanation(
+            predicted_class=predicted_name,
+            confidence=confidence,
+            gradcam_available=True
+        )
+    else:
+        print(
+            "\nGemini explanation skipped."
+        )
+
+        explanation = (
+            "Gemini explanation will be generated separately "
+            "after the CNN analysis."
+        )
+
+
+    # --------------------------------------------------------
+    # Symptom safety analysis
+    # --------------------------------------------------------
+
+    validated_symptoms = validate_symptoms(symptoms)
+
+    safety_result = analyze_symptoms(validated_symptoms)
+
+
+    # --------------------------------------------------------
+    # Unified Safety & Decision Engine
+    # --------------------------------------------------------
+
+    decision_result = make_safety_decision(
+        confidence_assessment=uncertainty_result,
+        image_quality=quality_result,
+        symptom_safety=safety_result
+    )
+
+
+    # --------------------------------------------------------
+    # Final result
+    # --------------------------------------------------------
+
+    result = {
+
+        "input_image": str(
+            image_path
+        ),
+
+        "prediction": predicted_name,
+
+        "display_name": display_name,
+
+        "confidence": round(
+            confidence,
+            6
+        ),
+
+        "confidence_percent": round(
+            confidence * 100,
+            2
+        ),
+
+        "confidence_level": confidence_level,
+
+        "uncertainty": uncertainty_result,
+
+        "image_quality": quality_result,
+
+        "gradcam_generated": True,
+
+        "gradcam_heatmap": str(
+            heatmap_path
+        ),
+
+        "gradcam_overlay": str(
+            gradcam_path
+        ),
+
+        "symptoms": validated_symptoms,
+
+        "safety": safety_result,
+
+        "decision": decision_result,
+
+        "explanation": explanation,
+
+        "is_preliminary": True,
+
+        "medical_disclaimer":
+            "This result is for preliminary "
+            "educational guidance only and is "
+            "not a medical diagnosis."
+    }
+
+
+    # --------------------------------------------------------
+    # Save JSON
+    # --------------------------------------------------------
+
+    json_path = (
+        OUTPUT_DIR /
+        f"{base_name}_result.json"
+    )
+
+    with open(
+        json_path,
+        "w",
+        encoding="utf-8"
+    ) as file:
+
+        json.dump(
+            result,
+            file,
+            indent=4,
+            ensure_ascii=False
+        )
+
+
+    return result, json_path
+
+
+# ============================================================
+# COMMAND-LINE INTERFACE
+# ============================================================
+
+if __name__ == "__main__":
+
+    if len(sys.argv) < 2:
+
+        print(
+            "\nUsage:"
+        )
+
+        print(
+            'python "ai\\inference\\predict.py" '
+            '"path\\to\\image.jpg" [--skip-gemini] [--symptoms "<json_string_or_path>"]'
+        )
+
+        forward_handle.remove()
+        backward_handle.remove()
+
+        sys.exit(1)
+
+
+    raw_args = sys.argv[1:]
+    image_path = None
+    include_gemini = True
+    symptoms_input = None
+
+    idx = 0
+    while idx < len(raw_args):
+        arg = raw_args[idx]
+        if arg == "--skip-gemini":
+            include_gemini = False
+            idx += 1
+        elif arg in ("--symptoms", "--symptoms-json") and idx + 1 < len(raw_args):
+            symptoms_val = raw_args[idx + 1]
+            try:
+                if os.path.exists(symptoms_val):
+                    with open(symptoms_val, "r", encoding="utf-8") as sf:
+                        symptoms_input = json.load(sf)
+                else:
+                    symptoms_input = json.loads(symptoms_val)
+            except Exception as parse_err:
+                print(f"[WARN] Could not parse symptoms argument: {parse_err}")
+                symptoms_input = None
+            idx += 2
+        elif not arg.startswith("--") and image_path is None:
+            image_path = arg
+            idx += 1
+        else:
+            idx += 1
+
+    if not image_path:
+        print("\nERROR: No input image path provided.")
+        forward_handle.remove()
+        backward_handle.remove()
+        sys.exit(1)
+
+
+    try:
+
+        result, json_path = predict_image(
+            image_path,
+            include_gemini=include_gemini,
+            symptoms=symptoms_input
+        )
+
+
+        print("\n")
+        print("=" * 70)
+        print("FINAL AI RESULT")
+        print("=" * 70)
+
+        if "error" in result:
+            print(f"\nProcessing Error: {result['error']}")
+            if "image_quality" in result:
+                q = result["image_quality"]
+                print(f"Image Quality Status: {q['status'].upper()}")
+                for w in q.get("warnings", []):
+                    print(f"  ! {w}")
+        else:
+            print(
+                f"\nPrediction:"
+                f" {result['display_name']}"
+            )
+
+            print(
+                f"Confidence:"
+                f" {result['confidence_percent']:.2f}%"
+            )
+
+            print(
+                f"Confidence level:"
+                f" {result['confidence_level']}"
+            )
+
+            if "uncertainty" in result and result["uncertainty"]:
+                u = result["uncertainty"]
+                print(
+                    f"\nUncertainty Status:"
+                    f" {u['uncertainty_status']} (Caution Required: {u['requires_caution']})"
+                )
+                print(
+                    f"Guidance:"
+                    f" {u['message']}"
+                )
+                if u.get("recommended_next_step"):
+                    print(
+                        f"Recommended Next Step:"
+                        f" {u['recommended_next_step']}"
+                    )
+                if u.get("quality_impact"):
+                    print(
+                        f"Quality Impact:"
+                        f" {u['quality_impact']}"
+                    )
+
+            if "image_quality" in result and result["image_quality"]:
+                q = result["image_quality"]
+                print(
+                    f"\nImage Quality Status:"
+                    f" {q['status'].upper()}"
+                )
+                if q.get("resolution"):
+                    print(
+                        f"Resolution: {q['resolution']['width']}x{q['resolution']['height']} "
+                        f"(Passed: {q['resolution']['passed']})"
+                    )
+                if q.get("blur"):
+                    print(
+                        f"Blur Score: {q['blur']['score']} "
+                        f"(Threshold: {q['blur']['threshold']}, Passed: {q['blur']['passed']})"
+                    )
+                if q.get("brightness"):
+                    print(
+                        f"Brightness: {q['brightness']['score']} "
+                        f"(Passed: {q['brightness']['passed']})"
+                    )
+                if q.get("warnings"):
+                    print("Quality Warnings:")
+                    for w in q["warnings"]:
+                        print(f"  ! {w}")
+
+            if "safety" in result and result["safety"]:
+                print(
+                    f"\nSafety Level:"
+                    f" {result['safety']['safety_level'].upper()}"
+                )
+                print(
+                    f"Red Flags Detected:"
+                    f" {result['safety']['red_flag_count']}"
+                )
+                if result['safety']['red_flags']:
+                    for rf in result['safety']['red_flags']:
+                        print(f"  * {rf}")
+                print(
+                    f"Recommendation:"
+                    f" {result['safety']['recommendation']}"
+                )
+
+            if "decision" in result and result["decision"]:
+                d = result["decision"]
+                print(
+                    f"\nOverall Safety Decision:"
+                    f" {d['safety_level'].upper()}"
+                )
+                print(
+                    f"Professional Evaluation Recommended:"
+                    f" {d['requires_professional_evaluation']}"
+                )
+                print(
+                    f"Emergency Warning Sign:"
+                    f" {d['is_emergency']}"
+                )
+                if d.get("decision_factors"):
+                    print("Decision Factors:")
+                    for df in d["decision_factors"]:
+                        print(f"  * {df}")
+                print(
+                    f"Decision Guidance:"
+                    f" {d['recommendation']}"
+                )
+
+            print(
+                f"\nGrad-CAM:"
+                f" {result['gradcam_overlay']}"
+            )
+
+            print(
+                f"\nJSON result:"
+                f" {json_path}"
+            )
+
+            print("\n")
+            print("=" * 70)
+            print("GEMINI EXPLANATION")
+            print("=" * 70)
+
+            print(
+                result["explanation"]
+            )
+
+        print("\n")
+        print("=" * 70)
+        print("UNIFIED INFERENCE COMPLETE")
+        print("=" * 70)
+
+
+    except Exception as error:
+
+        print(
+            "\nERROR:"
+        )
+
+        print(
+            str(error)
+        )
+
+        sys.exit(1)
+
+
+    finally:
+
+        forward_handle.remove()
+        backward_handle.remove()
+

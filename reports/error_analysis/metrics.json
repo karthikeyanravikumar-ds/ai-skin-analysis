@@ -1,0 +1,311 @@
+{
+  "model_checkpoint": {
+    "path": "models\\trained\\best_model.pth",
+    "md5": "FF106263793F9F0A2FB13F15CEB1437E",
+    "size_bytes": 16367097,
+    "architecture": "EfficientNet-B0 Pretrained (ImageNet)",
+    "num_classes": 7,
+    "checkpoint_best_val_macro_f1": 0.9348099097506484
+  },
+  "dataset_summary": {
+    "split": "test",
+    "total_images": 622,
+    "correct_count": 596,
+    "misclassified_count": 26,
+    "class_distribution": {
+      "acne_vulgaris": 261,
+      "impetigo": 27,
+      "molluscum_contagiosum": 19,
+      "psoriasis": 121,
+      "urticaria": 109,
+      "vitiligo": 75,
+      "warts": 10
+    }
+  },
+  "overall_metrics": {
+    "accuracy": 0.9581993569131833,
+    "balanced_accuracy": 0.9457852445940221,
+    "macro_precision": 0.9624157143688122,
+    "macro_recall": 0.9457852445940221,
+    "macro_f1": 0.949116194626484,
+    "weighted_precision": 0.9637509457014916,
+    "weighted_recall": 0.9581993569131833,
+    "weighted_f1": 0.9566582757510154,
+    "top1_accuracy": 0.9581993569131833,
+    "top2_accuracy": 0.9967845659163987,
+    "top3_accuracy": 1.0
+  },
+  "confidence_statistics": {
+    "correct": {
+      "mean": 0.9810811545724837,
+      "std": 0.05842921568262906,
+      "min": 0.38757821917533875,
+      "max": 0.999994158744812,
+      "median": 0.9970743060112
+    },
+    "misclassified": {
+      "mean": 0.9046142926582923,
+      "std": 0.14058826887395165,
+      "min": 0.5288748145103455,
+      "max": 0.9991687536239624,
+      "median": 0.9785794317722321
+    },
+    "buckets": [
+      {
+        "bucket": "<0.50",
+        "correct": 1,
+        "incorrect": 0,
+        "total": 1,
+        "accuracy": 1.0
+      },
+      {
+        "bucket": "0.50-0.69",
+        "correct": 5,
+        "incorrect": 3,
+        "total": 8,
+        "accuracy": 0.625
+      },
+      {
+        "bucket": "0.70-0.84",
+        "correct": 14,
+        "incorrect": 3,
+        "total": 17,
+        "accuracy": 0.8235294117647058
+      },
+      {
+        "bucket": "0.85-0.94",
+        "correct": 24,
+        "incorrect": 4,
+        "total": 28,
+        "accuracy": 0.8571428571428571
+      },
+      {
+        "bucket": "0.95-1.00",
+        "correct": 552,
+        "incorrect": 16,
+        "total": 568,
+        "accuracy": 0.971830985915493
+      }
+    ],
+    "high_confidence_errors_count": 20,
+    "low_confidence_correct_count": 4
+  },
+  "quality_correlations": {
+    "correct": {
+      "blur_mean": 1179.1829697986577,
+      "blur_std": 2874.0147593211914,
+      "brightness_mean": 130.66281879194634,
+      "brightness_std": 32.282642983925065,
+      "status_counts": {
+        "good": 501,
+        "warning": 89,
+        "poor": 6
+      }
+    },
+    "incorrect": {
+      "blur_mean": 481.2757692307692,
+      "blur_std": 572.8721362651737,
+      "brightness_mean": 143.97961538461539,
+      "brightness_std": 21.696889972239237,
+      "status_counts": {
+        "good": 26,
+        "warning": 0,
+        "poor": 0
+      }
+    }
+  },
+  "per_class": [
+    {
+      "class_idx": 0,
+      "class_name": "acne_vulgaris",
+      "class_label": "Acne Vulgaris",
+      "support": 261,
+      "tp": 260,
+      "fp": 1,
+      "fn": 1,
+      "tn": 360,
+      "precision": 0.9961685823754789,
+      "recall": 0.9961685823754789,
+      "f1_score": 0.9961685823754789,
+      "top1_accuracy": 0.9961685823754789,
+      "top2_accuracy": 0.9961685823754789,
+      "top3_accuracy": 1.0,
+      "correct_count": 260,
+      "incorrect_count": 1,
+      "mean_correct_confidence": 0.9741131969369374,
+      "mean_incorrect_confidence": 0.9177687168121338
+    },
+    {
+      "class_idx": 1,
+      "class_name": "impetigo",
+      "class_label": "Impetigo",
+      "support": 27,
+      "tp": 25,
+      "fp": 0,
+      "fn": 2,
+      "tn": 595,
+      "precision": 1.0,
+      "recall": 0.9259259259259259,
+      "f1_score": 0.9615384615384615,
+      "top1_accuracy": 0.9259259259259259,
+      "top2_accuracy": 0.9629629629629629,
+      "top3_accuracy": 1.0,
+      "correct_count": 25,
+      "incorrect_count": 2,
+      "mean_correct_confidence": 0.9711215209960937,
+      "mean_incorrect_confidence": 0.7640217840671539
+    },
+    {
+      "class_idx": 2,
+      "class_name": "molluscum_contagiosum",
+      "class_label": "Molluscum Contagiosum",
+      "support": 19,
+      "tp": 19,
+      "fp": 2,
+      "fn": 0,
+      "tn": 601,
+      "precision": 0.9047619047619048,
+      "recall": 1.0,
+      "f1_score": 0.9500000000000001,
+      "top1_accuracy": 1.0,
+      "top2_accuracy": 1.0,
+      "top3_accuracy": 1.0,
+      "correct_count": 19,
+      "incorrect_count": 0,
+      "mean_correct_confidence": 0.9988785919390226,
+      "mean_incorrect_confidence": 0.0
+    },
+    {
+      "class_idx": 3,
+      "class_name": "psoriasis",
+      "class_label": "Psoriasis",
+      "support": 121,
+      "tp": 120,
+      "fp": 22,
+      "fn": 1,
+      "tn": 479,
+      "precision": 0.8450704225352113,
+      "recall": 0.9917355371900827,
+      "f1_score": 0.9125475285171103,
+      "top1_accuracy": 0.9917355371900827,
+      "top2_accuracy": 1.0,
+      "top3_accuracy": 1.0,
+      "correct_count": 120,
+      "incorrect_count": 1,
+      "mean_correct_confidence": 0.9860064332683881,
+      "mean_incorrect_confidence": 0.7388024926185608
+    },
+    {
+      "class_idx": 4,
+      "class_name": "urticaria",
+      "class_label": "Urticaria",
+      "support": 109,
+      "tp": 109,
+      "fp": 1,
+      "fn": 0,
+      "tn": 512,
+      "precision": 0.990909090909091,
+      "recall": 1.0,
+      "f1_score": 0.995433789954338,
+      "top1_accuracy": 1.0,
+      "top2_accuracy": 1.0,
+      "top3_accuracy": 1.0,
+      "correct_count": 109,
+      "incorrect_count": 0,
+      "mean_correct_confidence": 0.9968145702957013,
+      "mean_incorrect_confidence": 0.0
+    },
+    {
+      "class_idx": 5,
+      "class_name": "vitiligo",
+      "class_label": "Vitiligo",
+      "support": 75,
+      "tp": 53,
+      "fp": 0,
+      "fn": 22,
+      "tn": 547,
+      "precision": 1.0,
+      "recall": 0.7066666666666667,
+      "f1_score": 0.828125,
+      "top1_accuracy": 0.7066666666666667,
+      "top2_accuracy": 1.0,
+      "top3_accuracy": 1.0,
+      "correct_count": 53,
+      "incorrect_count": 22,
+      "mean_correct_confidence": 0.9666356579312738,
+      "mean_incorrect_confidence": 0.924334401434118
+    },
+    {
+      "class_idx": 6,
+      "class_name": "warts",
+      "class_label": "Warts",
+      "support": 10,
+      "tp": 10,
+      "fp": 0,
+      "fn": 0,
+      "tn": 612,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1_score": 1.0,
+      "top1_accuracy": 1.0,
+      "top2_accuracy": 1.0,
+      "top3_accuracy": 1.0,
+      "correct_count": 10,
+      "incorrect_count": 0,
+      "mean_correct_confidence": 0.999295562505722,
+      "mean_incorrect_confidence": 0.0
+    }
+  ],
+  "confusion_pairs": [
+    {
+      "true_idx": 5,
+      "true_class": "vitiligo",
+      "true_label": "Vitiligo",
+      "pred_idx": 3,
+      "pred_class": "psoriasis",
+      "pred_label": "Psoriasis",
+      "count": 22,
+      "percentage_of_true_class": 29.333333333333332
+    },
+    {
+      "true_idx": 0,
+      "true_class": "acne_vulgaris",
+      "true_label": "Acne Vulgaris",
+      "pred_idx": 2,
+      "pred_class": "molluscum_contagiosum",
+      "pred_label": "Molluscum Contagiosum",
+      "count": 1,
+      "percentage_of_true_class": 0.38314176245210724
+    },
+    {
+      "true_idx": 1,
+      "true_class": "impetigo",
+      "true_label": "Impetigo",
+      "pred_idx": 0,
+      "pred_class": "acne_vulgaris",
+      "pred_label": "Acne Vulgaris",
+      "count": 1,
+      "percentage_of_true_class": 3.7037037037037033
+    },
+    {
+      "true_idx": 1,
+      "true_class": "impetigo",
+      "true_label": "Impetigo",
+      "pred_idx": 4,
+      "pred_class": "urticaria",
+      "pred_label": "Urticaria",
+      "count": 1,
+      "percentage_of_true_class": 3.7037037037037033
+    },
+    {
+      "true_idx": 3,
+      "true_class": "psoriasis",
+      "true_label": "Psoriasis",
+      "pred_idx": 2,
+      "pred_class": "molluscum_contagiosum",
+      "pred_label": "Molluscum Contagiosum",
+      "count": 1,
+      "percentage_of_true_class": 0.8264462809917356
+    }
+  ]
+}

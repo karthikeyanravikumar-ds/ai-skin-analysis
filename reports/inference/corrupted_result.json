@@ -1,0 +1,16 @@
+{
+    "input_image": "C:\\Users\\KARTHI~1\\AppData\\Local\\Temp\\test_quality_qh7uxxkt\\corrupted.jpg",
+    "error": "Image file is unreadable, corrupted, or not a valid image.",
+    "image_quality": {
+        "status": "poor",
+        "is_valid": false,
+        "resolution": null,
+        "blur": null,
+        "brightness": null,
+        "warnings": [
+            "Image could not be decoded: cannot identify image file 'C:\\\\Users\\\\KARTHI~1\\\\AppData\\\\Local\\\\Temp\\\\test_quality_qh7uxxkt\\\\corrupted.jpg'"
+        ]
+    },
+    "is_preliminary": true,
+    "medical_disclaimer": "This result is for preliminary educational guidance only and is not a medical diagnosis."
+}

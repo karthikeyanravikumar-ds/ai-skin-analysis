@@ -1,0 +1,1003 @@
+import react from "@vitejs/plugin-react";
+import { defineConfig } from "vite";
+import multer from "multer";
+import { spawn } from "child_process";
+import fs from "fs";
+import path from "path";
+import crypto from "crypto";
+
+const projectRoot = path.resolve(
+  import.meta.dirname,
+  ".."
+);
+
+const uploadDirectory = path.join(
+  projectRoot,
+  "reports",
+  "frontend_uploads"
+);
+
+const inferenceDirectory = path.join(
+  projectRoot,
+  "reports",
+  "inference"
+);
+
+fs.mkdirSync(
+  uploadDirectory,
+  { recursive: true }
+);
+
+fs.mkdirSync(
+  inferenceDirectory,
+  { recursive: true }
+);
+
+
+const upload = multer({
+  storage: multer.diskStorage({
+
+    destination: uploadDirectory,
+
+    filename: (req, file, cb) => {
+
+      const uniqueId =
+        crypto.randomUUID();
+
+      const extension =
+        path.extname(
+          file.originalname
+        ).toLowerCase();
+
+      cb(
+        null,
+        `frontend_${uniqueId}${extension}`
+      );
+    },
+
+  }),
+
+  limits: {
+    fileSize: 10 * 1024 * 1024,
+  },
+
+  fileFilter: (req, file, cb) => {
+
+    const allowedTypes = [
+      "image/jpeg",
+      "image/png",
+      "image/jpg",
+    ];
+
+    if (
+      allowedTypes.includes(
+        file.mimetype
+      )
+    ) {
+      cb(null, true);
+    } else {
+      cb(
+        new Error(
+          "Only JPG, JPEG and PNG images are supported."
+        )
+      );
+    }
+
+  },
+});
+
+
+export default defineConfig({
+
+  plugins: [
+
+    react(),
+
+    {
+
+      name: "ai-skin-analysis-api",
+
+      configureServer(server) {
+
+        /*
+         * ======================================================
+         * AI ANALYSIS ENDPOINT
+         * ======================================================
+         */
+
+        server.middlewares.use(
+          async (req, res, next) => {
+
+            if (
+              req.url !== "/api/analyze" ||
+              req.method !== "POST"
+            ) {
+              next();
+              return;
+            }
+
+            console.log(
+              "\n========================================"
+            );
+
+            console.log(
+              "[AI BRIDGE] POST /api/analyze"
+            );
+
+            try {
+
+              upload.single("image")(
+                req,
+                res,
+                async (uploadError) => {
+
+                  if (uploadError) {
+
+                    console.error(
+                      "[AI BRIDGE] Upload error:",
+                      uploadError
+                    );
+
+                    res.statusCode = 400;
+
+                    res.setHeader(
+                      "Content-Type",
+                      "application/json"
+                    );
+
+                    res.end(
+                      JSON.stringify({
+                        error:
+                          uploadError.message,
+                      })
+                    );
+
+                    return;
+                  }
+
+
+                  if (!req.file) {
+
+                    console.error(
+                      "[AI BRIDGE] No image received."
+                    );
+
+                    res.statusCode = 400;
+
+                    res.setHeader(
+                      "Content-Type",
+                      "application/json"
+                    );
+
+                    res.end(
+                      JSON.stringify({
+                        error:
+                          "No image was uploaded.",
+                      })
+                    );
+
+                    return;
+                  }
+
+
+                  const uploadedImage =
+                    req.file.path;
+
+                  console.log(
+                    "[AI BRIDGE] Uploaded image:"
+                  );
+
+                  console.log(
+                    uploadedImage
+                  );
+
+
+                  const pythonExecutable =
+                    path.join(
+                      projectRoot,
+                      ".venv",
+                      "Scripts",
+                      "python.exe"
+                    );
+
+
+                  const predictScript =
+                    path.join(
+                      projectRoot,
+                      "ai",
+                      "inference",
+                      "predict.py"
+                    );
+
+
+                  console.log(
+                    "[AI BRIDGE] Python:"
+                  );
+
+                  console.log(
+                    pythonExecutable
+                  );
+
+
+                  console.log(
+                    "[AI BRIDGE] Script:"
+                  );
+
+                  console.log(
+                    predictScript
+                  );
+
+
+                  if (
+                    !fs.existsSync(
+                      pythonExecutable
+                    )
+                  ) {
+
+                    res.statusCode = 500;
+
+                    res.setHeader(
+                      "Content-Type",
+                      "application/json"
+                    );
+
+                    res.end(
+                      JSON.stringify({
+                        error:
+                          "Python executable not found.",
+                        path:
+                          pythonExecutable,
+                      })
+                    );
+
+                    return;
+                  }
+
+
+                  if (
+                    !fs.existsSync(
+                      predictScript
+                    )
+                  ) {
+
+                    res.statusCode = 500;
+
+                    res.setHeader(
+                      "Content-Type",
+                      "application/json"
+                    );
+
+                    res.end(
+                      JSON.stringify({
+                        error:
+                          "predict.py was not found.",
+                        path:
+                          predictScript,
+                      })
+                    );
+
+                    return;
+                  }
+
+
+                  let symptomsJson = null;
+                  if (req.body && req.body.symptoms) {
+                    if (typeof req.body.symptoms === "string") {
+                      symptomsJson = req.body.symptoms.trim();
+                    } else {
+                      try {
+                        symptomsJson = JSON.stringify(req.body.symptoms);
+                      } catch {
+                        symptomsJson = null;
+                      }
+                    }
+                  }
+
+                  const pythonArgs = [
+                    predictScript,
+                    uploadedImage,
+                    "--skip-gemini",
+                  ];
+
+                  if (symptomsJson) {
+                    console.log("[AI BRIDGE] Symptoms received:", symptomsJson);
+                    pythonArgs.push("--symptoms-json", symptomsJson);
+                  }
+
+                  console.log(
+                    "[AI BRIDGE] Starting Python inference..."
+                  );
+
+
+                  const pythonProcess =
+                    spawn(
+                      pythonExecutable,
+                      pythonArgs,
+                      {
+                        cwd: projectRoot,
+                        windowsHide: true,
+                      }
+                    );
+
+
+                  let stdout = "";
+                  let stderr = "";
+
+
+                  pythonProcess.stdout.on(
+                    "data",
+                    (data) => {
+
+                      const text =
+                        data.toString();
+
+                      stdout += text;
+
+                      console.log(
+                        `[PYTHON] ${text.trim()}`
+                      );
+                    }
+                  );
+
+
+                  pythonProcess.stderr.on(
+                    "data",
+                    (data) => {
+
+                      const text =
+                        data.toString();
+
+                      stderr += text;
+
+                      console.error(
+                        `[PYTHON STDERR] ${text.trim()}`
+                      );
+                    }
+                  );
+
+
+                  pythonProcess.on(
+                    "error",
+                    (error) => {
+
+                      console.error(
+                        "[AI BRIDGE] Python launch error:",
+                        error
+                      );
+
+                      if (
+                        !res.headersSent
+                      ) {
+
+                        res.statusCode = 500;
+
+                        res.setHeader(
+                          "Content-Type",
+                          "application/json"
+                        );
+
+                        res.end(
+                          JSON.stringify({
+                            error:
+                              "Failed to start Python inference.",
+                            details:
+                              error.message,
+                          })
+                        );
+                      }
+
+                    }
+                  );
+
+
+                  pythonProcess.on(
+                    "close",
+                    (code) => {
+
+                      console.log(
+                        `[AI BRIDGE] Python exited with code ${code}`
+                      );
+
+
+                      if (code !== 0) {
+
+                        console.error(
+                          "[AI BRIDGE] Python inference failed."
+                        );
+
+                        if (
+                          !res.headersSent
+                        ) {
+
+                          res.statusCode = 500;
+
+                          res.setHeader(
+                            "Content-Type",
+                            "application/json"
+                          );
+
+                          res.end(
+                            JSON.stringify({
+                              error:
+                                "AI inference failed.",
+                              details:
+                                stderr ||
+                                stdout ||
+                                "Unknown Python error.",
+                            })
+                          );
+                        }
+
+                        return;
+                      }
+
+
+                      const baseName =
+                        path.basename(
+                          uploadedImage,
+                          path.extname(
+                            uploadedImage
+                          )
+                        );
+
+
+                      const jsonPath =
+                        path.join(
+                          inferenceDirectory,
+                          `${baseName}_result.json`
+                        );
+
+
+                      console.log(
+                        "[AI BRIDGE] Looking for:"
+                      );
+
+                      console.log(
+                        jsonPath
+                      );
+
+
+                      if (
+                        !fs.existsSync(
+                          jsonPath
+                        )
+                      ) {
+
+                        console.error(
+                          "[AI BRIDGE] Result JSON not found."
+                        );
+
+                        if (
+                          !res.headersSent
+                        ) {
+
+                          res.statusCode = 500;
+
+                          res.setHeader(
+                            "Content-Type",
+                            "application/json"
+                          );
+
+                          res.end(
+                            JSON.stringify({
+                              error:
+                                "Python completed but no result JSON was generated.",
+                              expected:
+                                jsonPath,
+                            })
+                          );
+                        }
+
+                        return;
+                      }
+
+
+                      try {
+
+                        const result =
+                          JSON.parse(
+                            fs.readFileSync(
+                              jsonPath,
+                              "utf-8"
+                            )
+                          );
+
+
+                        const gradcamFilename =
+                          path.basename(
+                            result.gradcam_overlay
+                          );
+
+
+                        const heatmapFilename =
+                          path.basename(
+                            result.gradcam_heatmap
+                          );
+
+
+                        result.gradcam_url =
+                          `/api/inference-image/${encodeURIComponent(
+                            gradcamFilename
+                          )}`;
+
+
+                        result.heatmap_url =
+                          `/api/inference-image/${encodeURIComponent(
+                            heatmapFilename
+                          )}`;
+
+
+                        result.frontend_input =
+                          path.basename(
+                            uploadedImage
+                          );
+
+
+                        res.statusCode = 200;
+
+                        res.setHeader(
+                          "Content-Type",
+                          "application/json"
+                        );
+
+
+                        res.end(
+                          JSON.stringify(
+                            result
+                          )
+                        );
+
+
+                        console.log(
+                          "[AI BRIDGE] Result successfully returned to React."
+                        );
+
+
+                      } catch (error) {
+
+                        console.error(
+                          "[AI BRIDGE] JSON error:",
+                          error
+                        );
+
+
+                        if (
+                          !res.headersSent
+                        ) {
+
+                          res.statusCode = 500;
+
+                          res.setHeader(
+                            "Content-Type",
+                            "application/json"
+                          );
+
+                          res.end(
+                            JSON.stringify({
+                              error:
+                                "Failed to read AI result JSON.",
+                              details:
+                                error.message,
+                            })
+                          );
+                        }
+
+                      }
+
+                    }
+
+                  );
+
+                }
+              );
+
+            } catch (error) {
+
+              console.error(
+                "[AI BRIDGE] Unexpected error:",
+                error
+              );
+
+
+              if (
+                !res.headersSent
+              ) {
+
+                res.statusCode = 500;
+
+                res.setHeader(
+                  "Content-Type",
+                  "application/json"
+                );
+
+                res.end(
+                  JSON.stringify({
+                    error:
+                      "Unexpected AI bridge error.",
+                    details:
+                      error.message,
+                  })
+                );
+              }
+
+            }
+
+          }
+        );
+
+
+        
+        /*
+         * ======================================================
+         * GEMINI EXPLANATION ENDPOINT
+         * ======================================================
+         */
+
+        server.middlewares.use(
+          async (req, res, next) => {
+
+            if (
+              req.url !== "/api/explain" ||
+              req.method !== "POST"
+            ) {
+              next();
+              return;
+            }
+
+            console.log(
+              "[AI BRIDGE] POST /api/explain"
+            );
+
+            let body = "";
+
+            req.on("data", (chunk) => {
+              body += chunk.toString();
+            });
+
+            req.on("end", () => {
+
+              let data;
+
+              try {
+                data = JSON.parse(body);
+              } catch {
+
+                res.statusCode = 400;
+
+                res.setHeader(
+                  "Content-Type",
+                  "application/json"
+                );
+
+                res.end(
+                  JSON.stringify({
+                    error: "Invalid JSON request."
+                  })
+                );
+
+                return;
+              }
+
+              const prediction =
+                data.prediction;
+
+              const confidence =
+                data.confidence;
+
+              if (
+                !prediction ||
+                confidence === undefined
+              ) {
+
+                res.statusCode = 400;
+
+                res.setHeader(
+                  "Content-Type",
+                  "application/json"
+                );
+
+                res.end(
+                  JSON.stringify({
+                    error:
+                      "Prediction and confidence are required."
+                  })
+                );
+
+                return;
+              }
+
+              const pythonExecutable =
+                path.join(
+                  projectRoot,
+                  ".venv",
+                  "Scripts",
+                  "python.exe"
+                );
+
+              const explainScript =
+                path.join(
+                  projectRoot,
+                  "ai",
+                  "gemini",
+                  "explain_cli.py"
+                );
+
+              console.log(
+                "[AI BRIDGE] Starting Gemini explanation..."
+              );
+
+              const geminiProcess =
+                spawn(
+                  pythonExecutable,
+                  [
+                    explainScript,
+                    String(prediction),
+                    String(confidence),
+                  ],
+                  {
+                    cwd: projectRoot,
+                    windowsHide: true,
+                  }
+                );
+
+              let stdout = "";
+              let stderr = "";
+
+              geminiProcess.stdout.on(
+                "data",
+                (chunk) => {
+                  stdout += chunk.toString();
+                }
+              );
+
+              geminiProcess.stderr.on(
+                "data",
+                (chunk) => {
+                  stderr += chunk.toString();
+                }
+              );
+
+              let geminiTimedOut = false;
+
+              const geminiTimeout =
+                setTimeout(() => {
+
+                  geminiTimedOut = true;
+
+                  console.log(
+                    "[AI BRIDGE] Gemini process timeout. Terminating..."
+                  );
+
+                  geminiProcess.kill();
+
+                  if (!res.headersSent) {
+
+                    res.statusCode = 503;
+
+                    res.setHeader(
+                      "Content-Type",
+                      "application/json"
+                    );
+
+                    res.end(
+                      JSON.stringify({
+                        error:
+                          "Gemini explanation timed out.",
+                        details:
+                          "The CNN prediction and Grad-CAM analysis were completed successfully."
+                      })
+                    );
+                  }
+
+                }, 35000);
+
+              geminiProcess.on(
+                "error",
+                (error) => {
+
+                  clearTimeout(geminiTimeout);
+
+                  if (!res.headersSent) {
+
+                    res.statusCode = 503;
+
+                    res.setHeader(
+                      "Content-Type",
+                      "application/json"
+                    );
+
+                    res.end(
+                      JSON.stringify({
+                        error:
+                          "Gemini explanation is temporarily unavailable.",
+                        details:
+                          error.message,
+                      })
+                    );
+                  }
+                }
+              );
+
+              geminiProcess.on(
+                "close",
+                (code) => {
+
+                  clearTimeout(geminiTimeout);
+
+                  if (geminiTimedOut) {
+                    return;
+                  }
+
+                  if (code !== 0) {
+
+                    if (!res.headersSent) {
+
+                      res.statusCode = 503;
+
+                      res.setHeader(
+                        "Content-Type",
+                        "application/json"
+                      );
+
+                      res.end(
+                        JSON.stringify({
+                          error:
+                            "Gemini explanation is temporarily unavailable.",
+                          details:
+                            stderr ||
+                            stdout ||
+                            "Gemini process failed.",
+                        })
+                      );
+                    }
+
+                    return;
+                  }
+
+                  try {
+
+                    const result =
+                      JSON.parse(
+                        stdout.trim()
+                      );
+
+                    if (!res.headersSent) {
+
+                      res.statusCode = 200;
+
+                      res.setHeader(
+                        "Content-Type",
+                        "application/json"
+                      );
+
+                      res.end(
+                        JSON.stringify(result)
+                      );
+                    }
+
+                  } catch (error) {
+
+                    if (!res.headersSent) {
+
+                      res.statusCode = 500;
+
+                      res.setHeader(
+                        "Content-Type",
+                        "application/json"
+                      );
+
+                      res.end(
+                        JSON.stringify({
+                          error:
+                            "Gemini returned invalid JSON.",
+                          details:
+                            error.message,
+                        })
+                      );
+                    }
+                  }
+                }
+              );
+            });
+          }
+        );
+
+
+/*
+         * ======================================================
+         * GRAD-CAM IMAGE ENDPOINT
+         * ======================================================
+         */
+
+        server.middlewares.use(
+          async (req, res, next) => {
+
+            if (
+              !req.url?.startsWith(
+                "/api/inference-image/"
+              )
+            ) {
+              next();
+              return;
+            }
+
+
+            const requestedFile =
+              decodeURIComponent(
+                req.url.replace(
+                  "/api/inference-image/",
+                  ""
+                )
+              );
+
+
+            const safeFilename =
+              path.basename(
+                requestedFile
+              );
+
+
+            const imagePath =
+              path.join(
+                inferenceDirectory,
+                safeFilename
+              );
+
+
+            console.log(
+              `[AI BRIDGE] Serving Grad-CAM: ${safeFilename}`
+            );
+
+
+            if (
+              !fs.existsSync(
+                imagePath
+              )
+            ) {
+
+              res.statusCode = 404;
+
+              res.end(
+                "Grad-CAM image not found."
+              );
+
+              return;
+            }
+
+
+            const extension =
+              path.extname(
+                imagePath
+              ).toLowerCase();
+
+
+            const contentTypes = {
+              ".jpg": "image/jpeg",
+              ".jpeg": "image/jpeg",
+              ".png": "image/png",
+            };
+
+
+            res.statusCode = 200;
+
+            res.setHeader(
+              "Content-Type",
+              contentTypes[extension] ||
+                "application/octet-stream"
+            );
+
+
+            fs.createReadStream(
+              imagePath
+            ).pipe(res);
+
+          }
+        );
+
+      },
+
+    },
+
+  ],
+
+});

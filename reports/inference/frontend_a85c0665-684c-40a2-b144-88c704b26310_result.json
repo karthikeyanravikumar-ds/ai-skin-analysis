@@ -1,0 +1,173 @@
+{
+    "input_image": "C:\\SEM 5\\AI-Skin-Analysis\\reports\\frontend_uploads\\frontend_a85c0665-684c-40a2-b144-88c704b26310.jpeg",
+    "status": "completed",
+    "ood_assessment": {
+        "is_ood": false,
+        "status": "supported",
+        "reason_codes": [],
+        "reasons": [],
+        "message": "",
+        "metrics": {
+            "white_fraction": 0.0,
+            "black_fraction": 0.0827,
+            "mean_channel_diff": 63.26,
+            "color_entropy": 4.547
+        }
+    },
+    "prediction": "vitiligo",
+    "display_name": "Vitiligo",
+    "confidence": 0.536802,
+    "confidence_percent": 53.68,
+    "confidence_level": "low",
+    "top_predictions": [
+        {
+            "class_name": "vitiligo",
+            "display_name": "Vitiligo",
+            "probability": 0.536802,
+            "probability_percent": 53.68
+        },
+        {
+            "class_name": "molluscum_contagiosum",
+            "display_name": "Molluscum Contagiosum",
+            "probability": 0.206138,
+            "probability_percent": 20.61
+        },
+        {
+            "class_name": "warts",
+            "display_name": "Warts",
+            "probability": 0.090059,
+            "probability_percent": 9.01
+        }
+    ],
+    "uncertainty": {
+        "confidence": 0.5368021130561829,
+        "confidence_percent": 53.68,
+        "level": "low",
+        "uncertainty_status": "low_confidence",
+        "requires_caution": true,
+        "message": "The model produced a low-confidence image classification. The image may not contain enough information for a reliable model prediction. Consider using a clearer image and/or seeking professional evaluation.",
+        "recommended_next_step": "Retake a clear, well-lit, in-focus photograph of the skin lesion or consult a qualified healthcare provider directly.",
+        "quality_impact": null
+    },
+    "image_quality": {
+        "status": "good",
+        "is_valid": true,
+        "resolution": {
+            "width": 720,
+            "height": 1600,
+            "passed": true,
+            "min_width": 224,
+            "min_height": 224
+        },
+        "blur": {
+            "score": 229.54,
+            "passed": true,
+            "threshold": 50.0
+        },
+        "brightness": {
+            "score": 80.21,
+            "passed": true,
+            "min_threshold": 30.0,
+            "max_threshold": 225.0
+        },
+        "warnings": []
+    },
+    "gradcam_generated": true,
+    "gradcam_heatmap": "C:\\SEM 5\\AI-Skin-Analysis\\reports\\inference\\frontend_a85c0665-684c-40a2-b144-88c704b26310_heatmap.jpg",
+    "gradcam_overlay": "C:\\SEM 5\\AI-Skin-Analysis\\reports\\inference\\frontend_a85c0665-684c-40a2-b144-88c704b26310_gradcam.jpg",
+    "symptoms": {
+        "duration": "1 year",
+        "location": "back",
+        "spreading": "yes",
+        "itching": "yes",
+        "pain": "no",
+        "burning": "yes",
+        "swelling": "no",
+        "bleeding": "yes",
+        "discharge": "no",
+        "blisters": "no",
+        "fever": "no",
+        "sensitiveArea": "no",
+        "previousOccurrence": "yes",
+        "newExposure": "no"
+    },
+    "safety": {
+        "safety_level": "urgent",
+        "red_flags": [
+            "Active bleeding or skin breakdown requires urgent professional medical assessment."
+        ],
+        "red_flag_count": 1,
+        "attention_flags": [
+            "Rapidly spreading or expanding lesions warrant timely clinical evaluation.",
+            "Intense burning or stinging sensation may indicate acute contact dermatitis or neural irritation."
+        ],
+        "recommendation": "Urgent medical attention is advised. Please consult an emergency department, urgent care center, or a qualified healthcare provider immediately for professional clinical assessment.",
+        "disclaimer": "This symptom and safety evaluation provides preliminary educational guidance only. It is not a medical diagnosis, prescription, or treatment plan. Always consult a qualified healthcare professional for any skin condition."
+    },
+    "decision": {
+        "safety_level": "urgent",
+        "decision_factors": [
+            "Reported warning sign: Active bleeding or skin breakdown requires urgent professional medical assessment."
+        ],
+        "red_flags": [
+            "Active bleeding or skin breakdown requires urgent professional medical assessment."
+        ],
+        "attention_flags": [
+            "Rapidly spreading or expanding lesions warrant timely clinical evaluation.",
+            "Intense burning or stinging sensation may indicate acute contact dermatitis or neural irritation.",
+            "Model classification confidence is low."
+        ],
+        "recommendation": "The reported symptoms include high-risk warning signs that require prompt clinical assessment. Seek emergency care or immediate medical attention from a healthcare professional. If experiencing difficulty breathing, swallowing, or severe rapid swelling, contact emergency services immediately.",
+        "requires_professional_evaluation": true,
+        "is_emergency": true,
+        "disclaimer": "This safety decision provides preliminary educational guidance only. It is not a medical diagnosis, prescription, or treatment plan. Always consult a qualified healthcare professional for medical concerns."
+    },
+    "explanation": "Educational explanation will be generated separately after the CNN analysis.",
+    "symptom_reference": {
+        "class_label": "vitiligo",
+        "class_idx": 5,
+        "disease_name": "Vitiligo",
+        "typical_lesion_features": "Well-defined lighter or depigmented patches; hair in patches may also lose colour",
+        "duration": "Often persistent; patches may remain stable or change",
+        "location": "Can affect many areas, often face, hands, and body openings",
+        "spreading": "Variable; new patches or enlargement may occur",
+        "itching": "Usually absent; sometimes present",
+        "pain": "Not characteristic",
+        "burning": "Not characteristic",
+        "swelling": "Not characteristic",
+        "bleeding": "Not characteristic",
+        "discharge": "Not characteristic",
+        "blisters": "Not characteristic",
+        "fever": "Not characteristic",
+        "sensitiveArea": "Patches may occur near eyes, mouth, or genital areas; location alone does not indicate emergency",
+        "previousOccurrence": "May be present; personal or family history may be relevant",
+        "newExposure": "Not defining",
+        "distinctive_clue": "Loss of pigment without typical scale or discharge may be a clue",
+        "safety_note": "New or changing pigment loss should be assessed if diagnosis is uncertain",
+        "interpretation_limit": "Other pigment disorders and post-inflammatory colour changes can resemble vitiligo",
+        "symptom_patterns": {
+            "duration": "Often persistent; patches may remain stable or change",
+            "location": "Can affect many areas, often face, hands, and body openings",
+            "spreading": "Variable; new patches or enlargement may occur",
+            "itching": "Usually absent; sometimes present",
+            "pain": "Not characteristic",
+            "burning": "Not characteristic",
+            "swelling": "Not characteristic",
+            "bleeding": "Not characteristic",
+            "discharge": "Not characteristic",
+            "blisters": "Not characteristic",
+            "fever": "Not characteristic",
+            "sensitiveArea": "Patches may occur near eyes, mouth, or genital areas; location alone does not indicate emergency",
+            "previousOccurrence": "May be present; personal or family history may be relevant",
+            "newExposure": "Not defining"
+        },
+        "reference_metadata": {
+            "source": "Clinical Reference Database (Educational)",
+            "type": "General typical symptom pattern",
+            "diagnostic_status": "Non-diagnostic educational reference",
+            "caveat": "Typical presentation patterns describe general textbook observations. Individual presentations vary and presence or absence of a symptom does not confirm or exclude any diagnosis."
+        }
+    },
+    "is_preliminary": true,
+    "medical_disclaimer": "This result is for preliminary educational guidance only and is not a medical diagnosis."
+}

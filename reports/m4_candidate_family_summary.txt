@@ -1,0 +1,205 @@
+M4 CANDIDATE IMAGE FAMILY SUMMARY
+=================================
+Candidate pairs processed: 633
+Connected candidate families: 109
+Families spanning multiple splits: 109
+
+Affected classes (candidate families, member files):
+  urticaria: 86 family memberships, 427 member-file occurrences
+  impetigo: 8 family memberships, 18 member-file occurrences
+  warts: 8 family memberships, 41 member-file occurrences
+  acne_vulgaris: 7 family memberships, 14 member-file occurrences
+
+Largest cross-split candidate families:
+
+1. 18 files; splits=test, train, validation; classes=urticaria
+   [test/urticaria] nosie1dermagraphism-41.jpg
+   [test/urticaria] nosie5dermagraphism-30.jpg
+   [train/urticaria] dermagraphism-34.jpg
+   [train/urticaria] imagelightdermagraphism-34.jpg
+   [train/urticaria] nosie1dermagraphism-30.jpg
+   [train/urticaria] nosie1dermagraphism-40.jpg
+   [train/urticaria] nosie3dermagraphism-40.jpg
+   [train/urticaria] nosie5dermagraphism-34.jpg
+   [train/urticaria] nosie5dermagraphism-40.jpg
+   [train/urticaria] nosie5dermagraphism-41.jpg
+   [train/urticaria] nosiedermagraphism-34.jpg
+   [train/urticaria] nosiedermagraphism-40.jpg
+   [train/urticaria] nosiedermagraphism-41.jpg
+   [validation/urticaria] dermagraphism-30.jpg
+   [validation/urticaria] imagelightdermagraphism-30.jpg
+   [validation/urticaria] nosie3dermagraphism-30.jpg
+   [validation/urticaria] nosie3dermagraphism-41.jpg
+   [validation/urticaria] nosiedermagraphism-30.jpg
+
+2. 12 files; splits=test, train, validation; classes=urticaria
+   [test/urticaria] cholinergic-uriticaria-6.jpg
+   [test/urticaria] imagelightcholinergic-uriticaria-6.jpg
+   [test/urticaria] nosie1cholinergic-uriticaria-6.jpg
+   [test/urticaria] nosie5cholinergic-uriticaria-3.jpg
+   [test/urticaria] nosiecholinergic-uriticaria-6.jpg
+   [train/urticaria] nosie1cholinergic-uriticaria-3.jpg
+   [train/urticaria] nosie3cholinergic-uriticaria-3.jpg
+   [train/urticaria] nosie3cholinergic-uriticaria-6.jpg
+   [train/urticaria] nosie5cholinergic-uriticaria-6.jpg
+   [validation/urticaria] cholinergic-uriticaria-3.jpg
+   [validation/urticaria] imagelightcholinergic-uriticaria-3.jpg
+   [validation/urticaria] nosiecholinergic-uriticaria-3.jpg
+
+3. 12 files; splits=test, train, validation; classes=urticaria
+   [test/urticaria] nosie3erythema-annulare-centrifugum-4.jpg
+   [train/urticaria] erythema-annulare-centrifugum-3.jpg
+   [train/urticaria] erythema-annulare-centrifugum-4.jpg
+   [train/urticaria] imagelighterythema-annulare-centrifugum-3.jpg
+   [train/urticaria] imagelighterythema-annulare-centrifugum-4.jpg
+   [train/urticaria] nosie1erythema-annulare-centrifugum-3.jpg
+   [train/urticaria] nosie5erythema-annulare-centrifugum-3.jpg
+   [train/urticaria] nosie5erythema-annulare-centrifugum-4.jpg
+   [train/urticaria] nosieerythema-annulare-centrifugum-3.jpg
+   [train/urticaria] nosieerythema-annulare-centrifugum-4.jpg
+   [validation/urticaria] nosie1erythema-annulare-centrifugum-4.jpg
+   [validation/urticaria] nosie3erythema-annulare-centrifugum-3.jpg
+
+4. 6 files; splits=test, train, validation; classes=warts
+   [test/warts] 12WartAldara.jpg
+   [test/warts] imagelight12WartAldara.jpg
+   [test/warts] nosie12WartAldara.jpg
+   [train/warts] nosie312WartAldara.jpg
+   [train/warts] nosie512WartAldara.jpg
+   [validation/warts] nosie112WartAldara.jpg
+
+5. 6 files; splits=test, train, validation; classes=urticaria
+   [test/urticaria] erythema-annulare-centrifugum-15.jpg
+   [test/urticaria] imagelighterythema-annulare-centrifugum-15.jpg
+   [test/urticaria] nosie3erythema-annulare-centrifugum-15.jpg
+   [test/urticaria] nosieerythema-annulare-centrifugum-15.jpg
+   [train/urticaria] nosie5erythema-annulare-centrifugum-15.jpg
+   [validation/urticaria] nosie1erythema-annulare-centrifugum-15.jpg
+
+6. 6 files; splits=test, train, validation; classes=urticaria
+   [test/urticaria] erythema-annulare-centrifugum-8.jpg
+   [test/urticaria] imagelighterythema-annulare-centrifugum-8.jpg
+   [test/urticaria] nosie1erythema-annulare-centrifugum-8.jpg
+   [test/urticaria] nosieerythema-annulare-centrifugum-8.jpg
+   [train/urticaria] nosie5erythema-annulare-centrifugum-8.jpg
+   [validation/urticaria] nosie3erythema-annulare-centrifugum-8.jpg
+
+7. 6 files; splits=test, train, validation; classes=urticaria
+   [test/urticaria] hives-Urticaria-Acute-101.jpg
+   [test/urticaria] imagelighthives-Urticaria-Acute-101.jpg
+   [test/urticaria] nosiehives-Urticaria-Acute-101.jpg
+   [train/urticaria] nosie1hives-Urticaria-Acute-101.jpg
+   [train/urticaria] nosie3hives-Urticaria-Acute-101.jpg
+   [validation/urticaria] nosie5hives-Urticaria-Acute-101.jpg
+
+8. 6 files; splits=test, train, validation; classes=warts
+   [test/warts] nosie112WartsCyclosporin.jpg
+   [test/warts] nosie312WartsCyclosporin.jpg
+   [train/warts] 12WartsCyclosporin.jpg
+   [train/warts] imagelight12WartsCyclosporin.jpg
+   [train/warts] nosie12WartsCyclosporin.jpg
+   [validation/warts] nosie512WartsCyclosporin.jpg
+
+9. 6 files; splits=test, train, validation; classes=urticaria
+   [test/urticaria] nosie1angioedema-22.jpg
+   [train/urticaria] nosie3angioedema-22.jpg
+   [train/urticaria] nosie5angioedema-22.jpg
+   [validation/urticaria] angioedema-22.jpg
+   [validation/urticaria] imagelightangioedema-22.jpg
+   [validation/urticaria] nosieangioedema-22.jpg
+
+10. 6 files; splits=test, train, validation; classes=urticaria
+   [test/urticaria] nosie1dermagraphism-23.jpg
+   [train/urticaria] nosie5dermagraphism-23.jpg
+   [validation/urticaria] dermagraphism-23.jpg
+   [validation/urticaria] imagelightdermagraphism-23.jpg
+   [validation/urticaria] nosie3dermagraphism-23.jpg
+   [validation/urticaria] nosiedermagraphism-23.jpg
+
+11. 6 files; splits=test, train, validation; classes=urticaria
+   [test/urticaria] nosie1dermagraphism-25.jpg
+   [train/urticaria] nosie3dermagraphism-25.jpg
+   [train/urticaria] nosie5dermagraphism-25.jpg
+   [validation/urticaria] dermagraphism-25.jpg
+   [validation/urticaria] imagelightdermagraphism-25.jpg
+   [validation/urticaria] nosiedermagraphism-25.jpg
+
+12. 6 files; splits=test, train, validation; classes=urticaria
+   [test/urticaria] nosie1erythema-annulare-centrifugum-12.jpg
+   [train/urticaria] nosie3erythema-annulare-centrifugum-12.jpg
+   [train/urticaria] nosie5erythema-annulare-centrifugum-12.jpg
+   [validation/urticaria] erythema-annulare-centrifugum-12.jpg
+   [validation/urticaria] imagelighterythema-annulare-centrifugum-12.jpg
+   [validation/urticaria] nosieerythema-annulare-centrifugum-12.jpg
+
+13. 6 files; splits=test, train, validation; classes=urticaria
+   [test/urticaria] nosie3angioedema-8.jpg
+   [train/urticaria] angioedema-8.jpg
+   [train/urticaria] imagelightangioedema-8.jpg
+   [train/urticaria] nosie1angioedema-8.jpg
+   [train/urticaria] nosieangioedema-8.jpg
+   [validation/urticaria] nosie5angioedema-8.jpg
+
+14. 6 files; splits=test, train, validation; classes=urticaria
+   [test/urticaria] nosie3dermagraphism-19.jpg
+   [test/urticaria] nosie5dermagraphism-19.jpg
+   [train/urticaria] nosie1dermagraphism-19.jpg
+   [validation/urticaria] dermagraphism-19.jpg
+   [validation/urticaria] imagelightdermagraphism-19.jpg
+   [validation/urticaria] nosiedermagraphism-19.jpg
+
+15. 6 files; splits=test, train, validation; classes=urticaria
+   [test/urticaria] nosie3dermagraphism-33.jpg
+   [train/urticaria] dermagraphism-33.jpg
+   [train/urticaria] imagelightdermagraphism-33.jpg
+   [train/urticaria] nosie5dermagraphism-33.jpg
+   [train/urticaria] nosiedermagraphism-33.jpg
+   [validation/urticaria] nosie1dermagraphism-33.jpg
+
+16. 6 files; splits=test, train, validation; classes=urticaria
+   [test/urticaria] nosie5dermagraphism-27.jpg
+   [train/urticaria] dermagraphism-27.jpg
+   [train/urticaria] imagelightdermagraphism-27.jpg
+   [train/urticaria] nosie3dermagraphism-27.jpg
+   [train/urticaria] nosiedermagraphism-27.jpg
+   [validation/urticaria] nosie1dermagraphism-27.jpg
+
+17. 6 files; splits=test, train, validation; classes=urticaria
+   [test/urticaria] nosie5dermagraphism-31.jpg
+   [train/urticaria] dermagraphism-31.jpg
+   [train/urticaria] imagelightdermagraphism-31.jpg
+   [train/urticaria] nosie3dermagraphism-31.jpg
+   [train/urticaria] nosiedermagraphism-31.jpg
+   [validation/urticaria] nosie1dermagraphism-31.jpg
+
+18. 6 files; splits=test, train, validation; classes=urticaria
+   [test/urticaria] nosie5dermagraphism-8.jpg
+   [train/urticaria] dermagraphism-8.jpg
+   [train/urticaria] imagelightdermagraphism-8.jpg
+   [train/urticaria] nosiedermagraphism-8.jpg
+   [validation/urticaria] nosie1dermagraphism-8.jpg
+   [validation/urticaria] nosie3dermagraphism-8.jpg
+
+19. 6 files; splits=test, train, validation; classes=urticaria
+   [test/urticaria] nosie5erythema-annulare-centrifugum-6.jpg
+   [train/urticaria] nosie1erythema-annulare-centrifugum-6.jpg
+   [train/urticaria] nosie3erythema-annulare-centrifugum-6.jpg
+   [validation/urticaria] erythema-annulare-centrifugum-6.jpg
+   [validation/urticaria] imagelighterythema-annulare-centrifugum-6.jpg
+   [validation/urticaria] nosieerythema-annulare-centrifugum-6.jpg
+
+20. 4 files; splits=test, train, validation; classes=urticaria
+   [test/urticaria] rotat_img2erythema-annulare-centrifugum-3.jpg
+   [train/urticaria] rotat_img3erythema-annulare-centrifugum-4.jpg
+   [validation/urticaria] rotat_img2erythema-annulare-centrifugum-4.jpg
+   [validation/urticaria] rotat_img3erythema-annulare-centrifugum-3.jpg
+
+Interpretation limits:
+- Families are connected components of pHash candidate pairs.
+- A family may contain indirect connections between images.
+- Similarity does not prove duplicate identity or patient identity.
+- Review images and provenance before deciding that leakage is confirmed.
+- This report does not verify licenses or source-image permissions.
+- No images, dataset splits, or model checkpoints were modified.
+
+Detailed report: reports\m4_candidate_image_families.csv

@@ -1,0 +1,8 @@
+class_name,train_images,val_images,test_images,total_images,images_with_masks,mask_coverage_pct
+acne_vulgaris,1223,263,261,1747,0,0.0%
+impetigo,132,29,27,188,0,0.0%
+molluscum_contagiosum,94,21,19,134,0,0.0%
+psoriasis,626,142,121,889,0,0.0%
+urticaria,526,114,109,749,0,0.0%
+vitiligo,503,127,75,705,0,0.0%
+warts,65,14,10,89,0,0.0%

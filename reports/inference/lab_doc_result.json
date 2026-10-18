@@ -1,0 +1,98 @@
+{
+    "input_image": "C:\\Users\\KARTHI~1\\AppData\\Local\\Temp\\test_ood_req02_boqhqr7q\\lab_doc.jpg",
+    "status": "abstained",
+    "prediction": "unsupported_non_skin",
+    "display_name": "Unsupported / Domain Abstained",
+    "confidence": 0.0,
+    "confidence_percent": 0.0,
+    "confidence_level": "low",
+    "top_predictions": [],
+    "uncertainty": {
+        "confidence": 0.0,
+        "confidence_percent": 0.0,
+        "level": "low",
+        "uncertainty_status": "domain_abstained",
+        "requires_caution": true,
+        "message": "This system is designed specifically for clinical skin lesion photographs across seven supported conditions (Acne Vulgaris, Impetigo, Molluscum Contagiosum, Psoriasis, Urticaria, Vitiligo, and Warts). The submitted image appears to be outside this supported domain. Please upload or capture a clear, well-lit photograph focusing on the affected skin area.",
+        "recommended_next_step": "Please submit a clear, well-lit photograph focusing on the affected skin area, or consult a qualified healthcare provider directly.",
+        "quality_impact": "Image rejected by domain guardrail."
+    },
+    "image_quality": {
+        "status": "warning",
+        "is_valid": true,
+        "resolution": {
+            "width": 300,
+            "height": 300,
+            "passed": true,
+            "min_width": 224,
+            "min_height": 224
+        },
+        "blur": {
+            "score": 820.45,
+            "passed": true,
+            "threshold": 50.0
+        },
+        "brightness": {
+            "score": 251.88,
+            "passed": false,
+            "min_threshold": 30.0,
+            "max_threshold": 225.0
+        },
+        "warnings": [
+            "Image may be overexposed or too bright (brightness: 251.9 > 225.0)."
+        ]
+    },
+    "ood_assessment": {
+        "is_ood": true,
+        "status": "abstained",
+        "reason_codes": [
+            "DOCUMENT_OR_TEXT_PAGE",
+            "MONOCHROMATIC_NON_SKIN",
+            "SOLID_OR_SYNTHETIC_COLOR"
+        ],
+        "reasons": [
+            "The uploaded file appears to be a printed document, text page, or diagram rather than a photographic skin image.",
+            "The image lacks chromatic color variance (grayscale or monochromatic) and does not represent a supported dermatological color photograph.",
+            "The image exhibits a solid, synthetic, or artificially uniform color field lacking natural skin tissue variance."
+        ],
+        "message": "This system is designed specifically for clinical skin lesion photographs across seven supported conditions (Acne Vulgaris, Impetigo, Molluscum Contagiosum, Psoriasis, Urticaria, Vitiligo, and Warts). The submitted image appears to be outside this supported domain. Please upload or capture a clear, well-lit photograph focusing on the affected skin area.",
+        "metrics": {
+            "white_fraction": 0.9837,
+            "black_fraction": 0.0082,
+            "mean_channel_diff": 0.0,
+            "color_entropy": 0.146
+        }
+    },
+    "gradcam_generated": false,
+    "gradcam_heatmap": null,
+    "gradcam_overlay": null,
+    "symptoms": {},
+    "safety": {
+        "safety_level": "routine",
+        "red_flags": [],
+        "red_flag_count": 0,
+        "attention_flags": [],
+        "recommendation": "Routine dermatological consultation is suggested. Consider scheduling an in-person appointment with a healthcare professional or board-certified dermatologist for a comprehensive skin evaluation.",
+        "disclaimer": "This symptom and safety evaluation provides preliminary educational guidance only. It is not a medical diagnosis, prescription, or treatment plan. Always consult a qualified healthcare professional for any skin condition."
+    },
+    "decision": {
+        "safety_level": "attention",
+        "decision_factors": [
+            "Model classification confidence is low.",
+            "The result should be interpreted with caution.",
+            "Technical image limitation: Image may be overexposed or too bright (brightness: 251.9 > 225.0)."
+        ],
+        "red_flags": [],
+        "attention_flags": [
+            "Model classification confidence is low.",
+            "Technical image quality status is warning."
+        ],
+        "recommendation": "The preliminary classification should be interpreted cautiously due to model uncertainty, technical image factors, or reported symptoms. Consider scheduling an in-person evaluation with a board-certified dermatologist or healthcare professional.",
+        "requires_professional_evaluation": true,
+        "is_emergency": false,
+        "disclaimer": "This safety decision provides preliminary educational guidance only. It is not a medical diagnosis, prescription, or treatment plan. Always consult a qualified healthcare professional for medical concerns."
+    },
+    "explanation": "This system is designed specifically for clinical skin lesion photographs across seven supported conditions (Acne Vulgaris, Impetigo, Molluscum Contagiosum, Psoriasis, Urticaria, Vitiligo, and Warts). The submitted image appears to be outside this supported domain. Please upload or capture a clear, well-lit photograph focusing on the affected skin area.",
+    "is_preliminary": true,
+    "medical_disclaimer": "This result is for preliminary educational guidance only and is not a medical diagnosis. The submitted image was identified as falling outside the supported skin lesion classification domain."
+}

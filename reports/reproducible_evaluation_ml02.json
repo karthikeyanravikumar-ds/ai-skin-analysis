@@ -1,0 +1,1739 @@
+{
+  "execution_metadata": {
+    "task": "ML-02",
+    "checkpoint_path": "models\\trained\\best_model.pth",
+    "checkpoint_md5": "FF106263793F9F0A2FB13F15CEB1437E",
+    "checkpoint_size_bytes": 16367097,
+    "test_split_path": "data\\split\\test",
+    "total_test_samples": 622,
+    "device": "cpu",
+    "seed": 42,
+    "best_val_macro_f1_in_ckpt": 0.9348099097506484
+  },
+  "metrics": {
+    "overall": {
+      "total_samples": 622,
+      "accuracy": 0.9581993569131833,
+      "balanced_accuracy": 0.9457852445940221,
+      "macro_precision": 0.9624157143688122,
+      "weighted_precision": 0.9637509457014916,
+      "macro_recall": 0.9457852445940221,
+      "weighted_recall": 0.9581993569131833,
+      "macro_f1": 0.949116194626484,
+      "weighted_f1": 0.9566582757510154,
+      "top1_accuracy": 0.9581993569131833,
+      "top2_accuracy": 0.9967845659163987,
+      "top3_accuracy": 1.0,
+      "brier_score": 0.07801253909987786,
+      "ece": 0.02881365487429877,
+      "mce": 0.6124217510223389
+    },
+    "per_class": {
+      "acne_vulgaris": {
+        "class_index": 0,
+        "precision": 0.9961685823754789,
+        "recall": 0.9961685823754789,
+        "f1_score": 0.9961685823754789,
+        "support": 261
+      },
+      "impetigo": {
+        "class_index": 1,
+        "precision": 1.0,
+        "recall": 0.9259259259259259,
+        "f1_score": 0.9615384615384616,
+        "support": 27
+      },
+      "molluscum_contagiosum": {
+        "class_index": 2,
+        "precision": 0.9047619047619048,
+        "recall": 1.0,
+        "f1_score": 0.95,
+        "support": 19
+      },
+      "psoriasis": {
+        "class_index": 3,
+        "precision": 0.8450704225352113,
+        "recall": 0.9917355371900827,
+        "f1_score": 0.9125475285171103,
+        "support": 121
+      },
+      "urticaria": {
+        "class_index": 4,
+        "precision": 0.990909090909091,
+        "recall": 1.0,
+        "f1_score": 0.9954337899543378,
+        "support": 109
+      },
+      "vitiligo": {
+        "class_index": 5,
+        "precision": 1.0,
+        "recall": 0.7066666666666667,
+        "f1_score": 0.828125,
+        "support": 75
+      },
+      "warts": {
+        "class_index": 6,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1_score": 1.0,
+        "support": 10
+      }
+    },
+    "confusion_matrix": [
+      [
+        260,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        1,
+        25,
+        0,
+        0,
+        1,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        19,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        1,
+        120,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        109,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        22,
+        0,
+        53,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        10
+      ]
+    ],
+    "calibration": {
+      "ece": 0.02881365487429877,
+      "mce": 0.6124217510223389,
+      "num_bins": 10,
+      "bins": [
+        {
+          "bin_index": 0,
+          "range": [
+            0.0,
+            0.1
+          ],
+          "count": 0,
+          "accuracy": 0.0,
+          "confidence": 0.0,
+          "calibration_gap": 0.0
+        },
+        {
+          "bin_index": 1,
+          "range": [
+            0.1,
+            0.2
+          ],
+          "count": 0,
+          "accuracy": 0.0,
+          "confidence": 0.0,
+          "calibration_gap": 0.0
+        },
+        {
+          "bin_index": 2,
+          "range": [
+            0.2,
+            0.3
+          ],
+          "count": 0,
+          "accuracy": 0.0,
+          "confidence": 0.0,
+          "calibration_gap": 0.0
+        },
+        {
+          "bin_index": 3,
+          "range": [
+            0.3,
+            0.4
+          ],
+          "count": 1,
+          "accuracy": 1.0,
+          "confidence": 0.3876,
+          "calibration_gap": 0.6124
+        },
+        {
+          "bin_index": 4,
+          "range": [
+            0.4,
+            0.5
+          ],
+          "count": 0,
+          "accuracy": 0.0,
+          "confidence": 0.0,
+          "calibration_gap": 0.0
+        },
+        {
+          "bin_index": 5,
+          "range": [
+            0.5,
+            0.6
+          ],
+          "count": 6,
+          "accuracy": 0.5,
+          "confidence": 0.5536,
+          "calibration_gap": 0.0536
+        },
+        {
+          "bin_index": 6,
+          "range": [
+            0.6,
+            0.7
+          ],
+          "count": 2,
+          "accuracy": 1.0,
+          "confidence": 0.6129,
+          "calibration_gap": 0.3871
+        },
+        {
+          "bin_index": 7,
+          "range": [
+            0.7,
+            0.8
+          ],
+          "count": 10,
+          "accuracy": 0.9,
+          "confidence": 0.7548,
+          "calibration_gap": 0.1452
+        },
+        {
+          "bin_index": 8,
+          "range": [
+            0.8,
+            0.9
+          ],
+          "count": 17,
+          "accuracy": 0.8235,
+          "confidence": 0.861,
+          "calibration_gap": 0.0374
+        },
+        {
+          "bin_index": 9,
+          "range": [
+            0.9,
+            1.0
+          ],
+          "count": 586,
+          "accuracy": 0.9676,
+          "confidence": 0.9917,
+          "calibration_gap": 0.0241
+        }
+      ]
+    },
+    "confidence_distribution": {
+      "all": {
+        "count": 622,
+        "mean": 0.9778848886489868,
+        "std": 0.06581532210111618,
+        "median": 0.9968510866165161,
+        "min": 0.38757824897766113,
+        "max": 0.999994158744812,
+        "p25": 0.989803671836853,
+        "p75": 0.9989519715309143
+      },
+      "correct": {
+        "count": 596,
+        "mean": 0.9810811281204224,
+        "std": 0.05842919647693634,
+        "median": 0.9970743060112,
+        "min": 0.38757824897766113,
+        "max": 0.999994158744812,
+        "p25": 0.9908171892166138,
+        "p75": 0.9990668892860413
+      },
+      "incorrect": {
+        "count": 26,
+        "mean": 0.9046141505241394,
+        "std": 0.14058826863765717,
+        "median": 0.9785794019699097,
+        "min": 0.5288743376731873,
+        "max": 0.9991687536239624,
+        "p25": 0.8751358985900879,
+        "p75": 0.9930656552314758
+      }
+    }
+  },
+  "vitiligo_investigation": {
+    "total_vitiligo_test_samples": 75,
+    "correct_vitiligo_predictions": 53,
+    "total_vitiligo_errors": 22,
+    "vitiligo_to_psoriasis_errors": 22,
+    "vitiligo_recall": 0.7066666666666667,
+    "mean_error_confidence": 0.9243343878876079,
+    "min_error_confidence": 0.5671746730804443,
+    "max_error_confidence": 0.998417854309082,
+    "cases": [
+      {
+        "filename": "IMG-0951_frame_10.jpg",
+        "relative_path": "data\\split\\test\\vitiligo\\IMG-0951_frame_10.jpg",
+        "actual_class": "vitiligo",
+        "predicted_class": "psoriasis",
+        "psoriasis_confidence": 0.8461,
+        "vitiligo_probability": 0.1502,
+        "margin": 0.6959,
+        "top3": [
+          {
+            "class_name": "psoriasis",
+            "class_index": 3,
+            "probability": 0.8461062908172607
+          },
+          {
+            "class_name": "vitiligo",
+            "class_index": 5,
+            "probability": 0.15019011497497559
+          },
+          {
+            "class_name": "warts",
+            "class_index": 6,
+            "probability": 0.0015662560472264886
+          }
+        ],
+        "blur_variance": null,
+        "brightness": null,
+        "iq_status": "good",
+        "associated_with_near_duplicate": false
+      },
+      {
+        "filename": "IMG-0951_frame_11.jpg",
+        "relative_path": "data\\split\\test\\vitiligo\\IMG-0951_frame_11.jpg",
+        "actual_class": "vitiligo",
+        "predicted_class": "psoriasis",
+        "psoriasis_confidence": 0.9656,
+        "vitiligo_probability": 0.0293,
+        "margin": 0.9363,
+        "top3": [
+          {
+            "class_name": "psoriasis",
+            "class_index": 3,
+            "probability": 0.9655765891075134
+          },
+          {
+            "class_name": "vitiligo",
+            "class_index": 5,
+            "probability": 0.029270485043525696
+          },
+          {
+            "class_name": "warts",
+            "class_index": 6,
+            "probability": 0.0021701359655708075
+          }
+        ],
+        "blur_variance": null,
+        "brightness": null,
+        "iq_status": "good",
+        "associated_with_near_duplicate": false
+      },
+      {
+        "filename": "IMG-0951_frame_14.jpg",
+        "relative_path": "data\\split\\test\\vitiligo\\IMG-0951_frame_14.jpg",
+        "actual_class": "vitiligo",
+        "predicted_class": "psoriasis",
+        "psoriasis_confidence": 0.9931,
+        "vitiligo_probability": 0.0056,
+        "margin": 0.9875,
+        "top3": [
+          {
+            "class_name": "psoriasis",
+            "class_index": 3,
+            "probability": 0.99310302734375
+          },
+          {
+            "class_name": "vitiligo",
+            "class_index": 5,
+            "probability": 0.005567424464970827
+          },
+          {
+            "class_name": "warts",
+            "class_index": 6,
+            "probability": 0.0005910826730541885
+          }
+        ],
+        "blur_variance": null,
+        "brightness": null,
+        "iq_status": "good",
+        "associated_with_near_duplicate": false
+      },
+      {
+        "filename": "IMG-0951_frame_15.jpg",
+        "relative_path": "data\\split\\test\\vitiligo\\IMG-0951_frame_15.jpg",
+        "actual_class": "vitiligo",
+        "predicted_class": "psoriasis",
+        "psoriasis_confidence": 0.9984,
+        "vitiligo_probability": 0.0007,
+        "margin": 0.9977,
+        "top3": [
+          {
+            "class_name": "psoriasis",
+            "class_index": 3,
+            "probability": 0.998417854309082
+          },
+          {
+            "class_name": "vitiligo",
+            "class_index": 5,
+            "probability": 0.0007173172198235989
+          },
+          {
+            "class_name": "warts",
+            "class_index": 6,
+            "probability": 0.0003618790942709893
+          }
+        ],
+        "blur_variance": null,
+        "brightness": null,
+        "iq_status": "good",
+        "associated_with_near_duplicate": false
+      },
+      {
+        "filename": "IMG-0951_frame_16.jpg",
+        "relative_path": "data\\split\\test\\vitiligo\\IMG-0951_frame_16.jpg",
+        "actual_class": "vitiligo",
+        "predicted_class": "psoriasis",
+        "psoriasis_confidence": 0.9951,
+        "vitiligo_probability": 0.0024,
+        "margin": 0.9927,
+        "top3": [
+          {
+            "class_name": "psoriasis",
+            "class_index": 3,
+            "probability": 0.9951061010360718
+          },
+          {
+            "class_name": "vitiligo",
+            "class_index": 5,
+            "probability": 0.0024035507813096046
+          },
+          {
+            "class_name": "warts",
+            "class_index": 6,
+            "probability": 0.0009734389605000615
+          }
+        ],
+        "blur_variance": null,
+        "brightness": null,
+        "iq_status": "good",
+        "associated_with_near_duplicate": false
+      },
+      {
+        "filename": "IMG-0951_frame_20.jpg",
+        "relative_path": "data\\split\\test\\vitiligo\\IMG-0951_frame_20.jpg",
+        "actual_class": "vitiligo",
+        "predicted_class": "psoriasis",
+        "psoriasis_confidence": 0.9174,
+        "vitiligo_probability": 0.0676,
+        "margin": 0.8498,
+        "top3": [
+          {
+            "class_name": "psoriasis",
+            "class_index": 3,
+            "probability": 0.9174354672431946
+          },
+          {
+            "class_name": "vitiligo",
+            "class_index": 5,
+            "probability": 0.06761044263839722
+          },
+          {
+            "class_name": "warts",
+            "class_index": 6,
+            "probability": 0.0046160221099853516
+          }
+        ],
+        "blur_variance": null,
+        "brightness": null,
+        "iq_status": "good",
+        "associated_with_near_duplicate": false
+      },
+      {
+        "filename": "IMG-0951_frame_22.jpg",
+        "relative_path": "data\\split\\test\\vitiligo\\IMG-0951_frame_22.jpg",
+        "actual_class": "vitiligo",
+        "predicted_class": "psoriasis",
+        "psoriasis_confidence": 0.9868,
+        "vitiligo_probability": 0.0125,
+        "margin": 0.9743,
+        "top3": [
+          {
+            "class_name": "psoriasis",
+            "class_index": 3,
+            "probability": 0.986788809299469
+          },
+          {
+            "class_name": "vitiligo",
+            "class_index": 5,
+            "probability": 0.012517938390374184
+          },
+          {
+            "class_name": "molluscum_contagiosum",
+            "class_index": 2,
+            "probability": 0.00031433586264029145
+          }
+        ],
+        "blur_variance": null,
+        "brightness": null,
+        "iq_status": "good",
+        "associated_with_near_duplicate": false
+      },
+      {
+        "filename": "IMG-0951_frame_23.jpg",
+        "relative_path": "data\\split\\test\\vitiligo\\IMG-0951_frame_23.jpg",
+        "actual_class": "vitiligo",
+        "predicted_class": "psoriasis",
+        "psoriasis_confidence": 0.9833,
+        "vitiligo_probability": 0.0147,
+        "margin": 0.9685,
+        "top3": [
+          {
+            "class_name": "psoriasis",
+            "class_index": 3,
+            "probability": 0.9832873344421387
+          },
+          {
+            "class_name": "vitiligo",
+            "class_index": 5,
+            "probability": 0.01474606804549694
+          },
+          {
+            "class_name": "warts",
+            "class_index": 6,
+            "probability": 0.0009615120361559093
+          }
+        ],
+        "blur_variance": null,
+        "brightness": null,
+        "iq_status": "good",
+        "associated_with_near_duplicate": false
+      },
+      {
+        "filename": "IMG-0951_frame_24.jpg",
+        "relative_path": "data\\split\\test\\vitiligo\\IMG-0951_frame_24.jpg",
+        "actual_class": "vitiligo",
+        "predicted_class": "psoriasis",
+        "psoriasis_confidence": 0.8634,
+        "vitiligo_probability": 0.1067,
+        "margin": 0.7567,
+        "top3": [
+          {
+            "class_name": "psoriasis",
+            "class_index": 3,
+            "probability": 0.8634073734283447
+          },
+          {
+            "class_name": "vitiligo",
+            "class_index": 5,
+            "probability": 0.10674487054347992
+          },
+          {
+            "class_name": "warts",
+            "class_index": 6,
+            "probability": 0.0092436783015728
+          }
+        ],
+        "blur_variance": null,
+        "brightness": null,
+        "iq_status": "good",
+        "associated_with_near_duplicate": false
+      },
+      {
+        "filename": "IMG-0951_frame_25.jpg",
+        "relative_path": "data\\split\\test\\vitiligo\\IMG-0951_frame_25.jpg",
+        "actual_class": "vitiligo",
+        "predicted_class": "psoriasis",
+        "psoriasis_confidence": 0.9898,
+        "vitiligo_probability": 0.0046,
+        "margin": 0.9853,
+        "top3": [
+          {
+            "class_name": "psoriasis",
+            "class_index": 3,
+            "probability": 0.9898335933685303
+          },
+          {
+            "class_name": "vitiligo",
+            "class_index": 5,
+            "probability": 0.004552758298814297
+          },
+          {
+            "class_name": "warts",
+            "class_index": 6,
+            "probability": 0.0017624272732064128
+          }
+        ],
+        "blur_variance": null,
+        "brightness": null,
+        "iq_status": "good",
+        "associated_with_near_duplicate": false
+      },
+      {
+        "filename": "IMG-0951_frame_26.jpg",
+        "relative_path": "data\\split\\test\\vitiligo\\IMG-0951_frame_26.jpg",
+        "actual_class": "vitiligo",
+        "predicted_class": "psoriasis",
+        "psoriasis_confidence": 0.5672,
+        "vitiligo_probability": 0.418,
+        "margin": 0.1492,
+        "top3": [
+          {
+            "class_name": "psoriasis",
+            "class_index": 3,
+            "probability": 0.5671746730804443
+          },
+          {
+            "class_name": "vitiligo",
+            "class_index": 5,
+            "probability": 0.4179600477218628
+          },
+          {
+            "class_name": "warts",
+            "class_index": 6,
+            "probability": 0.005465605761855841
+          }
+        ],
+        "blur_variance": null,
+        "brightness": null,
+        "iq_status": "good",
+        "associated_with_near_duplicate": false
+      },
+      {
+        "filename": "IMG-0951_frame_28.jpg",
+        "relative_path": "data\\split\\test\\vitiligo\\IMG-0951_frame_28.jpg",
+        "actual_class": "vitiligo",
+        "predicted_class": "psoriasis",
+        "psoriasis_confidence": 0.9103,
+        "vitiligo_probability": 0.082,
+        "margin": 0.8283,
+        "top3": [
+          {
+            "class_name": "psoriasis",
+            "class_index": 3,
+            "probability": 0.9103214740753174
+          },
+          {
+            "class_name": "vitiligo",
+            "class_index": 5,
+            "probability": 0.08204629272222519
+          },
+          {
+            "class_name": "molluscum_contagiosum",
+            "class_index": 2,
+            "probability": 0.0026869249995797873
+          }
+        ],
+        "blur_variance": null,
+        "brightness": null,
+        "iq_status": "good",
+        "associated_with_near_duplicate": false
+      },
+      {
+        "filename": "IMG-0951_frame_30.jpg",
+        "relative_path": "data\\split\\test\\vitiligo\\IMG-0951_frame_30.jpg",
+        "actual_class": "vitiligo",
+        "predicted_class": "psoriasis",
+        "psoriasis_confidence": 0.9925,
+        "vitiligo_probability": 0.0068,
+        "margin": 0.9857,
+        "top3": [
+          {
+            "class_name": "psoriasis",
+            "class_index": 3,
+            "probability": 0.9924566745758057
+          },
+          {
+            "class_name": "vitiligo",
+            "class_index": 5,
+            "probability": 0.0068006133660674095
+          },
+          {
+            "class_name": "molluscum_contagiosum",
+            "class_index": 2,
+            "probability": 0.00028680541436187923
+          }
+        ],
+        "blur_variance": null,
+        "brightness": null,
+        "iq_status": "good",
+        "associated_with_near_duplicate": false
+      },
+      {
+        "filename": "IMG-0951_frame_31.jpg",
+        "relative_path": "data\\split\\test\\vitiligo\\IMG-0951_frame_31.jpg",
+        "actual_class": "vitiligo",
+        "predicted_class": "psoriasis",
+        "psoriasis_confidence": 0.993,
+        "vitiligo_probability": 0.0051,
+        "margin": 0.9879,
+        "top3": [
+          {
+            "class_name": "psoriasis",
+            "class_index": 3,
+            "probability": 0.9929535984992981
+          },
+          {
+            "class_name": "vitiligo",
+            "class_index": 5,
+            "probability": 0.005082511343061924
+          },
+          {
+            "class_name": "warts",
+            "class_index": 6,
+            "probability": 0.0007625638972967863
+          }
+        ],
+        "blur_variance": null,
+        "brightness": null,
+        "iq_status": "good",
+        "associated_with_near_duplicate": false
+      },
+      {
+        "filename": "IMG-0951_frame_32.jpg",
+        "relative_path": "data\\split\\test\\vitiligo\\IMG-0951_frame_32.jpg",
+        "actual_class": "vitiligo",
+        "predicted_class": "psoriasis",
+        "psoriasis_confidence": 0.9739,
+        "vitiligo_probability": 0.0136,
+        "margin": 0.9603,
+        "top3": [
+          {
+            "class_name": "psoriasis",
+            "class_index": 3,
+            "probability": 0.9738715291023254
+          },
+          {
+            "class_name": "vitiligo",
+            "class_index": 5,
+            "probability": 0.013605096377432346
+          },
+          {
+            "class_name": "acne_vulgaris",
+            "class_index": 0,
+            "probability": 0.004015548154711723
+          }
+        ],
+        "blur_variance": null,
+        "brightness": null,
+        "iq_status": "good",
+        "associated_with_near_duplicate": false
+      },
+      {
+        "filename": "IMG-0951_frame_33.jpg",
+        "relative_path": "data\\split\\test\\vitiligo\\IMG-0951_frame_33.jpg",
+        "actual_class": "vitiligo",
+        "predicted_class": "psoriasis",
+        "psoriasis_confidence": 0.8471,
+        "vitiligo_probability": 0.133,
+        "margin": 0.7142,
+        "top3": [
+          {
+            "class_name": "psoriasis",
+            "class_index": 3,
+            "probability": 0.8471441864967346
+          },
+          {
+            "class_name": "vitiligo",
+            "class_index": 5,
+            "probability": 0.13297241926193237
+          },
+          {
+            "class_name": "warts",
+            "class_index": 6,
+            "probability": 0.00600035535171628
+          }
+        ],
+        "blur_variance": null,
+        "brightness": null,
+        "iq_status": "good",
+        "associated_with_near_duplicate": false
+      },
+      {
+        "filename": "IMG-0951_frame_34.jpg",
+        "relative_path": "data\\split\\test\\vitiligo\\IMG-0951_frame_34.jpg",
+        "actual_class": "vitiligo",
+        "predicted_class": "psoriasis",
+        "psoriasis_confidence": 0.994,
+        "vitiligo_probability": 0.0037,
+        "margin": 0.9904,
+        "top3": [
+          {
+            "class_name": "psoriasis",
+            "class_index": 3,
+            "probability": 0.9940329194068909
+          },
+          {
+            "class_name": "vitiligo",
+            "class_index": 5,
+            "probability": 0.0036624649073928595
+          },
+          {
+            "class_name": "molluscum_contagiosum",
+            "class_index": 2,
+            "probability": 0.0008015488856472075
+          }
+        ],
+        "blur_variance": null,
+        "brightness": null,
+        "iq_status": "good",
+        "associated_with_near_duplicate": false
+      },
+      {
+        "filename": "IMG-0951_frame_35.jpg",
+        "relative_path": "data\\split\\test\\vitiligo\\IMG-0951_frame_35.jpg",
+        "actual_class": "vitiligo",
+        "predicted_class": "psoriasis",
+        "psoriasis_confidence": 0.967,
+        "vitiligo_probability": 0.0286,
+        "margin": 0.9384,
+        "top3": [
+          {
+            "class_name": "psoriasis",
+            "class_index": 3,
+            "probability": 0.9669696688652039
+          },
+          {
+            "class_name": "vitiligo",
+            "class_index": 5,
+            "probability": 0.02856014110147953
+          },
+          {
+            "class_name": "molluscum_contagiosum",
+            "class_index": 2,
+            "probability": 0.0018899738788604736
+          }
+        ],
+        "blur_variance": null,
+        "brightness": null,
+        "iq_status": "good",
+        "associated_with_near_duplicate": false
+      },
+      {
+        "filename": "IMG-0951_frame_36.jpg",
+        "relative_path": "data\\split\\test\\vitiligo\\IMG-0951_frame_36.jpg",
+        "actual_class": "vitiligo",
+        "predicted_class": "psoriasis",
+        "psoriasis_confidence": 0.5738,
+        "vitiligo_probability": 0.4134,
+        "margin": 0.1604,
+        "top3": [
+          {
+            "class_name": "psoriasis",
+            "class_index": 3,
+            "probability": 0.5738047361373901
+          },
+          {
+            "class_name": "vitiligo",
+            "class_index": 5,
+            "probability": 0.4134179651737213
+          },
+          {
+            "class_name": "molluscum_contagiosum",
+            "class_index": 2,
+            "probability": 0.004273285623639822
+          }
+        ],
+        "blur_variance": null,
+        "brightness": null,
+        "iq_status": "good",
+        "associated_with_near_duplicate": false
+      },
+      {
+        "filename": "IMG-0951_frame_6.jpg",
+        "relative_path": "data\\split\\test\\vitiligo\\IMG-0951_frame_6.jpg",
+        "actual_class": "vitiligo",
+        "predicted_class": "psoriasis",
+        "psoriasis_confidence": 0.9945,
+        "vitiligo_probability": 0.0024,
+        "margin": 0.9921,
+        "top3": [
+          {
+            "class_name": "psoriasis",
+            "class_index": 3,
+            "probability": 0.9945100545883179
+          },
+          {
+            "class_name": "vitiligo",
+            "class_index": 5,
+            "probability": 0.00243999226950109
+          },
+          {
+            "class_name": "warts",
+            "class_index": 6,
+            "probability": 0.0009717061184346676
+          }
+        ],
+        "blur_variance": null,
+        "brightness": null,
+        "iq_status": "good",
+        "associated_with_near_duplicate": false
+      },
+      {
+        "filename": "IMG-0951_frame_7.jpg",
+        "relative_path": "data\\split\\test\\vitiligo\\IMG-0951_frame_7.jpg",
+        "actual_class": "vitiligo",
+        "predicted_class": "psoriasis",
+        "psoriasis_confidence": 0.9967,
+        "vitiligo_probability": 0.0016,
+        "margin": 0.9951,
+        "top3": [
+          {
+            "class_name": "psoriasis",
+            "class_index": 3,
+            "probability": 0.9967162609100342
+          },
+          {
+            "class_name": "vitiligo",
+            "class_index": 5,
+            "probability": 0.0016273210057988763
+          },
+          {
+            "class_name": "warts",
+            "class_index": 6,
+            "probability": 0.0006093033007346094
+          }
+        ],
+        "blur_variance": null,
+        "brightness": null,
+        "iq_status": "good",
+        "associated_with_near_duplicate": false
+      },
+      {
+        "filename": "IMG-0951_frame_8.jpg",
+        "relative_path": "data\\split\\test\\vitiligo\\IMG-0951_frame_8.jpg",
+        "actual_class": "vitiligo",
+        "predicted_class": "psoriasis",
+        "psoriasis_confidence": 0.9863,
+        "vitiligo_probability": 0.0121,
+        "margin": 0.9742,
+        "top3": [
+          {
+            "class_name": "psoriasis",
+            "class_index": 3,
+            "probability": 0.9863383173942566
+          },
+          {
+            "class_name": "vitiligo",
+            "class_index": 5,
+            "probability": 0.012131323106586933
+          },
+          {
+            "class_name": "warts",
+            "class_index": 6,
+            "probability": 0.0005671764374710619
+          }
+        ],
+        "blur_variance": null,
+        "brightness": null,
+        "iq_status": "good",
+        "associated_with_near_duplicate": false
+      }
+    ]
+  },
+  "reliability_and_abstention": {
+    "total_test_samples": 622,
+    "total_errors": 26,
+    "error_rate": 0.04180064308681672,
+    "application_tier_breakdown": {
+      "high_confidence_tier_ge_0_80": {
+        "total": 603,
+        "errors": 22,
+        "error_rate": 0.03648424543946932
+      },
+      "moderate_confidence_tier_0_60_to_0_80": {
+        "total": 12,
+        "errors": 1,
+        "error_rate": 0.08333333333333333
+      },
+      "low_confidence_tier_lt_0_60": {
+        "total": 7,
+        "errors": 3,
+        "error_rate": 0.42857142857142855
+      }
+    },
+    "caution_flag_analysis": {
+      "total_flagged_for_caution": 19,
+      "errors_flagged": 4,
+      "errors_unflagged_in_high_confidence": 22,
+      "caution_recall_on_errors": 0.15384615384615385
+    },
+    "narrow_margin_analysis": {
+      "margin_threshold": 0.15,
+      "total_narrow_margin": 3,
+      "errors_in_narrow_margin": 1
+    },
+    "abstention_architecture": {
+      "is_calibrated": false,
+      "calibration_method": "None (Raw Maximum Softmax Probability)",
+      "hard_abstention_enabled": false,
+      "advisory_abstention_enabled": true,
+      "image_quality_hard_rejection": true
+    }
+  },
+  "all_errors": [
+    {
+      "sample_index": 99,
+      "path": "data\\split\\test\\acne_vulgaris\\hidradenitis-suppurativa-10.jpg",
+      "filename": "hidradenitis-suppurativa-10.jpg",
+      "ground_truth_index": 0,
+      "ground_truth_class": "acne_vulgaris",
+      "predicted_index": 2,
+      "predicted_class": "molluscum_contagiosum",
+      "is_correct": false,
+      "confidence": 0.9177690148353577,
+      "top3": [
+        {
+          "class_name": "molluscum_contagiosum",
+          "class_index": 2,
+          "probability": 0.9177690148353577
+        },
+        {
+          "class_name": "impetigo",
+          "class_index": 1,
+          "probability": 0.04074936360120773
+        },
+        {
+          "class_name": "acne_vulgaris",
+          "class_index": 0,
+          "probability": 0.019217776134610176
+        }
+      ]
+    },
+    {
+      "sample_index": 275,
+      "path": "data\\split\\test\\impetigo\\impetigo-11.jpg",
+      "filename": "impetigo-11.jpg",
+      "ground_truth_index": 1,
+      "ground_truth_class": "impetigo",
+      "predicted_index": 4,
+      "predicted_class": "urticaria",
+      "is_correct": false,
+      "confidence": 0.5288743376731873,
+      "top3": [
+        {
+          "class_name": "urticaria",
+          "class_index": 4,
+          "probability": 0.5288743376731873
+        },
+        {
+          "class_name": "acne_vulgaris",
+          "class_index": 0,
+          "probability": 0.30002930760383606
+        },
+        {
+          "class_name": "impetigo",
+          "class_index": 1,
+          "probability": 0.10734942555427551
+        }
+      ]
+    },
+    {
+      "sample_index": 281,
+      "path": "data\\split\\test\\impetigo\\impetigo-5.jpg",
+      "filename": "impetigo-5.jpg",
+      "ground_truth_index": 1,
+      "ground_truth_class": "impetigo",
+      "predicted_index": 0,
+      "predicted_class": "acne_vulgaris",
+      "is_correct": false,
+      "confidence": 0.9991687536239624,
+      "top3": [
+        {
+          "class_name": "acne_vulgaris",
+          "class_index": 0,
+          "probability": 0.9991687536239624
+        },
+        {
+          "class_name": "impetigo",
+          "class_index": 1,
+          "probability": 0.00043464143527671695
+        },
+        {
+          "class_name": "molluscum_contagiosum",
+          "class_index": 2,
+          "probability": 0.00021340085368137807
+        }
+      ]
+    },
+    {
+      "sample_index": 312,
+      "path": "data\\split\\test\\psoriasis\\20230829_113923_frame_18.jpg",
+      "filename": "20230829_113923_frame_18.jpg",
+      "ground_truth_index": 3,
+      "ground_truth_class": "psoriasis",
+      "predicted_index": 2,
+      "predicted_class": "molluscum_contagiosum",
+      "is_correct": false,
+      "confidence": 0.7388019561767578,
+      "top3": [
+        {
+          "class_name": "molluscum_contagiosum",
+          "class_index": 2,
+          "probability": 0.7388019561767578
+        },
+        {
+          "class_name": "psoriasis",
+          "class_index": 3,
+          "probability": 0.1136789619922638
+        },
+        {
+          "class_name": "vitiligo",
+          "class_index": 5,
+          "probability": 0.07780472189188004
+        }
+      ]
+    },
+    {
+      "sample_index": 537,
+      "path": "data\\split\\test\\vitiligo\\IMG-0951_frame_10.jpg",
+      "filename": "IMG-0951_frame_10.jpg",
+      "ground_truth_index": 5,
+      "ground_truth_class": "vitiligo",
+      "predicted_index": 3,
+      "predicted_class": "psoriasis",
+      "is_correct": false,
+      "confidence": 0.8461062908172607,
+      "top3": [
+        {
+          "class_name": "psoriasis",
+          "class_index": 3,
+          "probability": 0.8461062908172607
+        },
+        {
+          "class_name": "vitiligo",
+          "class_index": 5,
+          "probability": 0.15019011497497559
+        },
+        {
+          "class_name": "warts",
+          "class_index": 6,
+          "probability": 0.0015662560472264886
+        }
+      ]
+    },
+    {
+      "sample_index": 538,
+      "path": "data\\split\\test\\vitiligo\\IMG-0951_frame_11.jpg",
+      "filename": "IMG-0951_frame_11.jpg",
+      "ground_truth_index": 5,
+      "ground_truth_class": "vitiligo",
+      "predicted_index": 3,
+      "predicted_class": "psoriasis",
+      "is_correct": false,
+      "confidence": 0.9655765891075134,
+      "top3": [
+        {
+          "class_name": "psoriasis",
+          "class_index": 3,
+          "probability": 0.9655765891075134
+        },
+        {
+          "class_name": "vitiligo",
+          "class_index": 5,
+          "probability": 0.029270485043525696
+        },
+        {
+          "class_name": "warts",
+          "class_index": 6,
+          "probability": 0.0021701359655708075
+        }
+      ]
+    },
+    {
+      "sample_index": 541,
+      "path": "data\\split\\test\\vitiligo\\IMG-0951_frame_14.jpg",
+      "filename": "IMG-0951_frame_14.jpg",
+      "ground_truth_index": 5,
+      "ground_truth_class": "vitiligo",
+      "predicted_index": 3,
+      "predicted_class": "psoriasis",
+      "is_correct": false,
+      "confidence": 0.99310302734375,
+      "top3": [
+        {
+          "class_name": "psoriasis",
+          "class_index": 3,
+          "probability": 0.99310302734375
+        },
+        {
+          "class_name": "vitiligo",
+          "class_index": 5,
+          "probability": 0.005567424464970827
+        },
+        {
+          "class_name": "warts",
+          "class_index": 6,
+          "probability": 0.0005910826730541885
+        }
+      ]
+    },
+    {
+      "sample_index": 542,
+      "path": "data\\split\\test\\vitiligo\\IMG-0951_frame_15.jpg",
+      "filename": "IMG-0951_frame_15.jpg",
+      "ground_truth_index": 5,
+      "ground_truth_class": "vitiligo",
+      "predicted_index": 3,
+      "predicted_class": "psoriasis",
+      "is_correct": false,
+      "confidence": 0.998417854309082,
+      "top3": [
+        {
+          "class_name": "psoriasis",
+          "class_index": 3,
+          "probability": 0.998417854309082
+        },
+        {
+          "class_name": "vitiligo",
+          "class_index": 5,
+          "probability": 0.0007173172198235989
+        },
+        {
+          "class_name": "warts",
+          "class_index": 6,
+          "probability": 0.0003618790942709893
+        }
+      ]
+    },
+    {
+      "sample_index": 543,
+      "path": "data\\split\\test\\vitiligo\\IMG-0951_frame_16.jpg",
+      "filename": "IMG-0951_frame_16.jpg",
+      "ground_truth_index": 5,
+      "ground_truth_class": "vitiligo",
+      "predicted_index": 3,
+      "predicted_class": "psoriasis",
+      "is_correct": false,
+      "confidence": 0.9951061010360718,
+      "top3": [
+        {
+          "class_name": "psoriasis",
+          "class_index": 3,
+          "probability": 0.9951061010360718
+        },
+        {
+          "class_name": "vitiligo",
+          "class_index": 5,
+          "probability": 0.0024035507813096046
+        },
+        {
+          "class_name": "warts",
+          "class_index": 6,
+          "probability": 0.0009734389605000615
+        }
+      ]
+    },
+    {
+      "sample_index": 547,
+      "path": "data\\split\\test\\vitiligo\\IMG-0951_frame_20.jpg",
+      "filename": "IMG-0951_frame_20.jpg",
+      "ground_truth_index": 5,
+      "ground_truth_class": "vitiligo",
+      "predicted_index": 3,
+      "predicted_class": "psoriasis",
+      "is_correct": false,
+      "confidence": 0.9174354672431946,
+      "top3": [
+        {
+          "class_name": "psoriasis",
+          "class_index": 3,
+          "probability": 0.9174354672431946
+        },
+        {
+          "class_name": "vitiligo",
+          "class_index": 5,
+          "probability": 0.06761044263839722
+        },
+        {
+          "class_name": "warts",
+          "class_index": 6,
+          "probability": 0.0046160221099853516
+        }
+      ]
+    },
+    {
+      "sample_index": 549,
+      "path": "data\\split\\test\\vitiligo\\IMG-0951_frame_22.jpg",
+      "filename": "IMG-0951_frame_22.jpg",
+      "ground_truth_index": 5,
+      "ground_truth_class": "vitiligo",
+      "predicted_index": 3,
+      "predicted_class": "psoriasis",
+      "is_correct": false,
+      "confidence": 0.986788809299469,
+      "top3": [
+        {
+          "class_name": "psoriasis",
+          "class_index": 3,
+          "probability": 0.986788809299469
+        },
+        {
+          "class_name": "vitiligo",
+          "class_index": 5,
+          "probability": 0.012517938390374184
+        },
+        {
+          "class_name": "molluscum_contagiosum",
+          "class_index": 2,
+          "probability": 0.00031433586264029145
+        }
+      ]
+    },
+    {
+      "sample_index": 550,
+      "path": "data\\split\\test\\vitiligo\\IMG-0951_frame_23.jpg",
+      "filename": "IMG-0951_frame_23.jpg",
+      "ground_truth_index": 5,
+      "ground_truth_class": "vitiligo",
+      "predicted_index": 3,
+      "predicted_class": "psoriasis",
+      "is_correct": false,
+      "confidence": 0.9832873344421387,
+      "top3": [
+        {
+          "class_name": "psoriasis",
+          "class_index": 3,
+          "probability": 0.9832873344421387
+        },
+        {
+          "class_name": "vitiligo",
+          "class_index": 5,
+          "probability": 0.01474606804549694
+        },
+        {
+          "class_name": "warts",
+          "class_index": 6,
+          "probability": 0.0009615120361559093
+        }
+      ]
+    },
+    {
+      "sample_index": 551,
+      "path": "data\\split\\test\\vitiligo\\IMG-0951_frame_24.jpg",
+      "filename": "IMG-0951_frame_24.jpg",
+      "ground_truth_index": 5,
+      "ground_truth_class": "vitiligo",
+      "predicted_index": 3,
+      "predicted_class": "psoriasis",
+      "is_correct": false,
+      "confidence": 0.8634073734283447,
+      "top3": [
+        {
+          "class_name": "psoriasis",
+          "class_index": 3,
+          "probability": 0.8634073734283447
+        },
+        {
+          "class_name": "vitiligo",
+          "class_index": 5,
+          "probability": 0.10674487054347992
+        },
+        {
+          "class_name": "warts",
+          "class_index": 6,
+          "probability": 0.0092436783015728
+        }
+      ]
+    },
+    {
+      "sample_index": 552,
+      "path": "data\\split\\test\\vitiligo\\IMG-0951_frame_25.jpg",
+      "filename": "IMG-0951_frame_25.jpg",
+      "ground_truth_index": 5,
+      "ground_truth_class": "vitiligo",
+      "predicted_index": 3,
+      "predicted_class": "psoriasis",
+      "is_correct": false,
+      "confidence": 0.9898335933685303,
+      "top3": [
+        {
+          "class_name": "psoriasis",
+          "class_index": 3,
+          "probability": 0.9898335933685303
+        },
+        {
+          "class_name": "vitiligo",
+          "class_index": 5,
+          "probability": 0.004552758298814297
+        },
+        {
+          "class_name": "warts",
+          "class_index": 6,
+          "probability": 0.0017624272732064128
+        }
+      ]
+    },
+    {
+      "sample_index": 553,
+      "path": "data\\split\\test\\vitiligo\\IMG-0951_frame_26.jpg",
+      "filename": "IMG-0951_frame_26.jpg",
+      "ground_truth_index": 5,
+      "ground_truth_class": "vitiligo",
+      "predicted_index": 3,
+      "predicted_class": "psoriasis",
+      "is_correct": false,
+      "confidence": 0.5671746730804443,
+      "top3": [
+        {
+          "class_name": "psoriasis",
+          "class_index": 3,
+          "probability": 0.5671746730804443
+        },
+        {
+          "class_name": "vitiligo",
+          "class_index": 5,
+          "probability": 0.4179600477218628
+        },
+        {
+          "class_name": "warts",
+          "class_index": 6,
+          "probability": 0.005465605761855841
+        }
+      ]
+    },
+    {
+      "sample_index": 555,
+      "path": "data\\split\\test\\vitiligo\\IMG-0951_frame_28.jpg",
+      "filename": "IMG-0951_frame_28.jpg",
+      "ground_truth_index": 5,
+      "ground_truth_class": "vitiligo",
+      "predicted_index": 3,
+      "predicted_class": "psoriasis",
+      "is_correct": false,
+      "confidence": 0.9103214740753174,
+      "top3": [
+        {
+          "class_name": "psoriasis",
+          "class_index": 3,
+          "probability": 0.9103214740753174
+        },
+        {
+          "class_name": "vitiligo",
+          "class_index": 5,
+          "probability": 0.08204629272222519
+        },
+        {
+          "class_name": "molluscum_contagiosum",
+          "class_index": 2,
+          "probability": 0.0026869249995797873
+        }
+      ]
+    },
+    {
+      "sample_index": 557,
+      "path": "data\\split\\test\\vitiligo\\IMG-0951_frame_30.jpg",
+      "filename": "IMG-0951_frame_30.jpg",
+      "ground_truth_index": 5,
+      "ground_truth_class": "vitiligo",
+      "predicted_index": 3,
+      "predicted_class": "psoriasis",
+      "is_correct": false,
+      "confidence": 0.9924566745758057,
+      "top3": [
+        {
+          "class_name": "psoriasis",
+          "class_index": 3,
+          "probability": 0.9924566745758057
+        },
+        {
+          "class_name": "vitiligo",
+          "class_index": 5,
+          "probability": 0.0068006133660674095
+        },
+        {
+          "class_name": "molluscum_contagiosum",
+          "class_index": 2,
+          "probability": 0.00028680541436187923
+        }
+      ]
+    },
+    {
+      "sample_index": 558,
+      "path": "data\\split\\test\\vitiligo\\IMG-0951_frame_31.jpg",
+      "filename": "IMG-0951_frame_31.jpg",
+      "ground_truth_index": 5,
+      "ground_truth_class": "vitiligo",
+      "predicted_index": 3,
+      "predicted_class": "psoriasis",
+      "is_correct": false,
+      "confidence": 0.9929535984992981,
+      "top3": [
+        {
+          "class_name": "psoriasis",
+          "class_index": 3,
+          "probability": 0.9929535984992981
+        },
+        {
+          "class_name": "vitiligo",
+          "class_index": 5,
+          "probability": 0.005082511343061924
+        },
+        {
+          "class_name": "warts",
+          "class_index": 6,
+          "probability": 0.0007625638972967863
+        }
+      ]
+    },
+    {
+      "sample_index": 559,
+      "path": "data\\split\\test\\vitiligo\\IMG-0951_frame_32.jpg",
+      "filename": "IMG-0951_frame_32.jpg",
+      "ground_truth_index": 5,
+      "ground_truth_class": "vitiligo",
+      "predicted_index": 3,
+      "predicted_class": "psoriasis",
+      "is_correct": false,
+      "confidence": 0.9738715291023254,
+      "top3": [
+        {
+          "class_name": "psoriasis",
+          "class_index": 3,
+          "probability": 0.9738715291023254
+        },
+        {
+          "class_name": "vitiligo",
+          "class_index": 5,
+          "probability": 0.013605096377432346
+        },
+        {
+          "class_name": "acne_vulgaris",
+          "class_index": 0,
+          "probability": 0.004015548154711723
+        }
+      ]
+    },
+    {
+      "sample_index": 560,
+      "path": "data\\split\\test\\vitiligo\\IMG-0951_frame_33.jpg",
+      "filename": "IMG-0951_frame_33.jpg",
+      "ground_truth_index": 5,
+      "ground_truth_class": "vitiligo",
+      "predicted_index": 3,
+      "predicted_class": "psoriasis",
+      "is_correct": false,
+      "confidence": 0.8471441864967346,
+      "top3": [
+        {
+          "class_name": "psoriasis",
+          "class_index": 3,
+          "probability": 0.8471441864967346
+        },
+        {
+          "class_name": "vitiligo",
+          "class_index": 5,
+          "probability": 0.13297241926193237
+        },
+        {
+          "class_name": "warts",
+          "class_index": 6,
+          "probability": 0.00600035535171628
+        }
+      ]
+    },
+    {
+      "sample_index": 561,
+      "path": "data\\split\\test\\vitiligo\\IMG-0951_frame_34.jpg",
+      "filename": "IMG-0951_frame_34.jpg",
+      "ground_truth_index": 5,
+      "ground_truth_class": "vitiligo",
+      "predicted_index": 3,
+      "predicted_class": "psoriasis",
+      "is_correct": false,
+      "confidence": 0.9940329194068909,
+      "top3": [
+        {
+          "class_name": "psoriasis",
+          "class_index": 3,
+          "probability": 0.9940329194068909
+        },
+        {
+          "class_name": "vitiligo",
+          "class_index": 5,
+          "probability": 0.0036624649073928595
+        },
+        {
+          "class_name": "molluscum_contagiosum",
+          "class_index": 2,
+          "probability": 0.0008015488856472075
+        }
+      ]
+    },
+    {
+      "sample_index": 562,
+      "path": "data\\split\\test\\vitiligo\\IMG-0951_frame_35.jpg",
+      "filename": "IMG-0951_frame_35.jpg",
+      "ground_truth_index": 5,
+      "ground_truth_class": "vitiligo",
+      "predicted_index": 3,
+      "predicted_class": "psoriasis",
+      "is_correct": false,
+      "confidence": 0.9669696688652039,
+      "top3": [
+        {
+          "class_name": "psoriasis",
+          "class_index": 3,
+          "probability": 0.9669696688652039
+        },
+        {
+          "class_name": "vitiligo",
+          "class_index": 5,
+          "probability": 0.02856014110147953
+        },
+        {
+          "class_name": "molluscum_contagiosum",
+          "class_index": 2,
+          "probability": 0.0018899738788604736
+        }
+      ]
+    },
+    {
+      "sample_index": 563,
+      "path": "data\\split\\test\\vitiligo\\IMG-0951_frame_36.jpg",
+      "filename": "IMG-0951_frame_36.jpg",
+      "ground_truth_index": 5,
+      "ground_truth_class": "vitiligo",
+      "predicted_index": 3,
+      "predicted_class": "psoriasis",
+      "is_correct": false,
+      "confidence": 0.5738047361373901,
+      "top3": [
+        {
+          "class_name": "psoriasis",
+          "class_index": 3,
+          "probability": 0.5738047361373901
+        },
+        {
+          "class_name": "vitiligo",
+          "class_index": 5,
+          "probability": 0.4134179651737213
+        },
+        {
+          "class_name": "molluscum_contagiosum",
+          "class_index": 2,
+          "probability": 0.004273285623639822
+        }
+      ]
+    },
+    {
+      "sample_index": 566,
+      "path": "data\\split\\test\\vitiligo\\IMG-0951_frame_6.jpg",
+      "filename": "IMG-0951_frame_6.jpg",
+      "ground_truth_index": 5,
+      "ground_truth_class": "vitiligo",
+      "predicted_index": 3,
+      "predicted_class": "psoriasis",
+      "is_correct": false,
+      "confidence": 0.9945100545883179,
+      "top3": [
+        {
+          "class_name": "psoriasis",
+          "class_index": 3,
+          "probability": 0.9945100545883179
+        },
+        {
+          "class_name": "vitiligo",
+          "class_index": 5,
+          "probability": 0.00243999226950109
+        },
+        {
+          "class_name": "warts",
+          "class_index": 6,
+          "probability": 0.0009717061184346676
+        }
+      ]
+    },
+    {
+      "sample_index": 567,
+      "path": "data\\split\\test\\vitiligo\\IMG-0951_frame_7.jpg",
+      "filename": "IMG-0951_frame_7.jpg",
+      "ground_truth_index": 5,
+      "ground_truth_class": "vitiligo",
+      "predicted_index": 3,
+      "predicted_class": "psoriasis",
+      "is_correct": false,
+      "confidence": 0.9967162609100342,
+      "top3": [
+        {
+          "class_name": "psoriasis",
+          "class_index": 3,
+          "probability": 0.9967162609100342
+        },
+        {
+          "class_name": "vitiligo",
+          "class_index": 5,
+          "probability": 0.0016273210057988763
+        },
+        {
+          "class_name": "warts",
+          "class_index": 6,
+          "probability": 0.0006093033007346094
+        }
+      ]
+    },
+    {
+      "sample_index": 568,
+      "path": "data\\split\\test\\vitiligo\\IMG-0951_frame_8.jpg",
+      "filename": "IMG-0951_frame_8.jpg",
+      "ground_truth_index": 5,
+      "ground_truth_class": "vitiligo",
+      "predicted_index": 3,
+      "predicted_class": "psoriasis",
+      "is_correct": false,
+      "confidence": 0.9863383173942566,
+      "top3": [
+        {
+          "class_name": "psoriasis",
+          "class_index": 3,
+          "probability": 0.9863383173942566
+        },
+        {
+          "class_name": "vitiligo",
+          "class_index": 5,
+          "probability": 0.012131323106586933
+        },
+        {
+          "class_name": "warts",
+          "class_index": 6,
+          "probability": 0.0005671764374710619
+        }
+      ]
+    }
+  ]
+}

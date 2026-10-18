@@ -1,0 +1,590 @@
+import os
+import sys
+import json
+from pathlib import Path
+
+PROJECT_ROOT = os.path.abspath(
+    os.path.join(os.path.dirname(__file__), "..", "..")
+)
+
+if PROJECT_ROOT not in sys.path:
+    sys.path.insert(0, PROJECT_ROOT)
+
+import cv2
+import numpy as np
+import torch
+
+from PIL import Image
+from torchvision import transforms
+
+from ai.models.cnn_model import SkinDiseaseCNN
+from ai.gemini.explanation import generate_explanation
+
+
+# ============================================================
+# CONFIGURATION
+# ============================================================
+
+MODEL_PATH = Path(PROJECT_ROOT) / "models" / "trained" / "best_model.pth"
+
+OUTPUT_DIR = Path(PROJECT_ROOT) / "reports" / "inference"
+
+IMAGE_SIZE = 224
+
+
+CLASS_NAMES = [
+    "acne_vulgaris",
+    "impetigo",
+    "molluscum_contagiosum",
+    "psoriasis",
+    "urticaria",
+    "vitiligo",
+    "warts"
+]
+
+
+DISPLAY_NAMES = {
+    "acne_vulgaris": "Acne Vulgaris",
+    "impetigo": "Impetigo",
+    "molluscum_contagiosum": "Molluscum Contagiosum",
+    "psoriasis": "Psoriasis",
+    "urticaria": "Urticaria",
+    "vitiligo": "Vitiligo",
+    "warts": "Warts"
+}
+
+
+# ============================================================
+# DEVICE
+# ============================================================
+
+device = torch.device(
+    "cuda" if torch.cuda.is_available()
+    else "cpu"
+)
+
+
+# ============================================================
+# DIRECTORIES
+# ============================================================
+
+OUTPUT_DIR.mkdir(
+    parents=True,
+    exist_ok=True
+)
+
+
+# ============================================================
+# IMAGE TRANSFORM
+# ============================================================
+
+transform = transforms.Compose([
+    transforms.Resize(
+        (IMAGE_SIZE, IMAGE_SIZE)
+    ),
+    transforms.ToTensor(),
+    transforms.Normalize(
+        [0.485, 0.456, 0.406],
+        [0.229, 0.224, 0.225]
+    )
+])
+
+
+# ============================================================
+# LOAD MODEL
+# ============================================================
+
+print("=" * 70)
+print("AI SKIN ANALYSIS - UNIFIED AI INFERENCE")
+print("=" * 70)
+
+print(
+    f"\nDevice: {device}"
+)
+
+print(
+    f"Loading model: {MODEL_PATH}"
+)
+
+
+checkpoint = torch.load(
+    MODEL_PATH,
+    map_location=device,
+    weights_only=False
+)
+
+
+model = SkinDiseaseCNN(
+    num_classes=7
+)
+
+model.load_state_dict(
+    checkpoint["model_state_dict"]
+)
+
+model = model.to(device)
+
+model.eval()
+
+
+print(
+    f"Best validation Macro-F1: "
+    f"{checkpoint['best_val_macro_f1']:.4f}"
+)
+
+
+# ============================================================
+# GRAD-CAM HOOKS
+# ============================================================
+
+target_layer = model.backbone.features[-1]
+
+activations = None
+gradients = None
+
+
+def forward_hook(module, input, output):
+
+    global activations
+
+    activations = output
+
+
+def backward_hook(module, grad_input, grad_output):
+
+    global gradients
+
+    gradients = grad_output[0]
+
+
+forward_handle = target_layer.register_forward_hook(
+    forward_hook
+)
+
+backward_handle = target_layer.register_full_backward_hook(
+    backward_hook
+)
+
+
+# ============================================================
+# GRAD-CAM GENERATION
+# ============================================================
+
+def generate_gradcam(
+    original_image,
+    input_tensor,
+    predicted_class
+):
+
+    global activations
+    global gradients
+
+    activations = None
+    gradients = None
+
+    model.zero_grad()
+
+    output = model(
+        input_tensor
+    )
+
+    score = output[
+        0,
+        predicted_class
+    ]
+
+    score.backward()
+
+    acts = (
+        activations
+        .detach()
+        .cpu()
+        .numpy()[0]
+    )
+
+    grads = (
+        gradients
+        .detach()
+        .cpu()
+        .numpy()[0]
+    )
+
+    weights = np.mean(
+        grads,
+        axis=(1, 2)
+    )
+
+    cam = np.zeros(
+        acts.shape[1:],
+        dtype=np.float32
+    )
+
+    for channel, weight in enumerate(weights):
+
+        cam += (
+            weight *
+            acts[channel]
+        )
+
+    cam = np.maximum(
+        cam,
+        0
+    )
+
+    if cam.max() > 0:
+
+        cam = cam / cam.max()
+
+    original_np = np.array(
+        original_image
+    )
+
+    height, width = original_np.shape[:2]
+
+    cam = cv2.resize(
+        cam,
+        (width, height)
+    )
+
+    heatmap = np.uint8(
+        cam * 255
+    )
+
+    heatmap = cv2.applyColorMap(
+        heatmap,
+        cv2.COLORMAP_JET
+    )
+
+    original_bgr = cv2.cvtColor(
+        original_np,
+        cv2.COLOR_RGB2BGR
+    )
+
+    overlay = cv2.addWeighted(
+        original_bgr,
+        0.60,
+        heatmap,
+        0.40,
+        0
+    )
+
+    return (
+        heatmap,
+        overlay
+    )
+
+
+# ============================================================
+# PREDICTION FUNCTION
+# ============================================================
+
+def predict_image(image_path):
+
+    image_path = Path(
+        image_path
+    )
+
+    if not image_path.exists():
+
+        raise FileNotFoundError(
+            f"Image not found: {image_path}"
+        )
+
+    print(
+        f"\nInput image:\n{image_path}"
+    )
+
+
+    # --------------------------------------------------------
+    # Load image
+    # --------------------------------------------------------
+
+    original_image = Image.open(
+        image_path
+    ).convert("RGB")
+
+
+    # --------------------------------------------------------
+    # Preprocess
+    # --------------------------------------------------------
+
+    input_tensor = transform(
+        original_image
+    ).unsqueeze(0).to(device)
+
+
+    # --------------------------------------------------------
+    # CNN prediction
+    # --------------------------------------------------------
+
+    model.eval()
+
+    with torch.no_grad():
+
+        output = model(
+            input_tensor
+        )
+
+        probabilities = torch.softmax(
+            output,
+            dim=1
+        )
+
+        predicted_class = torch.argmax(
+            probabilities,
+            dim=1
+        ).item()
+
+        confidence = probabilities[
+            0,
+            predicted_class
+        ].item()
+
+
+    predicted_name = CLASS_NAMES[
+        predicted_class
+    ]
+
+    display_name = DISPLAY_NAMES[
+        predicted_name
+    ]
+
+
+    # --------------------------------------------------------
+    # Confidence interpretation
+    # --------------------------------------------------------
+
+    if confidence >= 0.80:
+
+        confidence_level = "high"
+
+    elif confidence >= 0.60:
+
+        confidence_level = "moderate"
+
+    else:
+
+        confidence_level = "low"
+
+
+    # --------------------------------------------------------
+    # Grad-CAM
+    # --------------------------------------------------------
+
+    heatmap, overlay = generate_gradcam(
+        original_image,
+        input_tensor,
+        predicted_class
+    )
+
+
+    # --------------------------------------------------------
+    # Output filenames
+    # --------------------------------------------------------
+
+    base_name = image_path.stem
+
+    heatmap_path = (
+        OUTPUT_DIR /
+        f"{base_name}_heatmap.jpg"
+    )
+
+    gradcam_path = (
+        OUTPUT_DIR /
+        f"{base_name}_gradcam.jpg"
+    )
+
+    cv2.imwrite(
+        str(heatmap_path),
+        heatmap
+    )
+
+    cv2.imwrite(
+        str(gradcam_path),
+        overlay
+    )
+
+
+    # --------------------------------------------------------
+    # Gemini explanation
+    # --------------------------------------------------------
+
+    print(
+        "\nGenerating Gemini explanation..."
+    )
+
+    explanation = generate_explanation(
+        predicted_class=predicted_name,
+        confidence=confidence,
+        gradcam_available=True
+    )
+
+
+    # --------------------------------------------------------
+    # Final result
+    # --------------------------------------------------------
+
+    result = {
+
+        "input_image": str(
+            image_path
+        ),
+
+        "prediction": predicted_name,
+
+        "display_name": display_name,
+
+        "confidence": round(
+            confidence,
+            6
+        ),
+
+        "confidence_percent": round(
+            confidence * 100,
+            2
+        ),
+
+        "confidence_level": confidence_level,
+
+        "gradcam_generated": True,
+
+        "gradcam_heatmap": str(
+            heatmap_path
+        ),
+
+        "gradcam_overlay": str(
+            gradcam_path
+        ),
+
+        "explanation": explanation,
+
+        "is_preliminary": True,
+
+        "medical_disclaimer":
+            "This result is for preliminary "
+            "educational guidance only and is "
+            "not a medical diagnosis."
+    }
+
+
+    # --------------------------------------------------------
+    # Save JSON
+    # --------------------------------------------------------
+
+    json_path = (
+        OUTPUT_DIR /
+        f"{base_name}_result.json"
+    )
+
+    with open(
+        json_path,
+        "w",
+        encoding="utf-8"
+    ) as file:
+
+        json.dump(
+            result,
+            file,
+            indent=4,
+            ensure_ascii=False
+        )
+
+
+    return result, json_path
+
+
+# ============================================================
+# COMMAND-LINE INTERFACE
+# ============================================================
+
+if __name__ == "__main__":
+
+    if len(sys.argv) < 2:
+
+        print(
+            "\nUsage:"
+        )
+
+        print(
+            'python "ai\\inference\\predict.py" '
+            '"path\\to\\image.jpg"'
+        )
+
+        forward_handle.remove()
+        backward_handle.remove()
+
+        sys.exit(1)
+
+
+    image_path = sys.argv[1]
+
+
+    try:
+
+        result, json_path = predict_image(
+            image_path
+        )
+
+
+        print("\n")
+        print("=" * 70)
+        print("FINAL AI RESULT")
+        print("=" * 70)
+
+        print(
+            f"\nPrediction:"
+            f" {result['display_name']}"
+        )
+
+        print(
+            f"Confidence:"
+            f" {result['confidence_percent']:.2f}%"
+        )
+
+        print(
+            f"Confidence level:"
+            f" {result['confidence_level']}"
+        )
+
+        print(
+            f"\nGrad-CAM:"
+            f" {result['gradcam_overlay']}"
+        )
+
+        print(
+            f"\nJSON result:"
+            f" {json_path}"
+        )
+
+        print("\n")
+        print("=" * 70)
+        print("GEMINI EXPLANATION")
+        print("=" * 70)
+
+        print(
+            result["explanation"]
+        )
+
+        print("\n")
+        print("=" * 70)
+        print("UNIFIED INFERENCE COMPLETE")
+        print("=" * 70)
+
+
+    except Exception as error:
+
+        print(
+            "\nERROR:"
+        )
+
+        print(
+            str(error)
+        )
+
+        sys.exit(1)
+
+
+    finally:
+
+        forward_handle.remove()
+        backward_handle.remove()

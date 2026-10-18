@@ -1,0 +1,14 @@
+{
+    "input_image": "C:\\SEM 5\\AI-Skin-Analysis\\reports\\frontend_uploads\\frontend_042b1587-927f-46f8-9664-7dbb06aeb484.jpg",
+    "prediction": "acne_vulgaris",
+    "display_name": "Acne Vulgaris",
+    "confidence": 0.99719,
+    "confidence_percent": 99.72,
+    "confidence_level": "high",
+    "gradcam_generated": true,
+    "gradcam_heatmap": "reports\\inference\\frontend_042b1587-927f-46f8-9664-7dbb06aeb484_heatmap.jpg",
+    "gradcam_overlay": "reports\\inference\\frontend_042b1587-927f-46f8-9664-7dbb06aeb484_gradcam.jpg",
+    "explanation": "Gemini explanation is temporarily unavailable.\n\nThe CNN prediction and Grad-CAM analysis were completed successfully. Please try the Gemini explanation again later.\n\nImportant: The CNN result is a preliminary computer-vision prediction and is not a medical diagnosis.",
+    "is_preliminary": true,
+    "medical_disclaimer": "This result is for preliminary educational guidance only and is not a medical diagnosis."
+}

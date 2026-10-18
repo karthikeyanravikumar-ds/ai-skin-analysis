@@ -1,0 +1,309 @@
+{
+  "audit_task": "REQ-01",
+  "project": "AI Skin Analysis V2",
+  "audit_date": "2026-10-10",
+  "auditor_role": "Senior Software Architect & QA Engineer",
+  "prd_version_inspected": "AI_Skin_Analysis_V2_PRD (Phases 1-7, Functional Requirements FR-01 through FR-20)",
+  "execution_mode": "read_only_audit",
+  "summary": {
+    "total_requirements_audited": 20,
+    "counts_by_status": {
+      "IMPLEMENTED": 16,
+      "PARTIALLY_IMPLEMENTED": 3,
+      "MISSING": 0,
+      "UNVERIFIABLE": 1,
+      "NOT_APPLICABLE": 0
+    },
+    "implementation_rate_percent": 80.0
+  },
+  "hospital_requirements_clarification": {
+    "is_hospital_locator_required": false,
+    "scope_verdict": "SCOPE_DECISION_REQUIRING_AUTHORIZATION",
+    "rationale": "The PRD establishes the application strictly as an educational, non-diagnostic skin analysis tool. It mandates contextual emergency triage recommendations (e.g. advising emergency room or dermatologist consultation upon red flag symptoms), but does NOT specify an interactive GPS/GIS facility locator, maps integration, or hospital directory.",
+    "contextual_recommendations_implemented": [
+      "Urgent medical attention is advised. Please consult an emergency department, urgent care center, or a qualified healthcare provider immediately.",
+      "Timely medical consultation is recommended. Schedule an appointment with a board-certified dermatologist or primary care physician.",
+      "Consider consulting a dermatologist for a professional evaluation."
+    ]
+  },
+  "requirements_status_matrix": [
+    {
+      "id": "FR-01",
+      "name": "Image Upload & Input Validation",
+      "prd_priority": "High (P0)",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "frontend/src/App.jsx",
+        "ai/preprocessing/quality.py",
+        "frontend/vite.config.js"
+      ],
+      "test_coverage": "tests/test_image_upload_integrity.py, tests/test_quality_engine.py",
+      "remaining_gap": "Relies on standard browser input; 10MB client-side cap.",
+      "safety_privacy_clinical_implications": "Safety: Prevents processing of malformed/corrupted files."
+    },
+    {
+      "id": "FR-02",
+      "name": "Browser Camera Capture",
+      "prd_priority": "High (P1)",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "frontend/src/components/CameraCapture.jsx",
+        "frontend/src/App.jsx"
+      ],
+      "test_coverage": "tests/test_camera_and_coaching.py",
+      "remaining_gap": "Automated verification uses mocked MediaStream APIs; physical device testing unverified.",
+      "safety_privacy_clinical_implications": "Privacy: Camera tracks immediately terminated upon unmount."
+    },
+    {
+      "id": "FR-03",
+      "name": "Image Capture Coaching",
+      "prd_priority": "Medium (P1)",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "frontend/src/components/CaptureCoachingCard.jsx",
+        "frontend/src/App.css"
+      ],
+      "test_coverage": "tests/test_camera_and_coaching.py",
+      "remaining_gap": "Advisory only; does not enforce user compliance.",
+      "safety_privacy_clinical_implications": "Clinical: Helps user provide usable, non-blurry, evenly illuminated photos."
+    },
+    {
+      "id": "FR-04",
+      "name": "Pre-Inference Image Quality Assessment",
+      "prd_priority": "High (P0)",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "ai/preprocessing/quality.py",
+        "ai/inference/predict.py"
+      ],
+      "test_coverage": "tests/test_quality_engine.py, tests/test_quality_regression.py",
+      "remaining_gap": "Fixed Laplacian threshold (<100) and luminance range (40-220).",
+      "safety_privacy_clinical_implications": "Safety: Halts inference before running CNN on degraded inputs."
+    },
+    {
+      "id": "FR-05",
+      "name": "7-Class CNN Inference (EfficientNet-B0)",
+      "prd_priority": "Critical (P0)",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "ai/inference/predict.py",
+        "models/trained/best_model.pth"
+      ],
+      "test_coverage": "tests/test_inference_pipeline.py, tests/test_top3_predictions.py",
+      "remaining_gap": "7 classes only; sensitive to single-video frame correlation (vitiligo IMG-0951).",
+      "safety_privacy_clinical_implications": "Clinical: Strictly non-diagnostic preliminary classification."
+    },
+    {
+      "id": "FR-06",
+      "name": "Top-3 Ranked Probabilities & Margins",
+      "prd_priority": "High (P1)",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "ai/safety/confidence_engine.py",
+        "frontend/src/components/Top3Predictions.jsx"
+      ],
+      "test_coverage": "tests/test_top3_predictions.py",
+      "remaining_gap": "None.",
+      "safety_privacy_clinical_implications": "Clinical: Transparent probability margins highlight close calls."
+    },
+    {
+      "id": "FR-07",
+      "name": "Confidence & Uncertainty Quantification",
+      "prd_priority": "High (P0)",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "ai/safety/confidence_engine.py"
+      ],
+      "test_coverage": "tests/test_confidence_engine.py, tests/test_confidence_consistency.py",
+      "remaining_gap": "Based on Softmax probabilities; no Bayesian or MC-Dropout uncertainty.",
+      "safety_privacy_clinical_implications": "Safety: Categorizes into High (>=0.8), Medium (0.6-0.8), Low (<0.6)."
+    },
+    {
+      "id": "FR-08",
+      "name": "Explainability via Grad-CAM Visual Heatmaps",
+      "prd_priority": "High (P1)",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "ai/inference/gradcam.py",
+        "frontend/src/components/GradCAMViewer.jsx"
+      ],
+      "test_coverage": "tests/test_gradcam.py, tests/test_gradcam_contract.py",
+      "remaining_gap": "Base64 overlay image generated from final convolutional layer.",
+      "safety_privacy_clinical_implications": "Clinical: Highlights salient lesion regions for user transparency."
+    },
+    {
+      "id": "FR-09",
+      "name": "Symptom Questionnaire Ingestion",
+      "prd_priority": "High (P0)",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "frontend/src/components/SymptomQuestionnaire.jsx",
+        "ai/safety/symptom_engine.py"
+      ],
+      "test_coverage": "tests/test_symptom_integration.py",
+      "remaining_gap": "Preserves unanswered/unknown states; does not alter CNN logits.",
+      "safety_privacy_clinical_implications": "Safety: Severe symptoms escalate triage to attention/urgent."
+    },
+    {
+      "id": "FR-10",
+      "name": "Deterministic Safety & Triage Engine",
+      "prd_priority": "Critical (P0)",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "ai/safety/decision_engine.py",
+        "ai/safety/guidelines.py"
+      ],
+      "test_coverage": "tests/test_safety_engine_core.py, tests/test_decision_engine.py",
+      "remaining_gap": "Deterministic rule set; cannot be bypassed by high model confidence.",
+      "safety_privacy_clinical_implications": "Safety: Enforces emergency flag and consult guidance."
+    },
+    {
+      "id": "FR-11",
+      "name": "Educational Disease Knowledge Presentation",
+      "prd_priority": "Medium (P2)",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "ai/database/disease_database.py",
+        "frontend/src/components/DiseaseInfoCard.jsx"
+      ],
+      "test_coverage": "tests/test_disease_database.py, tests/test_disease_presenter.py",
+      "remaining_gap": "Static database for 7 dermatological conditions.",
+      "safety_privacy_clinical_implications": "Clinical: Purely informational, non-prescriptive content."
+    },
+    {
+      "id": "FR-12",
+      "name": "Model Abstention & Out-of-Distribution (OOD) Handling",
+      "prd_priority": "High (P0)",
+      "status": "PARTIALLY_IMPLEMENTED",
+      "evidence": [
+        "ai/safety/decision_engine.py"
+      ],
+      "test_coverage": "tests/test_safety_engine_core.py",
+      "remaining_gap": "Escalates safety level when confidence is low, but lacks explicit non-skin rejection guardrail.",
+      "safety_privacy_clinical_implications": "Safety: Risk of confident hallucination on non-dermatological inputs."
+    },
+    {
+      "id": "FR-13",
+      "name": "AI Explanation via Gemini API with Guardrails",
+      "prd_priority": "High (P1)",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "ai/explanation/gemini_service.py",
+        "ai/explanation/guardrails.py"
+      ],
+      "test_coverage": "tests/test_explanation_system.py, tests/test_guardrails.py",
+      "remaining_gap": "Requires valid network and API key; strictly guarded output schema.",
+      "safety_privacy_clinical_implications": "Safety: Forbids diagnostic assertions and treatment advice."
+    },
+    {
+      "id": "FR-14",
+      "name": "Deterministic Fallback for Explanations",
+      "prd_priority": "High (P0)",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "ai/explanation/fallback_explainer.py"
+      ],
+      "test_coverage": "tests/test_gemini_explainer.py",
+      "remaining_gap": "Static pre-reviewed explanation templates.",
+      "safety_privacy_clinical_implications": "Reliability: Prevents application lockup if LLM call fails."
+    },
+    {
+      "id": "FR-15",
+      "name": "Unified Analysis Response Composer",
+      "prd_priority": "High (P1)",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "ai/safety/response_composer.py"
+      ],
+      "test_coverage": "tests/test_response_composer.py, tests/test_analysis_presenter.py",
+      "remaining_gap": "None.",
+      "safety_privacy_clinical_implications": "Reliability: Unified contract between backend and React client."
+    },
+    {
+      "id": "FR-16",
+      "name": "Accessible UI / UX & Multi-Device Journey",
+      "prd_priority": "High (P1)",
+      "status": "PARTIALLY_IMPLEMENTED",
+      "evidence": [
+        "frontend/src/App.jsx",
+        "frontend/src/components/"
+      ],
+      "test_coverage": "tests/test_ux_journey_accessibility.py",
+      "remaining_gap": "WCAG 2.1 AA keyboard navigation verified; real mobile device browser tests not performed.",
+      "safety_privacy_clinical_implications": "Accessibility: Screen reader and keyboard accessible."
+    },
+    {
+      "id": "FR-17",
+      "name": "Analysis History Persistence & Querying",
+      "prd_priority": "Medium (P2)",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "ai/database/history_service.py",
+        "frontend/src/components/HistoryView.jsx"
+      ],
+      "test_coverage": "tests/test_history_service.py, tests/test_history_presenter.py",
+      "remaining_gap": "SQLite local database without cloud synchronization.",
+      "safety_privacy_clinical_implications": "Privacy: Preserves records locally; raw images not stored."
+    },
+    {
+      "id": "FR-18",
+      "name": "Clinical Summary Export (PDF & CSV)",
+      "prd_priority": "Medium (P2)",
+      "status": "IMPLEMENTED",
+      "evidence": [
+        "ai/export/report_generator.py",
+        "frontend/src/components/HistoryDetail.jsx"
+      ],
+      "test_coverage": "tests/test_report_generation_export.py",
+      "remaining_gap": "Export limited to single-page PDF and summary CSV.",
+      "safety_privacy_clinical_implications": "Legal/Privacy: Mandates explicit educational disclaimer watermark."
+    },
+    {
+      "id": "FR-19",
+      "name": "User Feedback & Privacy Deletion Controls",
+      "prd_priority": "Medium (P2)",
+      "status": "PARTIALLY_IMPLEMENTED",
+      "evidence": [
+        "ai/safety/privacy_engine.py",
+        "frontend/src/components/PrivacySettings.jsx"
+      ],
+      "test_coverage": "tests/test_privacy_retention_deletion.py",
+      "remaining_gap": "Bulk history deletion implemented; per-record deletion not wired in UI.",
+      "safety_privacy_clinical_implications": "Privacy: User maintains full control to purge history."
+    },
+    {
+      "id": "FR-20",
+      "name": "Clinical Validation & Institutional Oversight",
+      "prd_priority": "Low (Roadmap)",
+      "status": "UNVERIFIABLE",
+      "evidence": [
+        "reports/model_card.md"
+      ],
+      "test_coverage": "N/A",
+      "remaining_gap": "Requires institutional IRB approval, real-world clinician trials, and prospective studies.",
+      "safety_privacy_clinical_implications": "Clinical: Strictly non-diagnostic prototype until trials are executed."
+    }
+  ],
+  "checkpoint_preservation": {
+    "checkpoint_path": "models/trained/best_model.pth",
+    "expected_md5": "FF106263793F9F0A2FB13F15CEB1437E",
+    "verified_md5": "FF106263793F9F0A2FB13F15CEB1437E",
+    "expected_size_bytes": 16367097,
+    "verified_size_bytes": 16367097,
+    "integrity_status": "MATCH"
+  },
+  "dataset_preservation": {
+    "data_raw": "UNTOUCHED",
+    "data_processed": "UNTOUCHED",
+    "data_reprocessed_v2": "UNTOUCHED",
+    "data_split": "UNTOUCHED (4,501 images in active split)"
+  },
+  "recommended_next_task": {
+    "task_id": "REQ-02",
+    "title": "Out-of-Distribution (OOD) & Abstention Guardrail Engine",
+    "priority_category": "Safety-Critical",
+    "scope": "Implement skin-detection heuristic and feature-distance thresholding to detect non-dermatological / non-skin images and abstain before CNN prediction.",
+    "dependencies": ["ai/preprocessing/quality.py", "ai/safety/decision_engine.py"],
+    "risk": "Low (preserves model weights and existing 7-class contract)."
+  }
+}

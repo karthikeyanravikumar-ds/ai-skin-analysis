@@ -1,0 +1,56 @@
+﻿group_id,group_size,filenames,review_status
+G001,9,10WartsTransplantPt1006.jpeg | 10WartsTransplantPt1006.jpg | imagelight10WartsTransplantPt1006.jpg | nosie10WartsTransplantPt1006.jpg | nosie110WartsTransplantPt1006.jpg | nosie310WartsTransplantPt1006.jpg | nosie510WartsTransplantPt1006.jpg | rotat_img210WartsTransplantPt1006.jpg | rotation10WartsTransplantPt1006.jpg,NOT_VISUALLY_VERIFIED
+G002,9,10WartsTransplantPt10061.jpeg | 10WartsTransplantPt10061.jpg | imagelight10WartsTransplantPt10061.jpg | nosie10WartsTransplantPt10061.jpg | nosie110WartsTransplantPt10061.jpg | nosie310WartsTransplantPt10061.jpg | nosie510WartsTransplantPt10061.jpg | rotat_img310WartsTransplantPt10061.jpg | rotation310WartsTransplantPt10061.jpg,NOT_VISUALLY_VERIFIED
+G003,8,12wartsMouth4975.jpeg | 12wartsMouth4975.jpg | imagelight12wartsMouth4975.jpg | nosie112wartsMouth4975.jpg | nosie12wartsMouth4975.jpg | nosie312wartsMouth4975.jpg | nosie512wartsMouth4975.jpg | warts-mouth-4.jpeg,NOT_VISUALLY_VERIFIED
+G004,7,12WartAldara.jpg | imagelight12WartAldara.jpg | nosie112WartAldara.jpg | nosie12WartAldara.jpg | nosie312WartAldara.jpg | nosie512WartAldara.jpg | warts-plantar-91.jpeg,NOT_VISUALLY_VERIFIED
+G005,7,12wartFinger050106.jpg | imagelight12wartFinger050106.jpg | nosie112wartFinger050106.jpg | nosie12wartFinger050106.jpg | nosie312wartFinger050106.jpg | nosie512wartFinger050106.jpg | warts-periungual-5.jpeg,NOT_VISUALLY_VERIFIED
+G006,7,12WartNitrogen4.jpg | imagelight12WartNitrogen4.jpg | nosie112WartNitrogen4.jpg | nosie12WartNitrogen4.jpg | nosie312WartNitrogen4.jpg | nosie512WartNitrogen4.jpg | warts-cryotherapy-9.jpeg,NOT_VISUALLY_VERIFIED
+G007,7,12WartsCyclosporin.jpeg | 12WartsCyclosporin.jpg | imagelight12WartsCyclosporin.jpg | nosie112WartsCyclosporin.jpg | nosie12WartsCyclosporin.jpg | nosie312WartsCyclosporin.jpg | nosie512WartsCyclosporin.jpg,NOT_VISUALLY_VERIFIED
+G008,6,12wartCommon040306.jpg | imagelight12wartCommon040306.jpg | nosie112wartCommon040306.jpg | nosie12wartCommon040306.jpg | nosie312wartCommon040306.jpg | nosie512wartCommon040306.jpg,NOT_VISUALLY_VERIFIED
+G009,6,12WartNitrogen1.jpg | imagelight12WartNitrogen1.jpg | nosie112WartNitrogen1.jpg | nosie12WartNitrogen1.jpg | nosie312WartNitrogen1.jpg | nosie512WartNitrogen1.jpg,NOT_VISUALLY_VERIFIED
+G010,6,12WartPeriungual.jpg | imagelight12WartPeriungual.jpg | nosie112WartPeriungual.jpg | nosie12WartPeriungual.jpg | nosie312WartPeriungual.jpg | nosie512WartPeriungual.jpg,NOT_VISUALLY_VERIFIED
+G011,4,rotat_img212wartCommon040306.jpg | rotat_img312wartCommon040306.jpg | rotation12wartCommon040306.jpg | rotation312wartCommon040306.jpg,NOT_VISUALLY_VERIFIED
+G012,4,rotat_img212wartFinger050106.jpg | rotat_img312wartFinger050106.jpg | rotation12wartFinger050106.jpg | rotation312wartFinger050106.jpg,NOT_VISUALLY_VERIFIED
+G013,4,rotat_img212WartNitrogen1.jpg | rotat_img312WartNitrogen1.jpg | rotation12WartNitrogen1.jpg | rotation312WartNitrogen1.jpg,NOT_VISUALLY_VERIFIED
+G014,4,rotat_img212WartNitrogen4.jpg | rotat_img312WartNitrogen4.jpg | rotation12WartNitrogen4.jpg | rotation312WartNitrogen4.jpg,NOT_VISUALLY_VERIFIED
+G015,4,rotat_img212WartPeriungual.jpg | rotat_img312WartPeriungual.jpg | rotation12WartPeriungual.jpg | rotation312WartPeriungual.jpg,NOT_VISUALLY_VERIFIED
+G016,4,rotat_img212wartsMouth4975.jpg | rotat_img312wartsMouth4975.jpg | rotation12wartsMouth4975.jpg | rotation312wartsMouth4975.jpg,NOT_VISUALLY_VERIFIED
+G017,3,genital-warts-52.jpeg | warts-immunocompromised-11.jpeg | warts-oral-9.jpeg,NOT_VISUALLY_VERIFIED
+G018,3,warts-common-33.jpeg | warts-periungual-6.jpeg | warts-plantar-90.jpeg,NOT_VISUALLY_VERIFIED
+G019,3,warts-common-35.jpeg | warts-common-36.jpeg | warts-plantar-88.jpeg,NOT_VISUALLY_VERIFIED
+G020,3,warts-common-54.jpeg | warts-flat-49.jpeg | warts-flat-50.jpeg,NOT_VISUALLY_VERIFIED
+G021,3,warts-immunocompromised-9.jpeg | warts-oral-7.jpeg | warts-treatment-3.jpeg,NOT_VISUALLY_VERIFIED
+G022,2,flipr10WartsTransplantPt1006.jpg | imgfr10WartsTransplantPt1006.jpg,NOT_VISUALLY_VERIFIED
+G023,2,flipr10WartsTransplantPt10061.jpg | imgfr10WartsTransplantPt10061.jpg,NOT_VISUALLY_VERIFIED
+G024,2,flipr12WartAldara.jpg | imgfr12WartAldara.jpg,NOT_VISUALLY_VERIFIED
+G025,2,flipr12wartCommon040306.jpg | imgfr12wartCommon040306.jpg,NOT_VISUALLY_VERIFIED
+G026,2,flipr12wartFinger050106.jpg | imgfr12wartFinger050106.jpg,NOT_VISUALLY_VERIFIED
+G027,2,flipr12WartNitrogen1.jpg | imgfr12WartNitrogen1.jpg,NOT_VISUALLY_VERIFIED
+G028,2,flipr12WartNitrogen4.jpg | imgfr12WartNitrogen4.jpg,NOT_VISUALLY_VERIFIED
+G029,2,flipr12WartPeriungual.jpg | imgfr12WartPeriungual.jpg,NOT_VISUALLY_VERIFIED
+G030,2,flipr12WartsCyclosporin.jpg | imgfr12WartsCyclosporin.jpg,NOT_VISUALLY_VERIFIED
+G031,2,flipr12wartsMouth4975.jpg | imgfr12wartsMouth4975.jpg,NOT_VISUALLY_VERIFIED
+G032,2,genital-warts-57.jpeg | warts-common-47.jpeg,NOT_VISUALLY_VERIFIED
+G033,2,genital-warts-58.jpeg | warts-genital-1.jpeg,NOT_VISUALLY_VERIFIED
+G034,2,genital-warts-59.jpeg | warts-genital-2.jpeg,NOT_VISUALLY_VERIFIED
+G035,2,rotat_img210WartsTransplantPt10061.jpg | rotation10WartsTransplantPt10061.jpg,NOT_VISUALLY_VERIFIED
+G036,2,rotat_img212WartAldara.jpg | rotation12WartAldara.jpg,NOT_VISUALLY_VERIFIED
+G037,2,rotat_img212WartsCyclosporin.jpg | rotation12WartsCyclosporin.jpg,NOT_VISUALLY_VERIFIED
+G038,2,rotat_img310WartsTransplantPt1006.jpg | rotation310WartsTransplantPt1006.jpg,NOT_VISUALLY_VERIFIED
+G039,2,rotat_img312WartAldara.jpg | rotation312WartAldara.jpg,NOT_VISUALLY_VERIFIED
+G040,2,rotat_img312WartsCyclosporin.jpg | rotation312WartsCyclosporin.jpg,NOT_VISUALLY_VERIFIED
+G041,2,warts-1.jpeg | warts-mouth-1.jpeg,NOT_VISUALLY_VERIFIED
+G042,2,warts-41.jpeg | warts-common-66.jpeg,NOT_VISUALLY_VERIFIED
+G043,2,warts-common-51.jpeg | warts-flat-47.jpeg,NOT_VISUALLY_VERIFIED
+G044,2,warts-common-53.jpeg | warts-flat-48.jpeg,NOT_VISUALLY_VERIFIED
+G045,2,warts-cryotherapy-1.jpeg | warts-cryotherapy-8.jpeg,NOT_VISUALLY_VERIFIED
+G046,2,warts-cryotherapy-10.jpeg | warts-cryotherapy-7.jpeg,NOT_VISUALLY_VERIFIED
+G047,2,warts-digitate-21.jpeg | warts-oral-8.jpeg,NOT_VISUALLY_VERIFIED
+G048,2,warts-digitate-22.jpeg | warts-digitate-3.jpeg,NOT_VISUALLY_VERIFIED
+G049,2,warts-digitate-37.jpeg | warts-digitate-65.jpeg,NOT_VISUALLY_VERIFIED
+G050,2,warts-flat-10.jpeg | warts-flat-11.jpeg,NOT_VISUALLY_VERIFIED
+G051,2,warts-flat-13.jpeg | warts-flat-39.jpeg,NOT_VISUALLY_VERIFIED
+G052,2,warts-plantar-109.jpeg | warts-plantar-110.jpeg,NOT_VISUALLY_VERIFIED
+G053,2,warts-plantar-33.jpeg | warts-plantar-5.jpeg,NOT_VISUALLY_VERIFIED
+G054,2,warts-plantar-70.jpeg | warts-plantar-71.jpeg,NOT_VISUALLY_VERIFIED
+G055,2,warts-plantar-77.jpeg | warts-treatment-1.jpeg,NOT_VISUALLY_VERIFIED

@@ -1,0 +1,43 @@
+M4 CROSS-SPLIT IMAGE AUDIT
+==========================
+Readable images: 4501
+Unreadable files: 0
+Cross-split candidate pairs (pHash <= 6 or exact match): 633
+Exact SHA-256 groups spanning multiple splits: 0
+
+Images per split:
+  train: 3169
+  validation: 710
+  test: 622
+
+Images per class and split:
+  train/acne_vulgaris: 1223
+  train/impetigo: 132
+  train/molluscum_contagiosum: 94
+  train/psoriasis: 626
+  train/urticaria: 526
+  train/vitiligo: 503
+  train/warts: 65
+  validation/acne_vulgaris: 263
+  validation/impetigo: 29
+  validation/molluscum_contagiosum: 21
+  validation/psoriasis: 142
+  validation/urticaria: 114
+  validation/vitiligo: 127
+  validation/warts: 14
+  test/acne_vulgaris: 261
+  test/impetigo: 27
+  test/molluscum_contagiosum: 19
+  test/psoriasis: 121
+  test/urticaria: 109
+  test/vitiligo: 75
+  test/warts: 10
+
+Important:
+- pHash matches are candidates, not confirmed duplicate cases.
+- Exact SHA-256 matches indicate identical file contents.
+- Similar images across splits require visual/source-group review.
+- This report does not establish patient identity or image licensing.
+- No images, dataset splits, or model checkpoints were modified.
+
+Candidate report: reports\m4_cross_split_leakage_candidates.csv

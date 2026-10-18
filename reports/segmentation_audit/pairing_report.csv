@@ -1,0 +1,7 @@
+metric,value,details
+Total Split Images,4501,Clean train + val + test images
+Total Raw Images,4876,Raw input image dataset
+Total Ground Truth Masks Found,0,No mask files found in repository
+Matched Image-Mask Pairs,0,0 pairs
+Images without Masks,4501,All images lack segmentation masks
+Mask Coverage Percentage,0.0%,Zero mask availability

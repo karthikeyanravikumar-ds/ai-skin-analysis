@@ -1,0 +1,10 @@
+statistic,value,notes
+Total Masks Found,0,None
+Mask Format,N/A,No mask files present
+Mask DataType,N/A,No mask files present
+Min Foreground Area,N/A,No mask files present
+Max Foreground Area,N/A,No mask files present
+Mean Foreground Area,N/A,No mask files present
+Median Foreground Area,N/A,No mask files present
+Empty Masks Count,0,N/A
+Corrupted Masks Count,0,N/A

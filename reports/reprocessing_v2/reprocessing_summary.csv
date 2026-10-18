@@ -1,0 +1,8 @@
+﻿class_name,files_scanned,image_files,kept,exact_duplicates,invalid_images,read_errors,non_image_files
+acne_vulgaris,1833,1832,1747,85,0,0,1
+impetigo,188,188,188,0,0,0,0
+molluscum_contagiosum,134,134,134,0,0,0,0
+psoriasis,889,889,889,0,0,0,0
+urticaria,1008,1008,749,259,0,0,0
+vitiligo,705,705,705,0,0,0,0
+warts,700,700,646,54,0,0,0

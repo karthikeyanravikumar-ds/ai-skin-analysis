@@ -1,0 +1,149 @@
+{
+    "input_image": "C:\\SEM 5\\AI-Skin-Analysis\\reports\\frontend_uploads\\frontend_a5cfc6d3-9653-4d3f-be73-d9b20d0e841c.jpg",
+    "status": "completed",
+    "ood_assessment": {
+        "is_ood": false,
+        "status": "supported",
+        "reason_codes": [],
+        "reasons": [],
+        "message": "",
+        "metrics": {
+            "white_fraction": 0.0,
+            "black_fraction": 0.0014,
+            "mean_channel_diff": 84.41,
+            "color_entropy": 3.028
+        }
+    },
+    "prediction": "acne_vulgaris",
+    "display_name": "Acne Vulgaris",
+    "confidence": 0.995381,
+    "confidence_percent": 99.54,
+    "confidence_level": "high",
+    "top_predictions": [
+        {
+            "class_name": "acne_vulgaris",
+            "display_name": "Acne Vulgaris",
+            "probability": 0.995381,
+            "probability_percent": 99.54
+        },
+        {
+            "class_name": "impetigo",
+            "display_name": "Impetigo",
+            "probability": 0.001173,
+            "probability_percent": 0.12
+        },
+        {
+            "class_name": "molluscum_contagiosum",
+            "display_name": "Molluscum Contagiosum",
+            "probability": 0.001109,
+            "probability_percent": 0.11
+        }
+    ],
+    "uncertainty": {
+        "confidence": 0.9953808784484863,
+        "confidence_percent": 99.54,
+        "level": "high",
+        "uncertainty_status": "high_confidence",
+        "requires_caution": false,
+        "message": "The model produced a relatively high-confidence image classification. This is still a preliminary AI prediction and should not be treated as a confirmed medical diagnosis.",
+        "recommended_next_step": "Consider scheduling a routine consultation with a healthcare professional or dermatologist for in-person evaluation.",
+        "quality_impact": null
+    },
+    "image_quality": {
+        "status": "good",
+        "is_valid": true,
+        "resolution": {
+            "width": 720,
+            "height": 472,
+            "passed": true,
+            "min_width": 224,
+            "min_height": 224
+        },
+        "blur": {
+            "score": 508.53,
+            "passed": true,
+            "threshold": 50.0
+        },
+        "brightness": {
+            "score": 131.41,
+            "passed": true,
+            "min_threshold": 30.0,
+            "max_threshold": 225.0
+        },
+        "warnings": []
+    },
+    "gradcam_generated": true,
+    "gradcam_heatmap": "C:\\SEM 5\\AI-Skin-Analysis\\reports\\inference\\frontend_a5cfc6d3-9653-4d3f-be73-d9b20d0e841c_heatmap.jpg",
+    "gradcam_overlay": "C:\\SEM 5\\AI-Skin-Analysis\\reports\\inference\\frontend_a5cfc6d3-9653-4d3f-be73-d9b20d0e841c_gradcam.jpg",
+    "symptoms": {},
+    "safety": {
+        "safety_level": "routine",
+        "red_flags": [],
+        "red_flag_count": 0,
+        "attention_flags": [],
+        "recommendation": "Routine dermatological consultation is suggested. Consider scheduling an in-person appointment with a healthcare professional or board-certified dermatologist for a comprehensive skin evaluation.",
+        "disclaimer": "This symptom and safety evaluation provides preliminary educational guidance only. It is not a medical diagnosis, prescription, or treatment plan. Always consult a qualified healthcare professional for any skin condition."
+    },
+    "decision": {
+        "safety_level": "routine",
+        "decision_factors": [
+            "No major symptom warning signs were reported.",
+            "Model confidence is high.",
+            "Image quality passed the technical checks."
+        ],
+        "red_flags": [],
+        "attention_flags": [],
+        "recommendation": "Continue to treat this result as preliminary educational guidance. Consider a routine consultation with a dermatologist or healthcare provider if the skin condition persists, changes, or causes concern.",
+        "requires_professional_evaluation": false,
+        "is_emergency": false,
+        "disclaimer": "This safety decision provides preliminary educational guidance only. It is not a medical diagnosis, prescription, or treatment plan. Always consult a qualified healthcare professional for medical concerns."
+    },
+    "explanation": "Educational explanation will be generated separately after the CNN analysis.",
+    "symptom_reference": {
+        "class_label": "acne_vulgaris",
+        "class_idx": 0,
+        "disease_name": "Acne Vulgaris",
+        "typical_lesion_features": "Blackheads or whiteheads; red papules; pustules; sometimes deeper nodules",
+        "duration": "Often recurrent or persistent over weeks to years",
+        "location": "Face; chest; shoulders; upper back",
+        "spreading": "Variable",
+        "itching": "Uncommon or mild",
+        "pain": "Variable; more likely with deep or inflamed lesions",
+        "burning": "Uncommon; may occur with irritation",
+        "swelling": "Variable; around inflamed lesions",
+        "bleeding": "Uncommon; possible after picking",
+        "discharge": "Variable; pustules may contain pus",
+        "blisters": "Not characteristic",
+        "fever": "Not characteristic",
+        "sensitiveArea": "Not characteristic",
+        "previousOccurrence": "Common",
+        "newExposure": "Variable; some products or medicines may worsen acne-like eruptions",
+        "distinctive_clue": "Comedones (blackheads or whiteheads) may be a clue, not proof",
+        "safety_note": "Seek medical assessment for severe pain, rapid worsening, or fever",
+        "interpretation_limit": "Symptoms overlap with other conditions; not a diagnosis",
+        "symptom_patterns": {
+            "duration": "Often recurrent or persistent over weeks to years",
+            "location": "Face; chest; shoulders; upper back",
+            "spreading": "Variable",
+            "itching": "Uncommon or mild",
+            "pain": "Variable; more likely with deep or inflamed lesions",
+            "burning": "Uncommon; may occur with irritation",
+            "swelling": "Variable; around inflamed lesions",
+            "bleeding": "Uncommon; possible after picking",
+            "discharge": "Variable; pustules may contain pus",
+            "blisters": "Not characteristic",
+            "fever": "Not characteristic",
+            "sensitiveArea": "Not characteristic",
+            "previousOccurrence": "Common",
+            "newExposure": "Variable; some products or medicines may worsen acne-like eruptions"
+        },
+        "reference_metadata": {
+            "source": "Clinical Reference Database (Educational)",
+            "type": "General typical symptom pattern",
+            "diagnostic_status": "Non-diagnostic educational reference",
+            "caveat": "Typical presentation patterns describe general textbook observations. Individual presentations vary and presence or absence of a symptom does not confirm or exclude any diagnosis."
+        }
+    },
+    "is_preliminary": true,
+    "medical_disclaimer": "This result is for preliminary educational guidance only and is not a medical diagnosis."
+}

@@ -1,0 +1,127 @@
+{
+    "input_image": "C:\\SEM 5\\AI-Skin-Analysis\\reports\\frontend_uploads\\frontend_e050e14a-15a4-4b9b-857a-5d0ce921ad39.jpeg",
+    "status": "completed",
+    "ood_assessment": {
+        "is_ood": false,
+        "status": "supported",
+        "reason_codes": [],
+        "reasons": [],
+        "message": "",
+        "metrics": {
+            "white_fraction": 0.0,
+            "black_fraction": 0.0004,
+            "mean_channel_diff": 81.29,
+            "color_entropy": 4.216
+        }
+    },
+    "prediction": "urticaria",
+    "display_name": "Urticaria",
+    "confidence": 0.656245,
+    "confidence_percent": 65.62,
+    "confidence_level": "moderate",
+    "top_predictions": [
+        {
+            "class_name": "urticaria",
+            "display_name": "Urticaria",
+            "probability": 0.656245,
+            "probability_percent": 65.62
+        },
+        {
+            "class_name": "acne_vulgaris",
+            "display_name": "Acne Vulgaris",
+            "probability": 0.10513,
+            "probability_percent": 10.51
+        },
+        {
+            "class_name": "vitiligo",
+            "display_name": "Vitiligo",
+            "probability": 0.1049,
+            "probability_percent": 10.49
+        }
+    ],
+    "uncertainty": {
+        "confidence": 0.6562445163726807,
+        "confidence_percent": 65.62,
+        "level": "moderate",
+        "uncertainty_status": "moderate_uncertainty",
+        "requires_caution": true,
+        "message": "The model produced a moderate-confidence image classification. The result should be interpreted cautiously and does not confirm a medical diagnosis.",
+        "recommended_next_step": "Seek in-person clinical assessment by a healthcare professional or board-certified dermatologist for a comprehensive evaluation.",
+        "quality_impact": "Minor technical image quality warnings were detected."
+    },
+    "image_quality": {
+        "status": "warning",
+        "is_valid": true,
+        "resolution": {
+            "width": 348,
+            "height": 574,
+            "passed": true,
+            "min_width": 224,
+            "min_height": 224
+        },
+        "blur": {
+            "score": 43.6,
+            "passed": false,
+            "threshold": 50.0
+        },
+        "brightness": {
+            "score": 112.49,
+            "passed": true,
+            "min_threshold": 30.0,
+            "max_threshold": 225.0
+        },
+        "warnings": [
+            "Image may be blurry (blur score: 43.6 < threshold: 50.0)."
+        ]
+    },
+    "gradcam_generated": true,
+    "gradcam_heatmap": "C:\\SEM 5\\AI-Skin-Analysis\\reports\\inference\\frontend_e050e14a-15a4-4b9b-857a-5d0ce921ad39_heatmap.jpg",
+    "gradcam_overlay": "C:\\SEM 5\\AI-Skin-Analysis\\reports\\inference\\frontend_e050e14a-15a4-4b9b-857a-5d0ce921ad39_gradcam.jpg",
+    "symptoms": {
+        "spreading": "yes",
+        "itching": "yes",
+        "pain": "no",
+        "burning": "yes",
+        "swelling": "no",
+        "bleeding": "yes",
+        "discharge": "no",
+        "blisters": "no",
+        "fever": "no",
+        "sensitiveArea": "no"
+    },
+    "safety": {
+        "safety_level": "urgent",
+        "red_flags": [
+            "Active bleeding or skin breakdown requires urgent professional medical assessment."
+        ],
+        "red_flag_count": 1,
+        "attention_flags": [
+            "Rapidly spreading or expanding lesions warrant timely clinical evaluation.",
+            "Intense burning or stinging sensation may indicate acute contact dermatitis or neural irritation."
+        ],
+        "recommendation": "Urgent medical attention is advised. Please consult an emergency department, urgent care center, or a qualified healthcare provider immediately for professional clinical assessment.",
+        "disclaimer": "This symptom and safety evaluation provides preliminary educational guidance only. It is not a medical diagnosis, prescription, or treatment plan. Always consult a qualified healthcare professional for any skin condition."
+    },
+    "decision": {
+        "safety_level": "urgent",
+        "decision_factors": [
+            "Reported warning sign: Active bleeding or skin breakdown requires urgent professional medical assessment."
+        ],
+        "red_flags": [
+            "Active bleeding or skin breakdown requires urgent professional medical assessment."
+        ],
+        "attention_flags": [
+            "Rapidly spreading or expanding lesions warrant timely clinical evaluation.",
+            "Intense burning or stinging sensation may indicate acute contact dermatitis or neural irritation.",
+            "Model classification confidence is moderate.",
+            "Technical image quality status is warning."
+        ],
+        "recommendation": "The reported symptoms include high-risk warning signs that require prompt clinical assessment. Seek emergency care or immediate medical attention from a healthcare professional. If experiencing difficulty breathing, swallowing, or severe rapid swelling, contact emergency services immediately.",
+        "requires_professional_evaluation": true,
+        "is_emergency": true,
+        "disclaimer": "This safety decision provides preliminary educational guidance only. It is not a medical diagnosis, prescription, or treatment plan. Always consult a qualified healthcare professional for medical concerns."
+    },
+    "explanation": "Educational explanation will be generated separately after the CNN analysis.",
+    "is_preliminary": true,
+    "medical_disclaimer": "This result is for preliminary educational guidance only and is not a medical diagnosis."
+}

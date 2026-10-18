@@ -1,0 +1,79 @@
+{
+  "task_id": "TR-03A",
+  "audit_timestamp_utc": "2026-10-10T08:20:08.348131+00:00",
+  "register_path": "reports\\perceptual_review\\review_register.csv",
+  "manifest_path": "reports\\proposed_group_manifest.csv",
+  "schema_valid": true,
+  "missing_columns": [],
+  "extra_columns": [],
+  "total_records": 117,
+  "unique_paths_count": 117,
+  "duplicate_paths_count": 0,
+  "duplicate_paths": [],
+  "total_groups_count": 37,
+  "reconciliation": {
+    "reconciliation_matched": true,
+    "manifest_perceptual_candidates_count": 117,
+    "manifest_perceptual_groups_count": 37,
+    "paths_in_reg_not_man": [],
+    "paths_in_man_not_reg": [],
+    "groups_in_reg_not_man": [],
+    "groups_in_man_not_reg": []
+  },
+  "disk_verification": {
+    "missing_images_count": 0,
+    "missing_images": [],
+    "missing_contact_sheets_count": 0,
+    "missing_contact_sheets": []
+  },
+  "decision_audit": {
+    "permitted_decisions": [
+      "confirmed_duplicate",
+      "confirmed_same_source",
+      "pending_review",
+      "uncertain",
+      "unrelated_images"
+    ],
+    "decision_distribution": {
+      "pending_review": 117
+    },
+    "invalid_decisions_count": 0,
+    "invalid_decisions": [],
+    "inconsistent_groups_count": 0,
+    "inconsistent_groups": [],
+    "cross_class_groups_count": 0,
+    "cross_class_groups": []
+  },
+  "review_progress": {
+    "total_images": 117,
+    "reviewed_images": 0,
+    "pending_images": 117,
+    "percent_images_reviewed": 0.0,
+    "total_groups": 37,
+    "reviewed_groups": 0,
+    "pending_groups": 37,
+    "percent_groups_reviewed": 0.0,
+    "class_distribution": {
+      "images": {
+        "acne_vulgaris": 14,
+        "impetigo": 2,
+        "urticaria": 60,
+        "warts": 41
+      },
+      "groups": {
+        "acne_vulgaris": 7,
+        "impetigo": 1,
+        "urticaria": 21,
+        "warts": 8
+      }
+    }
+  },
+  "approval_readiness": {
+    "verdict": "REVIEW INCOMPLETE",
+    "is_ready_for_approval": false,
+    "blockers_count": 1,
+    "blockers": [
+      "Review incomplete: 117/117 images (37/37 groups) remain in 'pending_review' status."
+    ]
+  }
+}

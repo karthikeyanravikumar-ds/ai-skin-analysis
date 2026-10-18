@@ -1,0 +1,14 @@
+{
+    "input_image": "C:\\SEM 5\\AI-Skin-Analysis\\reports\\frontend_uploads\\frontend_d094b6fd-a266-40b3-9262-ebebd1e459f5.jpeg",
+    "prediction": "acne_vulgaris",
+    "display_name": "Acne Vulgaris",
+    "confidence": 0.478615,
+    "confidence_percent": 47.86,
+    "confidence_level": "low",
+    "gradcam_generated": true,
+    "gradcam_heatmap": "C:\\SEM 5\\AI-Skin-Analysis\\reports\\inference\\frontend_d094b6fd-a266-40b3-9262-ebebd1e459f5_heatmap.jpg",
+    "gradcam_overlay": "C:\\SEM 5\\AI-Skin-Analysis\\reports\\inference\\frontend_d094b6fd-a266-40b3-9262-ebebd1e459f5_gradcam.jpg",
+    "explanation": "Gemini explanation will be generated separately after the CNN analysis.",
+    "is_preliminary": true,
+    "medical_disclaimer": "This result is for preliminary educational guidance only and is not a medical diagnosis."
+}

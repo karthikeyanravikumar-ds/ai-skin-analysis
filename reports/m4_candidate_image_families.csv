@@ -1,0 +1,501 @@
+﻿family_id,family_size,split_count,splits,classes,filename,class_name,split,relative_path
+F0001,18,3,"test, train, validation",urticaria,nosie1dermagraphism-41.jpg,urticaria,test,data\split\test\urticaria\nosie1dermagraphism-41.jpg
+F0001,18,3,"test, train, validation",urticaria,nosie5dermagraphism-30.jpg,urticaria,test,data\split\test\urticaria\nosie5dermagraphism-30.jpg
+F0001,18,3,"test, train, validation",urticaria,dermagraphism-34.jpg,urticaria,train,data\split\train\urticaria\dermagraphism-34.jpg
+F0001,18,3,"test, train, validation",urticaria,imagelightdermagraphism-34.jpg,urticaria,train,data\split\train\urticaria\imagelightdermagraphism-34.jpg
+F0001,18,3,"test, train, validation",urticaria,nosie1dermagraphism-30.jpg,urticaria,train,data\split\train\urticaria\nosie1dermagraphism-30.jpg
+F0001,18,3,"test, train, validation",urticaria,nosie1dermagraphism-40.jpg,urticaria,train,data\split\train\urticaria\nosie1dermagraphism-40.jpg
+F0001,18,3,"test, train, validation",urticaria,nosie3dermagraphism-40.jpg,urticaria,train,data\split\train\urticaria\nosie3dermagraphism-40.jpg
+F0001,18,3,"test, train, validation",urticaria,nosie5dermagraphism-34.jpg,urticaria,train,data\split\train\urticaria\nosie5dermagraphism-34.jpg
+F0001,18,3,"test, train, validation",urticaria,nosie5dermagraphism-40.jpg,urticaria,train,data\split\train\urticaria\nosie5dermagraphism-40.jpg
+F0001,18,3,"test, train, validation",urticaria,nosie5dermagraphism-41.jpg,urticaria,train,data\split\train\urticaria\nosie5dermagraphism-41.jpg
+F0001,18,3,"test, train, validation",urticaria,nosiedermagraphism-34.jpg,urticaria,train,data\split\train\urticaria\nosiedermagraphism-34.jpg
+F0001,18,3,"test, train, validation",urticaria,nosiedermagraphism-40.jpg,urticaria,train,data\split\train\urticaria\nosiedermagraphism-40.jpg
+F0001,18,3,"test, train, validation",urticaria,nosiedermagraphism-41.jpg,urticaria,train,data\split\train\urticaria\nosiedermagraphism-41.jpg
+F0001,18,3,"test, train, validation",urticaria,dermagraphism-30.jpg,urticaria,validation,data\split\validation\urticaria\dermagraphism-30.jpg
+F0001,18,3,"test, train, validation",urticaria,imagelightdermagraphism-30.jpg,urticaria,validation,data\split\validation\urticaria\imagelightdermagraphism-30.jpg
+F0001,18,3,"test, train, validation",urticaria,nosie3dermagraphism-30.jpg,urticaria,validation,data\split\validation\urticaria\nosie3dermagraphism-30.jpg
+F0001,18,3,"test, train, validation",urticaria,nosie3dermagraphism-41.jpg,urticaria,validation,data\split\validation\urticaria\nosie3dermagraphism-41.jpg
+F0001,18,3,"test, train, validation",urticaria,nosiedermagraphism-30.jpg,urticaria,validation,data\split\validation\urticaria\nosiedermagraphism-30.jpg
+F0002,12,3,"test, train, validation",urticaria,cholinergic-uriticaria-6.jpg,urticaria,test,data\split\test\urticaria\cholinergic-uriticaria-6.jpg
+F0002,12,3,"test, train, validation",urticaria,imagelightcholinergic-uriticaria-6.jpg,urticaria,test,data\split\test\urticaria\imagelightcholinergic-uriticaria-6.jpg
+F0002,12,3,"test, train, validation",urticaria,nosie1cholinergic-uriticaria-6.jpg,urticaria,test,data\split\test\urticaria\nosie1cholinergic-uriticaria-6.jpg
+F0002,12,3,"test, train, validation",urticaria,nosie5cholinergic-uriticaria-3.jpg,urticaria,test,data\split\test\urticaria\nosie5cholinergic-uriticaria-3.jpg
+F0002,12,3,"test, train, validation",urticaria,nosiecholinergic-uriticaria-6.jpg,urticaria,test,data\split\test\urticaria\nosiecholinergic-uriticaria-6.jpg
+F0002,12,3,"test, train, validation",urticaria,nosie1cholinergic-uriticaria-3.jpg,urticaria,train,data\split\train\urticaria\nosie1cholinergic-uriticaria-3.jpg
+F0002,12,3,"test, train, validation",urticaria,nosie3cholinergic-uriticaria-3.jpg,urticaria,train,data\split\train\urticaria\nosie3cholinergic-uriticaria-3.jpg
+F0002,12,3,"test, train, validation",urticaria,nosie3cholinergic-uriticaria-6.jpg,urticaria,train,data\split\train\urticaria\nosie3cholinergic-uriticaria-6.jpg
+F0002,12,3,"test, train, validation",urticaria,nosie5cholinergic-uriticaria-6.jpg,urticaria,train,data\split\train\urticaria\nosie5cholinergic-uriticaria-6.jpg
+F0002,12,3,"test, train, validation",urticaria,cholinergic-uriticaria-3.jpg,urticaria,validation,data\split\validation\urticaria\cholinergic-uriticaria-3.jpg
+F0002,12,3,"test, train, validation",urticaria,imagelightcholinergic-uriticaria-3.jpg,urticaria,validation,data\split\validation\urticaria\imagelightcholinergic-uriticaria-3.jpg
+F0002,12,3,"test, train, validation",urticaria,nosiecholinergic-uriticaria-3.jpg,urticaria,validation,data\split\validation\urticaria\nosiecholinergic-uriticaria-3.jpg
+F0003,12,3,"test, train, validation",urticaria,nosie3erythema-annulare-centrifugum-4.jpg,urticaria,test,data\split\test\urticaria\nosie3erythema-annulare-centrifugum-4.jpg
+F0003,12,3,"test, train, validation",urticaria,erythema-annulare-centrifugum-3.jpg,urticaria,train,data\split\train\urticaria\erythema-annulare-centrifugum-3.jpg
+F0003,12,3,"test, train, validation",urticaria,erythema-annulare-centrifugum-4.jpg,urticaria,train,data\split\train\urticaria\erythema-annulare-centrifugum-4.jpg
+F0003,12,3,"test, train, validation",urticaria,imagelighterythema-annulare-centrifugum-3.jpg,urticaria,train,data\split\train\urticaria\imagelighterythema-annulare-centrifugum-3.jpg
+F0003,12,3,"test, train, validation",urticaria,imagelighterythema-annulare-centrifugum-4.jpg,urticaria,train,data\split\train\urticaria\imagelighterythema-annulare-centrifugum-4.jpg
+F0003,12,3,"test, train, validation",urticaria,nosie1erythema-annulare-centrifugum-3.jpg,urticaria,train,data\split\train\urticaria\nosie1erythema-annulare-centrifugum-3.jpg
+F0003,12,3,"test, train, validation",urticaria,nosie5erythema-annulare-centrifugum-3.jpg,urticaria,train,data\split\train\urticaria\nosie5erythema-annulare-centrifugum-3.jpg
+F0003,12,3,"test, train, validation",urticaria,nosie5erythema-annulare-centrifugum-4.jpg,urticaria,train,data\split\train\urticaria\nosie5erythema-annulare-centrifugum-4.jpg
+F0003,12,3,"test, train, validation",urticaria,nosieerythema-annulare-centrifugum-3.jpg,urticaria,train,data\split\train\urticaria\nosieerythema-annulare-centrifugum-3.jpg
+F0003,12,3,"test, train, validation",urticaria,nosieerythema-annulare-centrifugum-4.jpg,urticaria,train,data\split\train\urticaria\nosieerythema-annulare-centrifugum-4.jpg
+F0003,12,3,"test, train, validation",urticaria,nosie1erythema-annulare-centrifugum-4.jpg,urticaria,validation,data\split\validation\urticaria\nosie1erythema-annulare-centrifugum-4.jpg
+F0003,12,3,"test, train, validation",urticaria,nosie3erythema-annulare-centrifugum-3.jpg,urticaria,validation,data\split\validation\urticaria\nosie3erythema-annulare-centrifugum-3.jpg
+F0004,6,3,"test, train, validation",warts,12WartAldara.jpg,warts,test,data\split\test\warts\12WartAldara.jpg
+F0004,6,3,"test, train, validation",warts,imagelight12WartAldara.jpg,warts,test,data\split\test\warts\imagelight12WartAldara.jpg
+F0004,6,3,"test, train, validation",warts,nosie12WartAldara.jpg,warts,test,data\split\test\warts\nosie12WartAldara.jpg
+F0004,6,3,"test, train, validation",warts,nosie312WartAldara.jpg,warts,train,data\split\train\warts\nosie312WartAldara.jpg
+F0004,6,3,"test, train, validation",warts,nosie512WartAldara.jpg,warts,train,data\split\train\warts\nosie512WartAldara.jpg
+F0004,6,3,"test, train, validation",warts,nosie112WartAldara.jpg,warts,validation,data\split\validation\warts\nosie112WartAldara.jpg
+F0005,6,3,"test, train, validation",urticaria,erythema-annulare-centrifugum-15.jpg,urticaria,test,data\split\test\urticaria\erythema-annulare-centrifugum-15.jpg
+F0005,6,3,"test, train, validation",urticaria,imagelighterythema-annulare-centrifugum-15.jpg,urticaria,test,data\split\test\urticaria\imagelighterythema-annulare-centrifugum-15.jpg
+F0005,6,3,"test, train, validation",urticaria,nosie3erythema-annulare-centrifugum-15.jpg,urticaria,test,data\split\test\urticaria\nosie3erythema-annulare-centrifugum-15.jpg
+F0005,6,3,"test, train, validation",urticaria,nosieerythema-annulare-centrifugum-15.jpg,urticaria,test,data\split\test\urticaria\nosieerythema-annulare-centrifugum-15.jpg
+F0005,6,3,"test, train, validation",urticaria,nosie5erythema-annulare-centrifugum-15.jpg,urticaria,train,data\split\train\urticaria\nosie5erythema-annulare-centrifugum-15.jpg
+F0005,6,3,"test, train, validation",urticaria,nosie1erythema-annulare-centrifugum-15.jpg,urticaria,validation,data\split\validation\urticaria\nosie1erythema-annulare-centrifugum-15.jpg
+F0006,6,3,"test, train, validation",urticaria,erythema-annulare-centrifugum-8.jpg,urticaria,test,data\split\test\urticaria\erythema-annulare-centrifugum-8.jpg
+F0006,6,3,"test, train, validation",urticaria,imagelighterythema-annulare-centrifugum-8.jpg,urticaria,test,data\split\test\urticaria\imagelighterythema-annulare-centrifugum-8.jpg
+F0006,6,3,"test, train, validation",urticaria,nosie1erythema-annulare-centrifugum-8.jpg,urticaria,test,data\split\test\urticaria\nosie1erythema-annulare-centrifugum-8.jpg
+F0006,6,3,"test, train, validation",urticaria,nosieerythema-annulare-centrifugum-8.jpg,urticaria,test,data\split\test\urticaria\nosieerythema-annulare-centrifugum-8.jpg
+F0006,6,3,"test, train, validation",urticaria,nosie5erythema-annulare-centrifugum-8.jpg,urticaria,train,data\split\train\urticaria\nosie5erythema-annulare-centrifugum-8.jpg
+F0006,6,3,"test, train, validation",urticaria,nosie3erythema-annulare-centrifugum-8.jpg,urticaria,validation,data\split\validation\urticaria\nosie3erythema-annulare-centrifugum-8.jpg
+F0007,6,3,"test, train, validation",urticaria,hives-Urticaria-Acute-101.jpg,urticaria,test,data\split\test\urticaria\hives-Urticaria-Acute-101.jpg
+F0007,6,3,"test, train, validation",urticaria,imagelighthives-Urticaria-Acute-101.jpg,urticaria,test,data\split\test\urticaria\imagelighthives-Urticaria-Acute-101.jpg
+F0007,6,3,"test, train, validation",urticaria,nosiehives-Urticaria-Acute-101.jpg,urticaria,test,data\split\test\urticaria\nosiehives-Urticaria-Acute-101.jpg
+F0007,6,3,"test, train, validation",urticaria,nosie1hives-Urticaria-Acute-101.jpg,urticaria,train,data\split\train\urticaria\nosie1hives-Urticaria-Acute-101.jpg
+F0007,6,3,"test, train, validation",urticaria,nosie3hives-Urticaria-Acute-101.jpg,urticaria,train,data\split\train\urticaria\nosie3hives-Urticaria-Acute-101.jpg
+F0007,6,3,"test, train, validation",urticaria,nosie5hives-Urticaria-Acute-101.jpg,urticaria,validation,data\split\validation\urticaria\nosie5hives-Urticaria-Acute-101.jpg
+F0008,6,3,"test, train, validation",warts,nosie112WartsCyclosporin.jpg,warts,test,data\split\test\warts\nosie112WartsCyclosporin.jpg
+F0008,6,3,"test, train, validation",warts,nosie312WartsCyclosporin.jpg,warts,test,data\split\test\warts\nosie312WartsCyclosporin.jpg
+F0008,6,3,"test, train, validation",warts,12WartsCyclosporin.jpg,warts,train,data\split\train\warts\12WartsCyclosporin.jpg
+F0008,6,3,"test, train, validation",warts,imagelight12WartsCyclosporin.jpg,warts,train,data\split\train\warts\imagelight12WartsCyclosporin.jpg
+F0008,6,3,"test, train, validation",warts,nosie12WartsCyclosporin.jpg,warts,train,data\split\train\warts\nosie12WartsCyclosporin.jpg
+F0008,6,3,"test, train, validation",warts,nosie512WartsCyclosporin.jpg,warts,validation,data\split\validation\warts\nosie512WartsCyclosporin.jpg
+F0009,6,3,"test, train, validation",urticaria,nosie1angioedema-22.jpg,urticaria,test,data\split\test\urticaria\nosie1angioedema-22.jpg
+F0009,6,3,"test, train, validation",urticaria,nosie3angioedema-22.jpg,urticaria,train,data\split\train\urticaria\nosie3angioedema-22.jpg
+F0009,6,3,"test, train, validation",urticaria,nosie5angioedema-22.jpg,urticaria,train,data\split\train\urticaria\nosie5angioedema-22.jpg
+F0009,6,3,"test, train, validation",urticaria,angioedema-22.jpg,urticaria,validation,data\split\validation\urticaria\angioedema-22.jpg
+F0009,6,3,"test, train, validation",urticaria,imagelightangioedema-22.jpg,urticaria,validation,data\split\validation\urticaria\imagelightangioedema-22.jpg
+F0009,6,3,"test, train, validation",urticaria,nosieangioedema-22.jpg,urticaria,validation,data\split\validation\urticaria\nosieangioedema-22.jpg
+F0010,6,3,"test, train, validation",urticaria,nosie1dermagraphism-23.jpg,urticaria,test,data\split\test\urticaria\nosie1dermagraphism-23.jpg
+F0010,6,3,"test, train, validation",urticaria,nosie5dermagraphism-23.jpg,urticaria,train,data\split\train\urticaria\nosie5dermagraphism-23.jpg
+F0010,6,3,"test, train, validation",urticaria,dermagraphism-23.jpg,urticaria,validation,data\split\validation\urticaria\dermagraphism-23.jpg
+F0010,6,3,"test, train, validation",urticaria,imagelightdermagraphism-23.jpg,urticaria,validation,data\split\validation\urticaria\imagelightdermagraphism-23.jpg
+F0010,6,3,"test, train, validation",urticaria,nosie3dermagraphism-23.jpg,urticaria,validation,data\split\validation\urticaria\nosie3dermagraphism-23.jpg
+F0010,6,3,"test, train, validation",urticaria,nosiedermagraphism-23.jpg,urticaria,validation,data\split\validation\urticaria\nosiedermagraphism-23.jpg
+F0011,6,3,"test, train, validation",urticaria,nosie1dermagraphism-25.jpg,urticaria,test,data\split\test\urticaria\nosie1dermagraphism-25.jpg
+F0011,6,3,"test, train, validation",urticaria,nosie3dermagraphism-25.jpg,urticaria,train,data\split\train\urticaria\nosie3dermagraphism-25.jpg
+F0011,6,3,"test, train, validation",urticaria,nosie5dermagraphism-25.jpg,urticaria,train,data\split\train\urticaria\nosie5dermagraphism-25.jpg
+F0011,6,3,"test, train, validation",urticaria,dermagraphism-25.jpg,urticaria,validation,data\split\validation\urticaria\dermagraphism-25.jpg
+F0011,6,3,"test, train, validation",urticaria,imagelightdermagraphism-25.jpg,urticaria,validation,data\split\validation\urticaria\imagelightdermagraphism-25.jpg
+F0011,6,3,"test, train, validation",urticaria,nosiedermagraphism-25.jpg,urticaria,validation,data\split\validation\urticaria\nosiedermagraphism-25.jpg
+F0012,6,3,"test, train, validation",urticaria,nosie1erythema-annulare-centrifugum-12.jpg,urticaria,test,data\split\test\urticaria\nosie1erythema-annulare-centrifugum-12.jpg
+F0012,6,3,"test, train, validation",urticaria,nosie3erythema-annulare-centrifugum-12.jpg,urticaria,train,data\split\train\urticaria\nosie3erythema-annulare-centrifugum-12.jpg
+F0012,6,3,"test, train, validation",urticaria,nosie5erythema-annulare-centrifugum-12.jpg,urticaria,train,data\split\train\urticaria\nosie5erythema-annulare-centrifugum-12.jpg
+F0012,6,3,"test, train, validation",urticaria,erythema-annulare-centrifugum-12.jpg,urticaria,validation,data\split\validation\urticaria\erythema-annulare-centrifugum-12.jpg
+F0012,6,3,"test, train, validation",urticaria,imagelighterythema-annulare-centrifugum-12.jpg,urticaria,validation,data\split\validation\urticaria\imagelighterythema-annulare-centrifugum-12.jpg
+F0012,6,3,"test, train, validation",urticaria,nosieerythema-annulare-centrifugum-12.jpg,urticaria,validation,data\split\validation\urticaria\nosieerythema-annulare-centrifugum-12.jpg
+F0013,6,3,"test, train, validation",urticaria,nosie3angioedema-8.jpg,urticaria,test,data\split\test\urticaria\nosie3angioedema-8.jpg
+F0013,6,3,"test, train, validation",urticaria,angioedema-8.jpg,urticaria,train,data\split\train\urticaria\angioedema-8.jpg
+F0013,6,3,"test, train, validation",urticaria,imagelightangioedema-8.jpg,urticaria,train,data\split\train\urticaria\imagelightangioedema-8.jpg
+F0013,6,3,"test, train, validation",urticaria,nosie1angioedema-8.jpg,urticaria,train,data\split\train\urticaria\nosie1angioedema-8.jpg
+F0013,6,3,"test, train, validation",urticaria,nosieangioedema-8.jpg,urticaria,train,data\split\train\urticaria\nosieangioedema-8.jpg
+F0013,6,3,"test, train, validation",urticaria,nosie5angioedema-8.jpg,urticaria,validation,data\split\validation\urticaria\nosie5angioedema-8.jpg
+F0014,6,3,"test, train, validation",urticaria,nosie3dermagraphism-19.jpg,urticaria,test,data\split\test\urticaria\nosie3dermagraphism-19.jpg
+F0014,6,3,"test, train, validation",urticaria,nosie5dermagraphism-19.jpg,urticaria,test,data\split\test\urticaria\nosie5dermagraphism-19.jpg
+F0014,6,3,"test, train, validation",urticaria,nosie1dermagraphism-19.jpg,urticaria,train,data\split\train\urticaria\nosie1dermagraphism-19.jpg
+F0014,6,3,"test, train, validation",urticaria,dermagraphism-19.jpg,urticaria,validation,data\split\validation\urticaria\dermagraphism-19.jpg
+F0014,6,3,"test, train, validation",urticaria,imagelightdermagraphism-19.jpg,urticaria,validation,data\split\validation\urticaria\imagelightdermagraphism-19.jpg
+F0014,6,3,"test, train, validation",urticaria,nosiedermagraphism-19.jpg,urticaria,validation,data\split\validation\urticaria\nosiedermagraphism-19.jpg
+F0015,6,3,"test, train, validation",urticaria,nosie3dermagraphism-33.jpg,urticaria,test,data\split\test\urticaria\nosie3dermagraphism-33.jpg
+F0015,6,3,"test, train, validation",urticaria,dermagraphism-33.jpg,urticaria,train,data\split\train\urticaria\dermagraphism-33.jpg
+F0015,6,3,"test, train, validation",urticaria,imagelightdermagraphism-33.jpg,urticaria,train,data\split\train\urticaria\imagelightdermagraphism-33.jpg
+F0015,6,3,"test, train, validation",urticaria,nosie5dermagraphism-33.jpg,urticaria,train,data\split\train\urticaria\nosie5dermagraphism-33.jpg
+F0015,6,3,"test, train, validation",urticaria,nosiedermagraphism-33.jpg,urticaria,train,data\split\train\urticaria\nosiedermagraphism-33.jpg
+F0015,6,3,"test, train, validation",urticaria,nosie1dermagraphism-33.jpg,urticaria,validation,data\split\validation\urticaria\nosie1dermagraphism-33.jpg
+F0016,6,3,"test, train, validation",urticaria,nosie5dermagraphism-27.jpg,urticaria,test,data\split\test\urticaria\nosie5dermagraphism-27.jpg
+F0016,6,3,"test, train, validation",urticaria,dermagraphism-27.jpg,urticaria,train,data\split\train\urticaria\dermagraphism-27.jpg
+F0016,6,3,"test, train, validation",urticaria,imagelightdermagraphism-27.jpg,urticaria,train,data\split\train\urticaria\imagelightdermagraphism-27.jpg
+F0016,6,3,"test, train, validation",urticaria,nosie3dermagraphism-27.jpg,urticaria,train,data\split\train\urticaria\nosie3dermagraphism-27.jpg
+F0016,6,3,"test, train, validation",urticaria,nosiedermagraphism-27.jpg,urticaria,train,data\split\train\urticaria\nosiedermagraphism-27.jpg
+F0016,6,3,"test, train, validation",urticaria,nosie1dermagraphism-27.jpg,urticaria,validation,data\split\validation\urticaria\nosie1dermagraphism-27.jpg
+F0017,6,3,"test, train, validation",urticaria,nosie5dermagraphism-31.jpg,urticaria,test,data\split\test\urticaria\nosie5dermagraphism-31.jpg
+F0017,6,3,"test, train, validation",urticaria,dermagraphism-31.jpg,urticaria,train,data\split\train\urticaria\dermagraphism-31.jpg
+F0017,6,3,"test, train, validation",urticaria,imagelightdermagraphism-31.jpg,urticaria,train,data\split\train\urticaria\imagelightdermagraphism-31.jpg
+F0017,6,3,"test, train, validation",urticaria,nosie3dermagraphism-31.jpg,urticaria,train,data\split\train\urticaria\nosie3dermagraphism-31.jpg
+F0017,6,3,"test, train, validation",urticaria,nosiedermagraphism-31.jpg,urticaria,train,data\split\train\urticaria\nosiedermagraphism-31.jpg
+F0017,6,3,"test, train, validation",urticaria,nosie1dermagraphism-31.jpg,urticaria,validation,data\split\validation\urticaria\nosie1dermagraphism-31.jpg
+F0018,6,3,"test, train, validation",urticaria,nosie5dermagraphism-8.jpg,urticaria,test,data\split\test\urticaria\nosie5dermagraphism-8.jpg
+F0018,6,3,"test, train, validation",urticaria,dermagraphism-8.jpg,urticaria,train,data\split\train\urticaria\dermagraphism-8.jpg
+F0018,6,3,"test, train, validation",urticaria,imagelightdermagraphism-8.jpg,urticaria,train,data\split\train\urticaria\imagelightdermagraphism-8.jpg
+F0018,6,3,"test, train, validation",urticaria,nosiedermagraphism-8.jpg,urticaria,train,data\split\train\urticaria\nosiedermagraphism-8.jpg
+F0018,6,3,"test, train, validation",urticaria,nosie1dermagraphism-8.jpg,urticaria,validation,data\split\validation\urticaria\nosie1dermagraphism-8.jpg
+F0018,6,3,"test, train, validation",urticaria,nosie3dermagraphism-8.jpg,urticaria,validation,data\split\validation\urticaria\nosie3dermagraphism-8.jpg
+F0019,6,3,"test, train, validation",urticaria,nosie5erythema-annulare-centrifugum-6.jpg,urticaria,test,data\split\test\urticaria\nosie5erythema-annulare-centrifugum-6.jpg
+F0019,6,3,"test, train, validation",urticaria,nosie1erythema-annulare-centrifugum-6.jpg,urticaria,train,data\split\train\urticaria\nosie1erythema-annulare-centrifugum-6.jpg
+F0019,6,3,"test, train, validation",urticaria,nosie3erythema-annulare-centrifugum-6.jpg,urticaria,train,data\split\train\urticaria\nosie3erythema-annulare-centrifugum-6.jpg
+F0019,6,3,"test, train, validation",urticaria,erythema-annulare-centrifugum-6.jpg,urticaria,validation,data\split\validation\urticaria\erythema-annulare-centrifugum-6.jpg
+F0019,6,3,"test, train, validation",urticaria,imagelighterythema-annulare-centrifugum-6.jpg,urticaria,validation,data\split\validation\urticaria\imagelighterythema-annulare-centrifugum-6.jpg
+F0019,6,3,"test, train, validation",urticaria,nosieerythema-annulare-centrifugum-6.jpg,urticaria,validation,data\split\validation\urticaria\nosieerythema-annulare-centrifugum-6.jpg
+F0020,4,3,"test, train, validation",urticaria,rotat_img2erythema-annulare-centrifugum-3.jpg,urticaria,test,data\split\test\urticaria\rotat_img2erythema-annulare-centrifugum-3.jpg
+F0020,4,3,"test, train, validation",urticaria,rotat_img3erythema-annulare-centrifugum-4.jpg,urticaria,train,data\split\train\urticaria\rotat_img3erythema-annulare-centrifugum-4.jpg
+F0020,4,3,"test, train, validation",urticaria,rotat_img2erythema-annulare-centrifugum-4.jpg,urticaria,validation,data\split\validation\urticaria\rotat_img2erythema-annulare-centrifugum-4.jpg
+F0020,4,3,"test, train, validation",urticaria,rotat_img3erythema-annulare-centrifugum-3.jpg,urticaria,validation,data\split\validation\urticaria\rotat_img3erythema-annulare-centrifugum-3.jpg
+F0021,4,3,"test, train, validation",urticaria,rotat_img3angioedema-9.jpg,urticaria,test,data\split\test\urticaria\rotat_img3angioedema-9.jpg
+F0021,4,3,"test, train, validation",urticaria,rotat_img2angioedema-9.jpg,urticaria,train,data\split\train\urticaria\rotat_img2angioedema-9.jpg
+F0021,4,3,"test, train, validation",urticaria,rotat_img2cholinergic-uriticaria-11.jpg,urticaria,train,data\split\train\urticaria\rotat_img2cholinergic-uriticaria-11.jpg
+F0021,4,3,"test, train, validation",urticaria,rotat_img3cholinergic-uriticaria-11.jpg,urticaria,validation,data\split\validation\urticaria\rotat_img3cholinergic-uriticaria-11.jpg
+F0022,7,2,"test, train",warts,10WartsTransplantPt1006.jpg,warts,test,data\split\test\warts\10WartsTransplantPt1006.jpg
+F0022,7,2,"test, train",warts,imagelight10WartsTransplantPt1006.jpg,warts,test,data\split\test\warts\imagelight10WartsTransplantPt1006.jpg
+F0022,7,2,"test, train",warts,nosie10WartsTransplantPt1006.jpg,warts,test,data\split\test\warts\nosie10WartsTransplantPt1006.jpg
+F0022,7,2,"test, train",warts,nosie110WartsTransplantPt1006.jpg,warts,train,data\split\train\warts\nosie110WartsTransplantPt1006.jpg
+F0022,7,2,"test, train",warts,nosie310WartsTransplantPt1006.jpg,warts,train,data\split\train\warts\nosie310WartsTransplantPt1006.jpg
+F0022,7,2,"test, train",warts,nosie510WartsTransplantPt1006.jpg,warts,train,data\split\train\warts\nosie510WartsTransplantPt1006.jpg
+F0022,7,2,"test, train",warts,rotat_img210WartsTransplantPt1006.jpg,warts,train,data\split\train\warts\rotat_img210WartsTransplantPt1006.jpg
+F0023,6,2,"train, validation",urticaria,06HivesPolycyclic1.jpg,urticaria,train,data\split\train\urticaria\06HivesPolycyclic1.jpg
+F0023,6,2,"train, validation",urticaria,imagelight06HivesPolycyclic1.jpg,urticaria,train,data\split\train\urticaria\imagelight06HivesPolycyclic1.jpg
+F0023,6,2,"train, validation",urticaria,nosie06HivesPolycyclic1.jpg,urticaria,train,data\split\train\urticaria\nosie06HivesPolycyclic1.jpg
+F0023,6,2,"train, validation",urticaria,nosie306HivesPolycyclic1.jpg,urticaria,train,data\split\train\urticaria\nosie306HivesPolycyclic1.jpg
+F0023,6,2,"train, validation",urticaria,nosie106HivesPolycyclic1.jpg,urticaria,validation,data\split\validation\urticaria\nosie106HivesPolycyclic1.jpg
+F0023,6,2,"train, validation",urticaria,nosie506HivesPolycyclic1.jpg,urticaria,validation,data\split\validation\urticaria\nosie506HivesPolycyclic1.jpg
+F0024,6,2,"train, validation",warts,12wartFinger050106.jpg,warts,train,data\split\train\warts\12wartFinger050106.jpg
+F0024,6,2,"train, validation",warts,imagelight12wartFinger050106.jpg,warts,train,data\split\train\warts\imagelight12wartFinger050106.jpg
+F0024,6,2,"train, validation",warts,nosie12wartFinger050106.jpg,warts,train,data\split\train\warts\nosie12wartFinger050106.jpg
+F0024,6,2,"train, validation",warts,nosie512wartFinger050106.jpg,warts,train,data\split\train\warts\nosie512wartFinger050106.jpg
+F0024,6,2,"train, validation",warts,nosie112wartFinger050106.jpg,warts,validation,data\split\validation\warts\nosie112wartFinger050106.jpg
+F0024,6,2,"train, validation",warts,nosie312wartFinger050106.jpg,warts,validation,data\split\validation\warts\nosie312wartFinger050106.jpg
+F0025,6,2,"train, validation",warts,12WartNitrogen4.jpg,warts,train,data\split\train\warts\12WartNitrogen4.jpg
+F0025,6,2,"train, validation",warts,imagelight12WartNitrogen4.jpg,warts,train,data\split\train\warts\imagelight12WartNitrogen4.jpg
+F0025,6,2,"train, validation",warts,nosie112WartNitrogen4.jpg,warts,train,data\split\train\warts\nosie112WartNitrogen4.jpg
+F0025,6,2,"train, validation",warts,nosie12WartNitrogen4.jpg,warts,train,data\split\train\warts\nosie12WartNitrogen4.jpg
+F0025,6,2,"train, validation",warts,nosie312WartNitrogen4.jpg,warts,train,data\split\train\warts\nosie312WartNitrogen4.jpg
+F0025,6,2,"train, validation",warts,nosie512WartNitrogen4.jpg,warts,validation,data\split\validation\warts\nosie512WartNitrogen4.jpg
+F0026,6,2,"train, validation",urticaria,angioedema-13.jpg,urticaria,train,data\split\train\urticaria\angioedema-13.jpg
+F0026,6,2,"train, validation",urticaria,imagelightangioedema-13.jpg,urticaria,train,data\split\train\urticaria\imagelightangioedema-13.jpg
+F0026,6,2,"train, validation",urticaria,nosie1angioedema-13.jpg,urticaria,train,data\split\train\urticaria\nosie1angioedema-13.jpg
+F0026,6,2,"train, validation",urticaria,nosie3angioedema-13.jpg,urticaria,train,data\split\train\urticaria\nosie3angioedema-13.jpg
+F0026,6,2,"train, validation",urticaria,nosieangioedema-13.jpg,urticaria,train,data\split\train\urticaria\nosieangioedema-13.jpg
+F0026,6,2,"train, validation",urticaria,nosie5angioedema-13.jpg,urticaria,validation,data\split\validation\urticaria\nosie5angioedema-13.jpg
+F0027,6,2,"train, validation",urticaria,angioedema-14.jpg,urticaria,train,data\split\train\urticaria\angioedema-14.jpg
+F0027,6,2,"train, validation",urticaria,imagelightangioedema-14.jpg,urticaria,train,data\split\train\urticaria\imagelightangioedema-14.jpg
+F0027,6,2,"train, validation",urticaria,nosie1angioedema-14.jpg,urticaria,train,data\split\train\urticaria\nosie1angioedema-14.jpg
+F0027,6,2,"train, validation",urticaria,nosie5angioedema-14.jpg,urticaria,train,data\split\train\urticaria\nosie5angioedema-14.jpg
+F0027,6,2,"train, validation",urticaria,nosieangioedema-14.jpg,urticaria,train,data\split\train\urticaria\nosieangioedema-14.jpg
+F0027,6,2,"train, validation",urticaria,nosie3angioedema-14.jpg,urticaria,validation,data\split\validation\urticaria\nosie3angioedema-14.jpg
+F0028,6,2,"train, validation",urticaria,angioedema-16.jpg,urticaria,train,data\split\train\urticaria\angioedema-16.jpg
+F0028,6,2,"train, validation",urticaria,imagelightangioedema-16.jpg,urticaria,train,data\split\train\urticaria\imagelightangioedema-16.jpg
+F0028,6,2,"train, validation",urticaria,nosie3angioedema-16.jpg,urticaria,train,data\split\train\urticaria\nosie3angioedema-16.jpg
+F0028,6,2,"train, validation",urticaria,nosie5angioedema-16.jpg,urticaria,train,data\split\train\urticaria\nosie5angioedema-16.jpg
+F0028,6,2,"train, validation",urticaria,nosieangioedema-16.jpg,urticaria,train,data\split\train\urticaria\nosieangioedema-16.jpg
+F0028,6,2,"train, validation",urticaria,nosie1angioedema-16.jpg,urticaria,validation,data\split\validation\urticaria\nosie1angioedema-16.jpg
+F0029,6,2,"train, validation",urticaria,angioedema-18.jpg,urticaria,train,data\split\train\urticaria\angioedema-18.jpg
+F0029,6,2,"train, validation",urticaria,imagelightangioedema-18.jpg,urticaria,train,data\split\train\urticaria\imagelightangioedema-18.jpg
+F0029,6,2,"train, validation",urticaria,nosie3angioedema-18.jpg,urticaria,train,data\split\train\urticaria\nosie3angioedema-18.jpg
+F0029,6,2,"train, validation",urticaria,nosie5angioedema-18.jpg,urticaria,train,data\split\train\urticaria\nosie5angioedema-18.jpg
+F0029,6,2,"train, validation",urticaria,nosieangioedema-18.jpg,urticaria,train,data\split\train\urticaria\nosieangioedema-18.jpg
+F0029,6,2,"train, validation",urticaria,nosie1angioedema-18.jpg,urticaria,validation,data\split\validation\urticaria\nosie1angioedema-18.jpg
+F0030,6,2,"train, validation",urticaria,angioedema-21.jpg,urticaria,train,data\split\train\urticaria\angioedema-21.jpg
+F0030,6,2,"train, validation",urticaria,imagelightangioedema-21.jpg,urticaria,train,data\split\train\urticaria\imagelightangioedema-21.jpg
+F0030,6,2,"train, validation",urticaria,nosie3angioedema-21.jpg,urticaria,train,data\split\train\urticaria\nosie3angioedema-21.jpg
+F0030,6,2,"train, validation",urticaria,nosie5angioedema-21.jpg,urticaria,train,data\split\train\urticaria\nosie5angioedema-21.jpg
+F0030,6,2,"train, validation",urticaria,nosieangioedema-21.jpg,urticaria,train,data\split\train\urticaria\nosieangioedema-21.jpg
+F0030,6,2,"train, validation",urticaria,nosie1angioedema-21.jpg,urticaria,validation,data\split\validation\urticaria\nosie1angioedema-21.jpg
+F0031,6,2,"train, validation",urticaria,angioedema-4.jpg,urticaria,train,data\split\train\urticaria\angioedema-4.jpg
+F0031,6,2,"train, validation",urticaria,imagelightangioedema-4.jpg,urticaria,train,data\split\train\urticaria\imagelightangioedema-4.jpg
+F0031,6,2,"train, validation",urticaria,nosie1angioedema-4.jpg,urticaria,train,data\split\train\urticaria\nosie1angioedema-4.jpg
+F0031,6,2,"train, validation",urticaria,nosie5angioedema-4.jpg,urticaria,train,data\split\train\urticaria\nosie5angioedema-4.jpg
+F0031,6,2,"train, validation",urticaria,nosieangioedema-4.jpg,urticaria,train,data\split\train\urticaria\nosieangioedema-4.jpg
+F0031,6,2,"train, validation",urticaria,nosie3angioedema-4.jpg,urticaria,validation,data\split\validation\urticaria\nosie3angioedema-4.jpg
+F0032,6,2,"train, validation",urticaria,cholinergic-uriticaria-5.jpg,urticaria,train,data\split\train\urticaria\cholinergic-uriticaria-5.jpg
+F0032,6,2,"train, validation",urticaria,imagelightcholinergic-uriticaria-5.jpg,urticaria,train,data\split\train\urticaria\imagelightcholinergic-uriticaria-5.jpg
+F0032,6,2,"train, validation",urticaria,nosie1cholinergic-uriticaria-5.jpg,urticaria,train,data\split\train\urticaria\nosie1cholinergic-uriticaria-5.jpg
+F0032,6,2,"train, validation",urticaria,nosie5cholinergic-uriticaria-5.jpg,urticaria,train,data\split\train\urticaria\nosie5cholinergic-uriticaria-5.jpg
+F0032,6,2,"train, validation",urticaria,nosiecholinergic-uriticaria-5.jpg,urticaria,train,data\split\train\urticaria\nosiecholinergic-uriticaria-5.jpg
+F0032,6,2,"train, validation",urticaria,nosie3cholinergic-uriticaria-5.jpg,urticaria,validation,data\split\validation\urticaria\nosie3cholinergic-uriticaria-5.jpg
+F0033,6,2,"test, train",urticaria,cholinergic-uriticaria-8.jpg,urticaria,test,data\split\test\urticaria\cholinergic-uriticaria-8.jpg
+F0033,6,2,"test, train",urticaria,imagelightcholinergic-uriticaria-8.jpg,urticaria,test,data\split\test\urticaria\imagelightcholinergic-uriticaria-8.jpg
+F0033,6,2,"test, train",urticaria,nosiecholinergic-uriticaria-8.jpg,urticaria,test,data\split\test\urticaria\nosiecholinergic-uriticaria-8.jpg
+F0033,6,2,"test, train",urticaria,nosie1cholinergic-uriticaria-8.jpg,urticaria,train,data\split\train\urticaria\nosie1cholinergic-uriticaria-8.jpg
+F0033,6,2,"test, train",urticaria,nosie3cholinergic-uriticaria-8.jpg,urticaria,train,data\split\train\urticaria\nosie3cholinergic-uriticaria-8.jpg
+F0033,6,2,"test, train",urticaria,nosie5cholinergic-uriticaria-8.jpg,urticaria,train,data\split\train\urticaria\nosie5cholinergic-uriticaria-8.jpg
+F0034,6,2,"train, validation",urticaria,dermagraphism-1.jpg,urticaria,train,data\split\train\urticaria\dermagraphism-1.jpg
+F0034,6,2,"train, validation",urticaria,imagelightdermagraphism-1.jpg,urticaria,train,data\split\train\urticaria\imagelightdermagraphism-1.jpg
+F0034,6,2,"train, validation",urticaria,nosie1dermagraphism-1.jpg,urticaria,train,data\split\train\urticaria\nosie1dermagraphism-1.jpg
+F0034,6,2,"train, validation",urticaria,nosiedermagraphism-1.jpg,urticaria,train,data\split\train\urticaria\nosiedermagraphism-1.jpg
+F0034,6,2,"train, validation",urticaria,nosie3dermagraphism-1.jpg,urticaria,validation,data\split\validation\urticaria\nosie3dermagraphism-1.jpg
+F0034,6,2,"train, validation",urticaria,nosie5dermagraphism-1.jpg,urticaria,validation,data\split\validation\urticaria\nosie5dermagraphism-1.jpg
+F0035,6,2,"test, train",urticaria,dermagraphism-11.jpg,urticaria,test,data\split\test\urticaria\dermagraphism-11.jpg
+F0035,6,2,"test, train",urticaria,imagelightdermagraphism-11.jpg,urticaria,test,data\split\test\urticaria\imagelightdermagraphism-11.jpg
+F0035,6,2,"test, train",urticaria,nosiedermagraphism-11.jpg,urticaria,test,data\split\test\urticaria\nosiedermagraphism-11.jpg
+F0035,6,2,"test, train",urticaria,nosie1dermagraphism-11.jpg,urticaria,train,data\split\train\urticaria\nosie1dermagraphism-11.jpg
+F0035,6,2,"test, train",urticaria,nosie3dermagraphism-11.jpg,urticaria,train,data\split\train\urticaria\nosie3dermagraphism-11.jpg
+F0035,6,2,"test, train",urticaria,nosie5dermagraphism-11.jpg,urticaria,train,data\split\train\urticaria\nosie5dermagraphism-11.jpg
+F0036,6,2,"train, validation",urticaria,dermagraphism-15.jpg,urticaria,train,data\split\train\urticaria\dermagraphism-15.jpg
+F0036,6,2,"train, validation",urticaria,imagelightdermagraphism-15.jpg,urticaria,train,data\split\train\urticaria\imagelightdermagraphism-15.jpg
+F0036,6,2,"train, validation",urticaria,nosie1dermagraphism-15.jpg,urticaria,train,data\split\train\urticaria\nosie1dermagraphism-15.jpg
+F0036,6,2,"train, validation",urticaria,nosie3dermagraphism-15.jpg,urticaria,train,data\split\train\urticaria\nosie3dermagraphism-15.jpg
+F0036,6,2,"train, validation",urticaria,nosiedermagraphism-15.jpg,urticaria,train,data\split\train\urticaria\nosiedermagraphism-15.jpg
+F0036,6,2,"train, validation",urticaria,nosie5dermagraphism-15.jpg,urticaria,validation,data\split\validation\urticaria\nosie5dermagraphism-15.jpg
+F0037,6,2,"train, validation",urticaria,dermagraphism-17.jpg,urticaria,train,data\split\train\urticaria\dermagraphism-17.jpg
+F0037,6,2,"train, validation",urticaria,imagelightdermagraphism-17.jpg,urticaria,train,data\split\train\urticaria\imagelightdermagraphism-17.jpg
+F0037,6,2,"train, validation",urticaria,nosie1dermagraphism-17.jpg,urticaria,train,data\split\train\urticaria\nosie1dermagraphism-17.jpg
+F0037,6,2,"train, validation",urticaria,nosie3dermagraphism-17.jpg,urticaria,train,data\split\train\urticaria\nosie3dermagraphism-17.jpg
+F0037,6,2,"train, validation",urticaria,nosiedermagraphism-17.jpg,urticaria,train,data\split\train\urticaria\nosiedermagraphism-17.jpg
+F0037,6,2,"train, validation",urticaria,nosie5dermagraphism-17.jpg,urticaria,validation,data\split\validation\urticaria\nosie5dermagraphism-17.jpg
+F0038,6,2,"train, validation",urticaria,dermagraphism-9.jpg,urticaria,train,data\split\train\urticaria\dermagraphism-9.jpg
+F0038,6,2,"train, validation",urticaria,imagelightdermagraphism-9.jpg,urticaria,train,data\split\train\urticaria\imagelightdermagraphism-9.jpg
+F0038,6,2,"train, validation",urticaria,nosie1dermagraphism-9.jpg,urticaria,train,data\split\train\urticaria\nosie1dermagraphism-9.jpg
+F0038,6,2,"train, validation",urticaria,nosiedermagraphism-9.jpg,urticaria,train,data\split\train\urticaria\nosiedermagraphism-9.jpg
+F0038,6,2,"train, validation",urticaria,nosie3dermagraphism-9.jpg,urticaria,validation,data\split\validation\urticaria\nosie3dermagraphism-9.jpg
+F0038,6,2,"train, validation",urticaria,nosie5dermagraphism-9.jpg,urticaria,validation,data\split\validation\urticaria\nosie5dermagraphism-9.jpg
+F0039,6,2,"test, train",urticaria,erythema-annulare-centrifugum-14.jpg,urticaria,test,data\split\test\urticaria\erythema-annulare-centrifugum-14.jpg
+F0039,6,2,"test, train",urticaria,imagelighterythema-annulare-centrifugum-14.jpg,urticaria,test,data\split\test\urticaria\imagelighterythema-annulare-centrifugum-14.jpg
+F0039,6,2,"test, train",urticaria,nosie5erythema-annulare-centrifugum-14.jpg,urticaria,test,data\split\test\urticaria\nosie5erythema-annulare-centrifugum-14.jpg
+F0039,6,2,"test, train",urticaria,nosieerythema-annulare-centrifugum-14.jpg,urticaria,test,data\split\test\urticaria\nosieerythema-annulare-centrifugum-14.jpg
+F0039,6,2,"test, train",urticaria,nosie1erythema-annulare-centrifugum-14.jpg,urticaria,train,data\split\train\urticaria\nosie1erythema-annulare-centrifugum-14.jpg
+F0039,6,2,"test, train",urticaria,nosie3erythema-annulare-centrifugum-14.jpg,urticaria,train,data\split\train\urticaria\nosie3erythema-annulare-centrifugum-14.jpg
+F0040,6,2,"test, train",urticaria,erythema-annulare-centrifugum-16.jpg,urticaria,test,data\split\test\urticaria\erythema-annulare-centrifugum-16.jpg
+F0040,6,2,"test, train",urticaria,imagelighterythema-annulare-centrifugum-16.jpg,urticaria,test,data\split\test\urticaria\imagelighterythema-annulare-centrifugum-16.jpg
+F0040,6,2,"test, train",urticaria,nosieerythema-annulare-centrifugum-16.jpg,urticaria,test,data\split\test\urticaria\nosieerythema-annulare-centrifugum-16.jpg
+F0040,6,2,"test, train",urticaria,nosie1erythema-annulare-centrifugum-16.jpg,urticaria,train,data\split\train\urticaria\nosie1erythema-annulare-centrifugum-16.jpg
+F0040,6,2,"test, train",urticaria,nosie3erythema-annulare-centrifugum-16.jpg,urticaria,train,data\split\train\urticaria\nosie3erythema-annulare-centrifugum-16.jpg
+F0040,6,2,"test, train",urticaria,nosie5erythema-annulare-centrifugum-16.jpg,urticaria,train,data\split\train\urticaria\nosie5erythema-annulare-centrifugum-16.jpg
+F0041,6,2,"test, train",urticaria,erythema-annulare-centrifugum-18.jpg,urticaria,test,data\split\test\urticaria\erythema-annulare-centrifugum-18.jpg
+F0041,6,2,"test, train",urticaria,imagelighterythema-annulare-centrifugum-18.jpg,urticaria,test,data\split\test\urticaria\imagelighterythema-annulare-centrifugum-18.jpg
+F0041,6,2,"test, train",urticaria,nosieerythema-annulare-centrifugum-18.jpg,urticaria,test,data\split\test\urticaria\nosieerythema-annulare-centrifugum-18.jpg
+F0041,6,2,"test, train",urticaria,nosie1erythema-annulare-centrifugum-18.jpg,urticaria,train,data\split\train\urticaria\nosie1erythema-annulare-centrifugum-18.jpg
+F0041,6,2,"test, train",urticaria,nosie3erythema-annulare-centrifugum-18.jpg,urticaria,train,data\split\train\urticaria\nosie3erythema-annulare-centrifugum-18.jpg
+F0041,6,2,"test, train",urticaria,nosie5erythema-annulare-centrifugum-18.jpg,urticaria,train,data\split\train\urticaria\nosie5erythema-annulare-centrifugum-18.jpg
+F0042,6,2,"train, validation",urticaria,erythema-annulare-centrifugum-2.jpg,urticaria,train,data\split\train\urticaria\erythema-annulare-centrifugum-2.jpg
+F0042,6,2,"train, validation",urticaria,imagelighterythema-annulare-centrifugum-2.jpg,urticaria,train,data\split\train\urticaria\imagelighterythema-annulare-centrifugum-2.jpg
+F0042,6,2,"train, validation",urticaria,nosie1erythema-annulare-centrifugum-2.jpg,urticaria,train,data\split\train\urticaria\nosie1erythema-annulare-centrifugum-2.jpg
+F0042,6,2,"train, validation",urticaria,nosie5erythema-annulare-centrifugum-2.jpg,urticaria,train,data\split\train\urticaria\nosie5erythema-annulare-centrifugum-2.jpg
+F0042,6,2,"train, validation",urticaria,nosieerythema-annulare-centrifugum-2.jpg,urticaria,train,data\split\train\urticaria\nosieerythema-annulare-centrifugum-2.jpg
+F0042,6,2,"train, validation",urticaria,nosie3erythema-annulare-centrifugum-2.jpg,urticaria,validation,data\split\validation\urticaria\nosie3erythema-annulare-centrifugum-2.jpg
+F0043,6,2,"train, validation",urticaria,hives-Urticaria-Acute-11.jpg,urticaria,train,data\split\train\urticaria\hives-Urticaria-Acute-11.jpg
+F0043,6,2,"train, validation",urticaria,imagelighthives-Urticaria-Acute-11.jpg,urticaria,train,data\split\train\urticaria\imagelighthives-Urticaria-Acute-11.jpg
+F0043,6,2,"train, validation",urticaria,nosie3hives-Urticaria-Acute-11.jpg,urticaria,train,data\split\train\urticaria\nosie3hives-Urticaria-Acute-11.jpg
+F0043,6,2,"train, validation",urticaria,nosie5hives-Urticaria-Acute-11.jpg,urticaria,train,data\split\train\urticaria\nosie5hives-Urticaria-Acute-11.jpg
+F0043,6,2,"train, validation",urticaria,nosiehives-Urticaria-Acute-11.jpg,urticaria,train,data\split\train\urticaria\nosiehives-Urticaria-Acute-11.jpg
+F0043,6,2,"train, validation",urticaria,nosie1hives-Urticaria-Acute-11.jpg,urticaria,validation,data\split\validation\urticaria\nosie1hives-Urticaria-Acute-11.jpg
+F0044,6,2,"test, train",urticaria,nosie1angioedema-20.jpg,urticaria,test,data\split\test\urticaria\nosie1angioedema-20.jpg
+F0044,6,2,"test, train",urticaria,angioedema-20.jpg,urticaria,train,data\split\train\urticaria\angioedema-20.jpg
+F0044,6,2,"test, train",urticaria,imagelightangioedema-20.jpg,urticaria,train,data\split\train\urticaria\imagelightangioedema-20.jpg
+F0044,6,2,"test, train",urticaria,nosie3angioedema-20.jpg,urticaria,train,data\split\train\urticaria\nosie3angioedema-20.jpg
+F0044,6,2,"test, train",urticaria,nosie5angioedema-20.jpg,urticaria,train,data\split\train\urticaria\nosie5angioedema-20.jpg
+F0044,6,2,"test, train",urticaria,nosieangioedema-20.jpg,urticaria,train,data\split\train\urticaria\nosieangioedema-20.jpg
+F0045,6,2,"train, validation",urticaria,nosie1angioedema-23.jpg,urticaria,train,data\split\train\urticaria\nosie1angioedema-23.jpg
+F0045,6,2,"train, validation",urticaria,nosie3angioedema-23.jpg,urticaria,train,data\split\train\urticaria\nosie3angioedema-23.jpg
+F0045,6,2,"train, validation",urticaria,nosie5angioedema-23.jpg,urticaria,train,data\split\train\urticaria\nosie5angioedema-23.jpg
+F0045,6,2,"train, validation",urticaria,angioedema-23.jpg,urticaria,validation,data\split\validation\urticaria\angioedema-23.jpg
+F0045,6,2,"train, validation",urticaria,imagelightangioedema-23.jpg,urticaria,validation,data\split\validation\urticaria\imagelightangioedema-23.jpg
+F0045,6,2,"train, validation",urticaria,nosieangioedema-23.jpg,urticaria,validation,data\split\validation\urticaria\nosieangioedema-23.jpg
+F0046,6,2,"train, validation",urticaria,nosie1cholinergic-uriticaria-11.jpg,urticaria,train,data\split\train\urticaria\nosie1cholinergic-uriticaria-11.jpg
+F0046,6,2,"train, validation",urticaria,nosie3cholinergic-uriticaria-11.jpg,urticaria,train,data\split\train\urticaria\nosie3cholinergic-uriticaria-11.jpg
+F0046,6,2,"train, validation",urticaria,nosie5cholinergic-uriticaria-11.jpg,urticaria,train,data\split\train\urticaria\nosie5cholinergic-uriticaria-11.jpg
+F0046,6,2,"train, validation",urticaria,cholinergic-uriticaria-11.jpg,urticaria,validation,data\split\validation\urticaria\cholinergic-uriticaria-11.jpg
+F0046,6,2,"train, validation",urticaria,imagelightcholinergic-uriticaria-11.jpg,urticaria,validation,data\split\validation\urticaria\imagelightcholinergic-uriticaria-11.jpg
+F0046,6,2,"train, validation",urticaria,nosiecholinergic-uriticaria-11.jpg,urticaria,validation,data\split\validation\urticaria\nosiecholinergic-uriticaria-11.jpg
+F0047,6,2,"train, validation",urticaria,nosie1cold-urticaria-2.jpg,urticaria,train,data\split\train\urticaria\nosie1cold-urticaria-2.jpg
+F0047,6,2,"train, validation",urticaria,nosie3cold-urticaria-2.jpg,urticaria,train,data\split\train\urticaria\nosie3cold-urticaria-2.jpg
+F0047,6,2,"train, validation",urticaria,nosie5cold-urticaria-2.jpg,urticaria,train,data\split\train\urticaria\nosie5cold-urticaria-2.jpg
+F0047,6,2,"train, validation",urticaria,cold-urticaria-2.jpg,urticaria,validation,data\split\validation\urticaria\cold-urticaria-2.jpg
+F0047,6,2,"train, validation",urticaria,imagelightcold-urticaria-2.jpg,urticaria,validation,data\split\validation\urticaria\imagelightcold-urticaria-2.jpg
+F0047,6,2,"train, validation",urticaria,nosiecold-urticaria-2.jpg,urticaria,validation,data\split\validation\urticaria\nosiecold-urticaria-2.jpg
+F0048,6,2,"test, train",urticaria,nosie1dermagraphism-43.jpg,urticaria,test,data\split\test\urticaria\nosie1dermagraphism-43.jpg
+F0048,6,2,"test, train",urticaria,dermagraphism-43.jpg,urticaria,train,data\split\train\urticaria\dermagraphism-43.jpg
+F0048,6,2,"test, train",urticaria,imagelightdermagraphism-43.jpg,urticaria,train,data\split\train\urticaria\imagelightdermagraphism-43.jpg
+F0048,6,2,"test, train",urticaria,nosie3dermagraphism-43.jpg,urticaria,train,data\split\train\urticaria\nosie3dermagraphism-43.jpg
+F0048,6,2,"test, train",urticaria,nosie5dermagraphism-43.jpg,urticaria,train,data\split\train\urticaria\nosie5dermagraphism-43.jpg
+F0048,6,2,"test, train",urticaria,nosiedermagraphism-43.jpg,urticaria,train,data\split\train\urticaria\nosiedermagraphism-43.jpg
+F0049,6,2,"train, validation",urticaria,nosie1erythema-annulare-centrifugum-13.jpg,urticaria,train,data\split\train\urticaria\nosie1erythema-annulare-centrifugum-13.jpg
+F0049,6,2,"train, validation",urticaria,nosie5erythema-annulare-centrifugum-13.jpg,urticaria,train,data\split\train\urticaria\nosie5erythema-annulare-centrifugum-13.jpg
+F0049,6,2,"train, validation",urticaria,erythema-annulare-centrifugum-13.jpg,urticaria,validation,data\split\validation\urticaria\erythema-annulare-centrifugum-13.jpg
+F0049,6,2,"train, validation",urticaria,imagelighterythema-annulare-centrifugum-13.jpg,urticaria,validation,data\split\validation\urticaria\imagelighterythema-annulare-centrifugum-13.jpg
+F0049,6,2,"train, validation",urticaria,nosie3erythema-annulare-centrifugum-13.jpg,urticaria,validation,data\split\validation\urticaria\nosie3erythema-annulare-centrifugum-13.jpg
+F0049,6,2,"train, validation",urticaria,nosieerythema-annulare-centrifugum-13.jpg,urticaria,validation,data\split\validation\urticaria\nosieerythema-annulare-centrifugum-13.jpg
+F0050,6,2,"test, train",urticaria,nosie1hives-Urticaria-Acute-1.jpg,urticaria,test,data\split\test\urticaria\nosie1hives-Urticaria-Acute-1.jpg
+F0050,6,2,"test, train",urticaria,hives-Urticaria-Acute-1.jpg,urticaria,train,data\split\train\urticaria\hives-Urticaria-Acute-1.jpg
+F0050,6,2,"test, train",urticaria,imagelighthives-Urticaria-Acute-1.jpg,urticaria,train,data\split\train\urticaria\imagelighthives-Urticaria-Acute-1.jpg
+F0050,6,2,"test, train",urticaria,nosie3hives-Urticaria-Acute-1.jpg,urticaria,train,data\split\train\urticaria\nosie3hives-Urticaria-Acute-1.jpg
+F0050,6,2,"test, train",urticaria,nosie5hives-Urticaria-Acute-1.jpg,urticaria,train,data\split\train\urticaria\nosie5hives-Urticaria-Acute-1.jpg
+F0050,6,2,"test, train",urticaria,nosiehives-Urticaria-Acute-1.jpg,urticaria,train,data\split\train\urticaria\nosiehives-Urticaria-Acute-1.jpg
+F0051,6,2,"train, validation",urticaria,nosie1hives-Urticaria-Acute-100.jpg,urticaria,train,data\split\train\urticaria\nosie1hives-Urticaria-Acute-100.jpg
+F0051,6,2,"train, validation",urticaria,hives-Urticaria-Acute-100.jpg,urticaria,validation,data\split\validation\urticaria\hives-Urticaria-Acute-100.jpg
+F0051,6,2,"train, validation",urticaria,imagelighthives-Urticaria-Acute-100.jpg,urticaria,validation,data\split\validation\urticaria\imagelighthives-Urticaria-Acute-100.jpg
+F0051,6,2,"train, validation",urticaria,nosie3hives-Urticaria-Acute-100.jpg,urticaria,validation,data\split\validation\urticaria\nosie3hives-Urticaria-Acute-100.jpg
+F0051,6,2,"train, validation",urticaria,nosie5hives-Urticaria-Acute-100.jpg,urticaria,validation,data\split\validation\urticaria\nosie5hives-Urticaria-Acute-100.jpg
+F0051,6,2,"train, validation",urticaria,nosiehives-Urticaria-Acute-100.jpg,urticaria,validation,data\split\validation\urticaria\nosiehives-Urticaria-Acute-100.jpg
+F0052,6,2,"train, validation",warts,nosie312wartsMouth4975.jpg,warts,train,data\split\train\warts\nosie312wartsMouth4975.jpg
+F0052,6,2,"train, validation",warts,nosie512wartsMouth4975.jpg,warts,train,data\split\train\warts\nosie512wartsMouth4975.jpg
+F0052,6,2,"train, validation",warts,12wartsMouth4975.jpg,warts,validation,data\split\validation\warts\12wartsMouth4975.jpg
+F0052,6,2,"train, validation",warts,imagelight12wartsMouth4975.jpg,warts,validation,data\split\validation\warts\imagelight12wartsMouth4975.jpg
+F0052,6,2,"train, validation",warts,nosie112wartsMouth4975.jpg,warts,validation,data\split\validation\warts\nosie112wartsMouth4975.jpg
+F0052,6,2,"train, validation",warts,nosie12wartsMouth4975.jpg,warts,validation,data\split\validation\warts\nosie12wartsMouth4975.jpg
+F0053,6,2,"test, train",urticaria,nosie3angioedema-15.jpg,urticaria,test,data\split\test\urticaria\nosie3angioedema-15.jpg
+F0053,6,2,"test, train",urticaria,angioedema-15.jpg,urticaria,train,data\split\train\urticaria\angioedema-15.jpg
+F0053,6,2,"test, train",urticaria,imagelightangioedema-15.jpg,urticaria,train,data\split\train\urticaria\imagelightangioedema-15.jpg
+F0053,6,2,"test, train",urticaria,nosie1angioedema-15.jpg,urticaria,train,data\split\train\urticaria\nosie1angioedema-15.jpg
+F0053,6,2,"test, train",urticaria,nosie5angioedema-15.jpg,urticaria,train,data\split\train\urticaria\nosie5angioedema-15.jpg
+F0053,6,2,"test, train",urticaria,nosieangioedema-15.jpg,urticaria,train,data\split\train\urticaria\nosieangioedema-15.jpg
+F0054,6,2,"test, train",urticaria,nosie3angioedema-17.jpg,urticaria,test,data\split\test\urticaria\nosie3angioedema-17.jpg
+F0054,6,2,"test, train",urticaria,angioedema-17.jpg,urticaria,train,data\split\train\urticaria\angioedema-17.jpg
+F0054,6,2,"test, train",urticaria,imagelightangioedema-17.jpg,urticaria,train,data\split\train\urticaria\imagelightangioedema-17.jpg
+F0054,6,2,"test, train",urticaria,nosie1angioedema-17.jpg,urticaria,train,data\split\train\urticaria\nosie1angioedema-17.jpg
+F0054,6,2,"test, train",urticaria,nosie5angioedema-17.jpg,urticaria,train,data\split\train\urticaria\nosie5angioedema-17.jpg
+F0054,6,2,"test, train",urticaria,nosieangioedema-17.jpg,urticaria,train,data\split\train\urticaria\nosieangioedema-17.jpg
+F0055,6,2,"test, train",urticaria,nosie3cholinergic-uriticaria-10.jpg,urticaria,test,data\split\test\urticaria\nosie3cholinergic-uriticaria-10.jpg
+F0055,6,2,"test, train",urticaria,nosie5cholinergic-uriticaria-10.jpg,urticaria,test,data\split\test\urticaria\nosie5cholinergic-uriticaria-10.jpg
+F0055,6,2,"test, train",urticaria,cholinergic-uriticaria-10.jpg,urticaria,train,data\split\train\urticaria\cholinergic-uriticaria-10.jpg
+F0055,6,2,"test, train",urticaria,imagelightcholinergic-uriticaria-10.jpg,urticaria,train,data\split\train\urticaria\imagelightcholinergic-uriticaria-10.jpg
+F0055,6,2,"test, train",urticaria,nosie1cholinergic-uriticaria-10.jpg,urticaria,train,data\split\train\urticaria\nosie1cholinergic-uriticaria-10.jpg
+F0055,6,2,"test, train",urticaria,nosiecholinergic-uriticaria-10.jpg,urticaria,train,data\split\train\urticaria\nosiecholinergic-uriticaria-10.jpg
+F0056,6,2,"test, train",urticaria,nosie3dermagraphism-13.jpg,urticaria,test,data\split\test\urticaria\nosie3dermagraphism-13.jpg
+F0056,6,2,"test, train",urticaria,dermagraphism-13.jpg,urticaria,train,data\split\train\urticaria\dermagraphism-13.jpg
+F0056,6,2,"test, train",urticaria,imagelightdermagraphism-13.jpg,urticaria,train,data\split\train\urticaria\imagelightdermagraphism-13.jpg
+F0056,6,2,"test, train",urticaria,nosie1dermagraphism-13.jpg,urticaria,train,data\split\train\urticaria\nosie1dermagraphism-13.jpg
+F0056,6,2,"test, train",urticaria,nosie5dermagraphism-13.jpg,urticaria,train,data\split\train\urticaria\nosie5dermagraphism-13.jpg
+F0056,6,2,"test, train",urticaria,nosiedermagraphism-13.jpg,urticaria,train,data\split\train\urticaria\nosiedermagraphism-13.jpg
+F0057,6,2,"test, train",urticaria,nosie3dermagraphism-38.jpg,urticaria,test,data\split\test\urticaria\nosie3dermagraphism-38.jpg
+F0057,6,2,"test, train",urticaria,dermagraphism-38.jpg,urticaria,train,data\split\train\urticaria\dermagraphism-38.jpg
+F0057,6,2,"test, train",urticaria,imagelightdermagraphism-38.jpg,urticaria,train,data\split\train\urticaria\imagelightdermagraphism-38.jpg
+F0057,6,2,"test, train",urticaria,nosie1dermagraphism-38.jpg,urticaria,train,data\split\train\urticaria\nosie1dermagraphism-38.jpg
+F0057,6,2,"test, train",urticaria,nosie5dermagraphism-38.jpg,urticaria,train,data\split\train\urticaria\nosie5dermagraphism-38.jpg
+F0057,6,2,"test, train",urticaria,nosiedermagraphism-38.jpg,urticaria,train,data\split\train\urticaria\nosiedermagraphism-38.jpg
+F0058,6,2,"test, train",urticaria,nosie3dermagraphism-6.jpg,urticaria,test,data\split\test\urticaria\nosie3dermagraphism-6.jpg
+F0058,6,2,"test, train",urticaria,dermagraphism-6.jpg,urticaria,train,data\split\train\urticaria\dermagraphism-6.jpg
+F0058,6,2,"test, train",urticaria,imagelightdermagraphism-6.jpg,urticaria,train,data\split\train\urticaria\imagelightdermagraphism-6.jpg
+F0058,6,2,"test, train",urticaria,nosie1dermagraphism-6.jpg,urticaria,train,data\split\train\urticaria\nosie1dermagraphism-6.jpg
+F0058,6,2,"test, train",urticaria,nosie5dermagraphism-6.jpg,urticaria,train,data\split\train\urticaria\nosie5dermagraphism-6.jpg
+F0058,6,2,"test, train",urticaria,nosiedermagraphism-6.jpg,urticaria,train,data\split\train\urticaria\nosiedermagraphism-6.jpg
+F0059,6,2,"test, train",urticaria,nosie3erythema-annulare-centrifugum-7.jpg,urticaria,test,data\split\test\urticaria\nosie3erythema-annulare-centrifugum-7.jpg
+F0059,6,2,"test, train",urticaria,erythema-annulare-centrifugum-7.jpg,urticaria,train,data\split\train\urticaria\erythema-annulare-centrifugum-7.jpg
+F0059,6,2,"test, train",urticaria,imagelighterythema-annulare-centrifugum-7.jpg,urticaria,train,data\split\train\urticaria\imagelighterythema-annulare-centrifugum-7.jpg
+F0059,6,2,"test, train",urticaria,nosie1erythema-annulare-centrifugum-7.jpg,urticaria,train,data\split\train\urticaria\nosie1erythema-annulare-centrifugum-7.jpg
+F0059,6,2,"test, train",urticaria,nosie5erythema-annulare-centrifugum-7.jpg,urticaria,train,data\split\train\urticaria\nosie5erythema-annulare-centrifugum-7.jpg
+F0059,6,2,"test, train",urticaria,nosieerythema-annulare-centrifugum-7.jpg,urticaria,train,data\split\train\urticaria\nosieerythema-annulare-centrifugum-7.jpg
+F0060,6,2,"test, train",urticaria,nosie3hives-Urticaria-Acute-10.jpg,urticaria,test,data\split\test\urticaria\nosie3hives-Urticaria-Acute-10.jpg
+F0060,6,2,"test, train",urticaria,hives-Urticaria-Acute-10.jpg,urticaria,train,data\split\train\urticaria\hives-Urticaria-Acute-10.jpg
+F0060,6,2,"test, train",urticaria,imagelighthives-Urticaria-Acute-10.jpg,urticaria,train,data\split\train\urticaria\imagelighthives-Urticaria-Acute-10.jpg
+F0060,6,2,"test, train",urticaria,nosie1hives-Urticaria-Acute-10.jpg,urticaria,train,data\split\train\urticaria\nosie1hives-Urticaria-Acute-10.jpg
+F0060,6,2,"test, train",urticaria,nosie5hives-Urticaria-Acute-10.jpg,urticaria,train,data\split\train\urticaria\nosie5hives-Urticaria-Acute-10.jpg
+F0060,6,2,"test, train",urticaria,nosiehives-Urticaria-Acute-10.jpg,urticaria,train,data\split\train\urticaria\nosiehives-Urticaria-Acute-10.jpg
+F0061,6,2,"test, train",urticaria,nosie5dermagraphism-2.jpg,urticaria,test,data\split\test\urticaria\nosie5dermagraphism-2.jpg
+F0061,6,2,"test, train",urticaria,dermagraphism-2.jpg,urticaria,train,data\split\train\urticaria\dermagraphism-2.jpg
+F0061,6,2,"test, train",urticaria,imagelightdermagraphism-2.jpg,urticaria,train,data\split\train\urticaria\imagelightdermagraphism-2.jpg
+F0061,6,2,"test, train",urticaria,nosie1dermagraphism-2.jpg,urticaria,train,data\split\train\urticaria\nosie1dermagraphism-2.jpg
+F0061,6,2,"test, train",urticaria,nosie3dermagraphism-2.jpg,urticaria,train,data\split\train\urticaria\nosie3dermagraphism-2.jpg
+F0061,6,2,"test, train",urticaria,nosiedermagraphism-2.jpg,urticaria,train,data\split\train\urticaria\nosiedermagraphism-2.jpg
+F0062,6,2,"test, train",urticaria,nosie5dermagraphism-29.jpg,urticaria,test,data\split\test\urticaria\nosie5dermagraphism-29.jpg
+F0062,6,2,"test, train",urticaria,dermagraphism-29.jpg,urticaria,train,data\split\train\urticaria\dermagraphism-29.jpg
+F0062,6,2,"test, train",urticaria,imagelightdermagraphism-29.jpg,urticaria,train,data\split\train\urticaria\imagelightdermagraphism-29.jpg
+F0062,6,2,"test, train",urticaria,nosie1dermagraphism-29.jpg,urticaria,train,data\split\train\urticaria\nosie1dermagraphism-29.jpg
+F0062,6,2,"test, train",urticaria,nosie3dermagraphism-29.jpg,urticaria,train,data\split\train\urticaria\nosie3dermagraphism-29.jpg
+F0062,6,2,"test, train",urticaria,nosiedermagraphism-29.jpg,urticaria,train,data\split\train\urticaria\nosiedermagraphism-29.jpg
+F0063,6,2,"test, train",urticaria,nosie5dermagraphism-7.jpg,urticaria,test,data\split\test\urticaria\nosie5dermagraphism-7.jpg
+F0063,6,2,"test, train",urticaria,dermagraphism-7.jpg,urticaria,train,data\split\train\urticaria\dermagraphism-7.jpg
+F0063,6,2,"test, train",urticaria,imagelightdermagraphism-7.jpg,urticaria,train,data\split\train\urticaria\imagelightdermagraphism-7.jpg
+F0063,6,2,"test, train",urticaria,nosie1dermagraphism-7.jpg,urticaria,train,data\split\train\urticaria\nosie1dermagraphism-7.jpg
+F0063,6,2,"test, train",urticaria,nosie3dermagraphism-7.jpg,urticaria,train,data\split\train\urticaria\nosie3dermagraphism-7.jpg
+F0063,6,2,"test, train",urticaria,nosiedermagraphism-7.jpg,urticaria,train,data\split\train\urticaria\nosiedermagraphism-7.jpg
+F0064,6,2,"test, train",urticaria,nosie5erythema-annulare-centrifugum-11.jpg,urticaria,test,data\split\test\urticaria\nosie5erythema-annulare-centrifugum-11.jpg
+F0064,6,2,"test, train",urticaria,erythema-annulare-centrifugum-11.jpg,urticaria,train,data\split\train\urticaria\erythema-annulare-centrifugum-11.jpg
+F0064,6,2,"test, train",urticaria,imagelighterythema-annulare-centrifugum-11.jpg,urticaria,train,data\split\train\urticaria\imagelighterythema-annulare-centrifugum-11.jpg
+F0064,6,2,"test, train",urticaria,nosie1erythema-annulare-centrifugum-11.jpg,urticaria,train,data\split\train\urticaria\nosie1erythema-annulare-centrifugum-11.jpg
+F0064,6,2,"test, train",urticaria,nosie3erythema-annulare-centrifugum-11.jpg,urticaria,train,data\split\train\urticaria\nosie3erythema-annulare-centrifugum-11.jpg
+F0064,6,2,"test, train",urticaria,nosieerythema-annulare-centrifugum-11.jpg,urticaria,train,data\split\train\urticaria\nosieerythema-annulare-centrifugum-11.jpg
+F0065,5,2,"test, train",urticaria,nosie3dermagraphism-28.jpg,urticaria,test,data\split\test\urticaria\nosie3dermagraphism-28.jpg
+F0065,5,2,"test, train",urticaria,dermagraphism-28.jpg,urticaria,train,data\split\train\urticaria\dermagraphism-28.jpg
+F0065,5,2,"test, train",urticaria,nosie1dermagraphism-28.jpg,urticaria,train,data\split\train\urticaria\nosie1dermagraphism-28.jpg
+F0065,5,2,"test, train",urticaria,nosie5dermagraphism-28.jpg,urticaria,train,data\split\train\urticaria\nosie5dermagraphism-28.jpg
+F0065,5,2,"test, train",urticaria,nosiedermagraphism-28.jpg,urticaria,train,data\split\train\urticaria\nosiedermagraphism-28.jpg
+F0066,4,2,"test, train",impetigo,96_BA-impetigo (17).jpg,impetigo,test,data\split\test\impetigo\96_BA-impetigo (17).jpg
+F0066,4,2,"test, train",impetigo,48_BA-impetigo (17).jpg,impetigo,train,data\split\train\impetigo\48_BA-impetigo (17).jpg
+F0066,4,2,"test, train",impetigo,49_BA-impetigo (17).jpg,impetigo,train,data\split\train\impetigo\49_BA-impetigo (17).jpg
+F0066,4,2,"test, train",impetigo,52_BA-impetigo (17).jpg,impetigo,train,data\split\train\impetigo\52_BA-impetigo (17).jpg
+F0067,2,2,"test, train",acne_vulgaris,0_19hJvhBaJyf8eJwT_.jpg,acne_vulgaris,test,data\split\test\acne_vulgaris\0_19hJvhBaJyf8eJwT_.jpg
+F0067,2,2,"test, train",acne_vulgaris,OIP (8).jpg,acne_vulgaris,train,data\split\train\acne_vulgaris\OIP (8).jpg
+F0068,2,2,"test, train",acne_vulgaris,0_before.jpg,acne_vulgaris,test,data\split\test\acne_vulgaris\0_before.jpg
+F0068,2,2,"test, train",acne_vulgaris,20_before1 - Copy.jpg,acne_vulgaris,train,data\split\train\acne_vulgaris\20_before1 - Copy.jpg
+F0069,2,2,"test, train",impetigo,18_BA-impetigo (82).jpg,impetigo,test,data\split\test\impetigo\18_BA-impetigo (82).jpg
+F0069,2,2,"test, train",impetigo,74_BA-impetigo (82).jpg,impetigo,train,data\split\train\impetigo\74_BA-impetigo (82).jpg
+F0070,2,2,"train, validation",acne_vulgaris,2 (13).jpeg,acne_vulgaris,train,data\split\train\acne_vulgaris\2 (13).jpeg
+F0070,2,2,"train, validation",acne_vulgaris,2 (13)111.jpeg,acne_vulgaris,validation,data\split\validation\acne_vulgaris\2 (13)111.jpeg
+F0071,2,2,"test, train",impetigo,22_BA-impetigo (55).jpg,impetigo,test,data\split\test\impetigo\22_BA-impetigo (55).jpg
+F0071,2,2,"test, train",impetigo,71_BA-impetigo (55).jpg,impetigo,train,data\split\train\impetigo\71_BA-impetigo (55).jpg
+F0072,2,2,"test, train",impetigo,26_BA-impetigo (73).jpg,impetigo,test,data\split\test\impetigo\26_BA-impetigo (73).jpg
+F0072,2,2,"test, train",impetigo,58_BA-impetigo (18).jpg,impetigo,train,data\split\train\impetigo\58_BA-impetigo (18).jpg
+F0073,2,2,"test, train",impetigo,27_BA-impetigo (54).jpg,impetigo,test,data\split\test\impetigo\27_BA-impetigo (54).jpg
+F0073,2,2,"test, train",impetigo,69_BA-impetigo (54).jpg,impetigo,train,data\split\train\impetigo\69_BA-impetigo (54).jpg
+F0074,2,2,"train, validation",impetigo,81_BA-impetigo (43).jpg,impetigo,train,data\split\train\impetigo\81_BA-impetigo (43).jpg
+F0074,2,2,"train, validation",impetigo,23_BA-impetigo (43).jpg,impetigo,validation,data\split\validation\impetigo\23_BA-impetigo (43).jpg
+F0075,2,2,"test, train",impetigo,82_BA-impetigo (16).jpg,impetigo,test,data\split\test\impetigo\82_BA-impetigo (16).jpg
+F0075,2,2,"test, train",impetigo,91_BA-impetigo (16).jpg,impetigo,train,data\split\train\impetigo\91_BA-impetigo (16).jpg
+F0076,2,2,"train, validation",impetigo,98_BA-impetigo (74).jpg,impetigo,train,data\split\train\impetigo\98_BA-impetigo (74).jpg
+F0076,2,2,"train, validation",impetigo,85_BA-impetigo (74).jpg,impetigo,validation,data\split\validation\impetigo\85_BA-impetigo (74).jpg
+F0077,2,2,"test, train",acne_vulgaris,acne-cystic-111.jpg,acne_vulgaris,test,data\split\test\acne_vulgaris\acne-cystic-111.jpg
+F0077,2,2,"test, train",acne_vulgaris,acne-cystic-140.jpg,acne_vulgaris,train,data\split\train\acne_vulgaris\acne-cystic-140.jpg
+F0078,2,2,"test, train",acne_vulgaris,milia-18.jpg,acne_vulgaris,test,data\split\test\acne_vulgaris\milia-18.jpg
+F0078,2,2,"test, train",acne_vulgaris,acne-closed-comedo-32.jpg,acne_vulgaris,train,data\split\train\acne_vulgaris\acne-closed-comedo-32.jpg
+F0079,2,2,"test, train",acne_vulgaris,R (42).jpg,acne_vulgaris,test,data\split\test\acne_vulgaris\R (42).jpg
+F0079,2,2,"test, train",acne_vulgaris,OIP (7).jpg,acne_vulgaris,train,data\split\train\acne_vulgaris\OIP (7).jpg
+F0080,2,2,"test, validation",acne_vulgaris,rosacea-104.jpg,acne_vulgaris,test,data\split\test\acne_vulgaris\rosacea-104.jpg
+F0080,2,2,"test, validation",acne_vulgaris,rosacea-117.jpg,acne_vulgaris,validation,data\split\validation\acne_vulgaris\rosacea-117.jpg
+F0081,2,2,"test, train",warts,rotat_img212wartFinger050106.jpg,warts,test,data\split\test\warts\rotat_img212wartFinger050106.jpg
+F0081,2,2,"test, train",warts,rotat_img312wartFinger050106.jpg,warts,train,data\split\train\warts\rotat_img312wartFinger050106.jpg
+F0082,2,2,"test, train",warts,rotat_img212wartsMouth4975.jpg,warts,test,data\split\test\warts\rotat_img212wartsMouth4975.jpg
+F0082,2,2,"test, train",warts,rotat_img312wartsMouth4975.jpg,warts,train,data\split\train\warts\rotat_img312wartsMouth4975.jpg
+F0083,2,2,"train, validation",urticaria,rotat_img2cholinergic-uriticaria-5.jpg,urticaria,train,data\split\train\urticaria\rotat_img2cholinergic-uriticaria-5.jpg
+F0083,2,2,"train, validation",urticaria,rotat_img3cholinergic-uriticaria-5.jpg,urticaria,validation,data\split\validation\urticaria\rotat_img3cholinergic-uriticaria-5.jpg
+F0084,2,2,"test, train",urticaria,rotat_img2cholinergic-uriticaria-6.jpg,urticaria,test,data\split\test\urticaria\rotat_img2cholinergic-uriticaria-6.jpg
+F0084,2,2,"test, train",urticaria,rotat_img3cholinergic-uriticaria-6.jpg,urticaria,train,data\split\train\urticaria\rotat_img3cholinergic-uriticaria-6.jpg
+F0085,2,2,"test, train",urticaria,rotat_img2dermagraphism-1.jpg,urticaria,test,data\split\test\urticaria\rotat_img2dermagraphism-1.jpg
+F0085,2,2,"test, train",urticaria,rotat_img3dermagraphism-1.jpg,urticaria,train,data\split\train\urticaria\rotat_img3dermagraphism-1.jpg
+F0086,2,2,"train, validation",urticaria,rotat_img2dermagraphism-15.jpg,urticaria,train,data\split\train\urticaria\rotat_img2dermagraphism-15.jpg
+F0086,2,2,"train, validation",urticaria,rotat_img3dermagraphism-15.jpg,urticaria,validation,data\split\validation\urticaria\rotat_img3dermagraphism-15.jpg
+F0087,2,2,"test, train",urticaria,rotat_img2dermagraphism-17.jpg,urticaria,test,data\split\test\urticaria\rotat_img2dermagraphism-17.jpg
+F0087,2,2,"test, train",urticaria,rotat_img3dermagraphism-17.jpg,urticaria,train,data\split\train\urticaria\rotat_img3dermagraphism-17.jpg
+F0088,2,2,"test, train",urticaria,rotat_img2dermagraphism-19.jpg,urticaria,test,data\split\test\urticaria\rotat_img2dermagraphism-19.jpg
+F0088,2,2,"test, train",urticaria,rotat_img3dermagraphism-19.jpg,urticaria,train,data\split\train\urticaria\rotat_img3dermagraphism-19.jpg
+F0089,2,2,"test, train",urticaria,rotat_img2dermagraphism-26.jpg,urticaria,test,data\split\test\urticaria\rotat_img2dermagraphism-26.jpg
+F0089,2,2,"test, train",urticaria,rotat_img3dermagraphism-26.jpg,urticaria,train,data\split\train\urticaria\rotat_img3dermagraphism-26.jpg
+F0090,2,2,"test, train",urticaria,rotat_img2dermagraphism-28.jpg,urticaria,test,data\split\test\urticaria\rotat_img2dermagraphism-28.jpg
+F0090,2,2,"test, train",urticaria,rotat_img3dermagraphism-28.jpg,urticaria,train,data\split\train\urticaria\rotat_img3dermagraphism-28.jpg
+F0091,2,2,"train, validation",urticaria,rotat_img2dermagraphism-39.jpg,urticaria,train,data\split\train\urticaria\rotat_img2dermagraphism-39.jpg
+F0091,2,2,"train, validation",urticaria,rotat_img3dermagraphism-39.jpg,urticaria,validation,data\split\validation\urticaria\rotat_img3dermagraphism-39.jpg
+F0092,2,2,"train, validation",urticaria,rotat_img2erythema-annulare-centrifugum-14.jpg,urticaria,train,data\split\train\urticaria\rotat_img2erythema-annulare-centrifugum-14.jpg
+F0092,2,2,"train, validation",urticaria,rotat_img3erythema-annulare-centrifugum-14.jpg,urticaria,validation,data\split\validation\urticaria\rotat_img3erythema-annulare-centrifugum-14.jpg
+F0093,2,2,"train, validation",urticaria,rotat_img2erythema-annulare-centrifugum-2.jpg,urticaria,train,data\split\train\urticaria\rotat_img2erythema-annulare-centrifugum-2.jpg
+F0093,2,2,"train, validation",urticaria,rotat_img3erythema-annulare-centrifugum-2.jpg,urticaria,validation,data\split\validation\urticaria\rotat_img3erythema-annulare-centrifugum-2.jpg
+F0094,2,2,"train, validation",urticaria,rotat_img2hives-Urticaria-Acute-10.jpg,urticaria,train,data\split\train\urticaria\rotat_img2hives-Urticaria-Acute-10.jpg
+F0094,2,2,"train, validation",urticaria,rotat_img3hives-Urticaria-Acute-10.jpg,urticaria,validation,data\split\validation\urticaria\rotat_img3hives-Urticaria-Acute-10.jpg
+F0095,2,2,"test, validation",urticaria,rotat_img3angioedema-11.jpg,urticaria,test,data\split\test\urticaria\rotat_img3angioedema-11.jpg
+F0095,2,2,"test, validation",urticaria,rotat_img2angioedema-11.jpg,urticaria,validation,data\split\validation\urticaria\rotat_img2angioedema-11.jpg
+F0096,2,2,"train, validation",urticaria,rotat_img3angioedema-17.jpg,urticaria,train,data\split\train\urticaria\rotat_img3angioedema-17.jpg
+F0096,2,2,"train, validation",urticaria,rotat_img2angioedema-17.jpg,urticaria,validation,data\split\validation\urticaria\rotat_img2angioedema-17.jpg
+F0097,2,2,"test, train",urticaria,rotat_img3angioedema-18.jpg,urticaria,test,data\split\test\urticaria\rotat_img3angioedema-18.jpg
+F0097,2,2,"test, train",urticaria,rotat_img2angioedema-18.jpg,urticaria,train,data\split\train\urticaria\rotat_img2angioedema-18.jpg
+F0098,2,2,"train, validation",urticaria,rotat_img3angioedema-21.jpg,urticaria,train,data\split\train\urticaria\rotat_img3angioedema-21.jpg
+F0098,2,2,"train, validation",urticaria,rotat_img2angioedema-21.jpg,urticaria,validation,data\split\validation\urticaria\rotat_img2angioedema-21.jpg
+F0099,2,2,"test, train",urticaria,rotat_img3angioedema-26.jpg,urticaria,test,data\split\test\urticaria\rotat_img3angioedema-26.jpg
+F0099,2,2,"test, train",urticaria,rotat_img2angioedema-26.jpg,urticaria,train,data\split\train\urticaria\rotat_img2angioedema-26.jpg
+F0100,2,2,"train, validation",urticaria,rotat_img3cholinergic-uriticaria-4.jpg,urticaria,train,data\split\train\urticaria\rotat_img3cholinergic-uriticaria-4.jpg
+F0100,2,2,"train, validation",urticaria,rotat_img2cholinergic-uriticaria-4.jpg,urticaria,validation,data\split\validation\urticaria\rotat_img2cholinergic-uriticaria-4.jpg
+F0101,2,2,"train, validation",urticaria,rotat_img3cholinergic-uriticaria-7.jpg,urticaria,train,data\split\train\urticaria\rotat_img3cholinergic-uriticaria-7.jpg
+F0101,2,2,"train, validation",urticaria,rotat_img2cholinergic-uriticaria-7.jpg,urticaria,validation,data\split\validation\urticaria\rotat_img2cholinergic-uriticaria-7.jpg
+F0102,2,2,"test, train",urticaria,rotat_img3cholinergic-uriticaria-9.jpg,urticaria,test,data\split\test\urticaria\rotat_img3cholinergic-uriticaria-9.jpg
+F0102,2,2,"test, train",urticaria,rotat_img2cholinergic-uriticaria-9.jpg,urticaria,train,data\split\train\urticaria\rotat_img2cholinergic-uriticaria-9.jpg
+F0103,2,2,"test, train",urticaria,rotat_img3dermagraphism-25.jpg,urticaria,test,data\split\test\urticaria\rotat_img3dermagraphism-25.jpg
+F0103,2,2,"test, train",urticaria,rotat_img2dermagraphism-25.jpg,urticaria,train,data\split\train\urticaria\rotat_img2dermagraphism-25.jpg
+F0104,2,2,"test, train",urticaria,rotat_img3dermagraphism-27.jpg,urticaria,test,data\split\test\urticaria\rotat_img3dermagraphism-27.jpg
+F0104,2,2,"test, train",urticaria,rotat_img2dermagraphism-27.jpg,urticaria,train,data\split\train\urticaria\rotat_img2dermagraphism-27.jpg
+F0105,2,2,"train, validation",urticaria,rotat_img3dermagraphism-3.jpg,urticaria,train,data\split\train\urticaria\rotat_img3dermagraphism-3.jpg
+F0105,2,2,"train, validation",urticaria,rotat_img2dermagraphism-3.jpg,urticaria,validation,data\split\validation\urticaria\rotat_img2dermagraphism-3.jpg
+F0106,2,2,"test, train",urticaria,rotat_img3erythema-annulare-centrifugum-15.jpg,urticaria,test,data\split\test\urticaria\rotat_img3erythema-annulare-centrifugum-15.jpg
+F0106,2,2,"test, train",urticaria,rotat_img2erythema-annulare-centrifugum-15.jpg,urticaria,train,data\split\train\urticaria\rotat_img2erythema-annulare-centrifugum-15.jpg
+F0107,2,2,"train, validation",urticaria,rotat_img3erythema-annulare-centrifugum-5.jpg,urticaria,train,data\split\train\urticaria\rotat_img3erythema-annulare-centrifugum-5.jpg
+F0107,2,2,"train, validation",urticaria,rotat_img2erythema-annulare-centrifugum-5.jpg,urticaria,validation,data\split\validation\urticaria\rotat_img2erythema-annulare-centrifugum-5.jpg
+F0108,2,2,"test, validation",urticaria,rotat_img3hives-Urticaria-Acute-100.jpg,urticaria,test,data\split\test\urticaria\rotat_img3hives-Urticaria-Acute-100.jpg
+F0108,2,2,"test, validation",urticaria,rotat_img2hives-Urticaria-Acute-100.jpg,urticaria,validation,data\split\validation\urticaria\rotat_img2hives-Urticaria-Acute-100.jpg
+F0109,2,2,"test, train",urticaria,rotat_img3hives-Urticaria-Acute-101.jpg,urticaria,test,data\split\test\urticaria\rotat_img3hives-Urticaria-Acute-101.jpg
+F0109,2,2,"test, train",urticaria,rotat_img2hives-Urticaria-Acute-101.jpg,urticaria,train,data\split\train\urticaria\rotat_img2hives-Urticaria-Acute-101.jpg

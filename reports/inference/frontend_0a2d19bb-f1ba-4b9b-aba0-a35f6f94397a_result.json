@@ -1,0 +1,109 @@
+{
+    "input_image": "C:\\SEM 5\\AI-Skin-Analysis\\reports\\frontend_uploads\\frontend_0a2d19bb-f1ba-4b9b-aba0-a35f6f94397a.jpeg",
+    "status": "completed",
+    "ood_assessment": {
+        "is_ood": false,
+        "status": "supported",
+        "reason_codes": [],
+        "reasons": [],
+        "message": "",
+        "metrics": {
+            "white_fraction": 0.0,
+            "black_fraction": 0.0004,
+            "mean_channel_diff": 81.29,
+            "color_entropy": 4.216
+        }
+    },
+    "prediction": "urticaria",
+    "display_name": "Urticaria",
+    "confidence": 0.656245,
+    "confidence_percent": 65.62,
+    "confidence_level": "moderate",
+    "top_predictions": [
+        {
+            "class_name": "urticaria",
+            "display_name": "Urticaria",
+            "probability": 0.656245,
+            "probability_percent": 65.62
+        },
+        {
+            "class_name": "acne_vulgaris",
+            "display_name": "Acne Vulgaris",
+            "probability": 0.10513,
+            "probability_percent": 10.51
+        },
+        {
+            "class_name": "vitiligo",
+            "display_name": "Vitiligo",
+            "probability": 0.1049,
+            "probability_percent": 10.49
+        }
+    ],
+    "uncertainty": {
+        "confidence": 0.6562445163726807,
+        "confidence_percent": 65.62,
+        "level": "moderate",
+        "uncertainty_status": "moderate_uncertainty",
+        "requires_caution": true,
+        "message": "The model produced a moderate-confidence image classification. The result should be interpreted cautiously and does not confirm a medical diagnosis.",
+        "recommended_next_step": "Seek in-person clinical assessment by a healthcare professional or board-certified dermatologist for a comprehensive evaluation.",
+        "quality_impact": "Minor technical image quality warnings were detected."
+    },
+    "image_quality": {
+        "status": "warning",
+        "is_valid": true,
+        "resolution": {
+            "width": 348,
+            "height": 574,
+            "passed": true,
+            "min_width": 224,
+            "min_height": 224
+        },
+        "blur": {
+            "score": 43.6,
+            "passed": false,
+            "threshold": 50.0
+        },
+        "brightness": {
+            "score": 112.49,
+            "passed": true,
+            "min_threshold": 30.0,
+            "max_threshold": 225.0
+        },
+        "warnings": [
+            "Image may be blurry (blur score: 43.6 < threshold: 50.0)."
+        ]
+    },
+    "gradcam_generated": true,
+    "gradcam_heatmap": "C:\\SEM 5\\AI-Skin-Analysis\\reports\\inference\\frontend_0a2d19bb-f1ba-4b9b-aba0-a35f6f94397a_heatmap.jpg",
+    "gradcam_overlay": "C:\\SEM 5\\AI-Skin-Analysis\\reports\\inference\\frontend_0a2d19bb-f1ba-4b9b-aba0-a35f6f94397a_gradcam.jpg",
+    "symptoms": {},
+    "safety": {
+        "safety_level": "routine",
+        "red_flags": [],
+        "red_flag_count": 0,
+        "attention_flags": [],
+        "recommendation": "Routine dermatological consultation is suggested. Consider scheduling an in-person appointment with a healthcare professional or board-certified dermatologist for a comprehensive skin evaluation.",
+        "disclaimer": "This symptom and safety evaluation provides preliminary educational guidance only. It is not a medical diagnosis, prescription, or treatment plan. Always consult a qualified healthcare professional for any skin condition."
+    },
+    "decision": {
+        "safety_level": "attention",
+        "decision_factors": [
+            "Model classification confidence is moderate (65.62%).",
+            "The result should be interpreted with caution.",
+            "Technical image limitation: Image may be blurry (blur score: 43.6 < threshold: 50.0)."
+        ],
+        "red_flags": [],
+        "attention_flags": [
+            "Model classification confidence is moderate.",
+            "Technical image quality status is warning."
+        ],
+        "recommendation": "The preliminary classification should be interpreted cautiously due to model uncertainty, technical image factors, or reported symptoms. Consider scheduling an in-person evaluation with a board-certified dermatologist or healthcare professional.",
+        "requires_professional_evaluation": true,
+        "is_emergency": false,
+        "disclaimer": "This safety decision provides preliminary educational guidance only. It is not a medical diagnosis, prescription, or treatment plan. Always consult a qualified healthcare professional for medical concerns."
+    },
+    "explanation": "Educational explanation will be generated separately after the CNN analysis.",
+    "is_preliminary": true,
+    "medical_disclaimer": "This result is for preliminary educational guidance only and is not a medical diagnosis."
+}

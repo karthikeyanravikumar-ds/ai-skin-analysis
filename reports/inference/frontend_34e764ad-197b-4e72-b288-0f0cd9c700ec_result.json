@@ -1,0 +1,104 @@
+{
+    "input_image": "C:\\SEM 5\\AI-Skin-Analysis\\reports\\frontend_uploads\\frontend_34e764ad-197b-4e72-b288-0f0cd9c700ec.jpeg",
+    "status": "completed",
+    "ood_assessment": {
+        "is_ood": false,
+        "status": "supported",
+        "reason_codes": [],
+        "reasons": [],
+        "message": "",
+        "metrics": {
+            "white_fraction": 0.0001,
+            "black_fraction": 0.0004,
+            "mean_channel_diff": 150.17,
+            "color_entropy": 3.764
+        }
+    },
+    "prediction": "molluscum_contagiosum",
+    "display_name": "Molluscum Contagiosum",
+    "confidence": 0.963249,
+    "confidence_percent": 96.32,
+    "confidence_level": "high",
+    "top_predictions": [
+        {
+            "class_name": "molluscum_contagiosum",
+            "display_name": "Molluscum Contagiosum",
+            "probability": 0.963249,
+            "probability_percent": 96.32
+        },
+        {
+            "class_name": "warts",
+            "display_name": "Warts",
+            "probability": 0.015412,
+            "probability_percent": 1.54
+        },
+        {
+            "class_name": "impetigo",
+            "display_name": "Impetigo",
+            "probability": 0.013651,
+            "probability_percent": 1.37
+        }
+    ],
+    "uncertainty": {
+        "confidence": 0.9632492065429688,
+        "confidence_percent": 96.32,
+        "level": "high",
+        "uncertainty_status": "high_confidence",
+        "requires_caution": false,
+        "message": "The model produced a relatively high-confidence image classification. This is still a preliminary AI prediction and should not be treated as a confirmed medical diagnosis.",
+        "recommended_next_step": "Consider scheduling a routine consultation with a healthcare professional or dermatologist for in-person evaluation.",
+        "quality_impact": null
+    },
+    "image_quality": {
+        "status": "good",
+        "is_valid": true,
+        "resolution": {
+            "width": 350,
+            "height": 380,
+            "passed": true,
+            "min_width": 224,
+            "min_height": 224
+        },
+        "blur": {
+            "score": 400.21,
+            "passed": true,
+            "threshold": 50.0
+        },
+        "brightness": {
+            "score": 165.87,
+            "passed": true,
+            "min_threshold": 30.0,
+            "max_threshold": 225.0
+        },
+        "warnings": []
+    },
+    "gradcam_generated": true,
+    "gradcam_heatmap": "C:\\SEM 5\\AI-Skin-Analysis\\reports\\inference\\frontend_34e764ad-197b-4e72-b288-0f0cd9c700ec_heatmap.jpg",
+    "gradcam_overlay": "C:\\SEM 5\\AI-Skin-Analysis\\reports\\inference\\frontend_34e764ad-197b-4e72-b288-0f0cd9c700ec_gradcam.jpg",
+    "symptoms": {},
+    "safety": {
+        "safety_level": "routine",
+        "red_flags": [],
+        "red_flag_count": 0,
+        "attention_flags": [],
+        "recommendation": "Routine dermatological consultation is suggested. Consider scheduling an in-person appointment with a healthcare professional or board-certified dermatologist for a comprehensive skin evaluation.",
+        "disclaimer": "This symptom and safety evaluation provides preliminary educational guidance only. It is not a medical diagnosis, prescription, or treatment plan. Always consult a qualified healthcare professional for any skin condition."
+    },
+    "decision": {
+        "safety_level": "routine",
+        "decision_factors": [
+            "No major symptom warning signs were reported.",
+            "Model confidence is high.",
+            "Image quality passed the technical checks."
+        ],
+        "red_flags": [],
+        "attention_flags": [],
+        "recommendation": "Continue to treat this result as preliminary educational guidance. Consider a routine consultation with a dermatologist or healthcare provider if the skin condition persists, changes, or causes concern.",
+        "requires_professional_evaluation": false,
+        "is_emergency": false,
+        "disclaimer": "This safety decision provides preliminary educational guidance only. It is not a medical diagnosis, prescription, or treatment plan. Always consult a qualified healthcare professional for medical concerns."
+    },
+    "explanation": "Educational explanation will be generated separately after the CNN analysis.",
+    "is_preliminary": true,
+    "medical_disclaimer": "This result is for preliminary educational guidance only and is not a medical diagnosis."
+}

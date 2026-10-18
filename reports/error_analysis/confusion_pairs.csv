@@ -1,0 +1,6 @@
+true_idx,true_class,true_label,pred_idx,pred_class,pred_label,count,percentage_of_true_class
+5,vitiligo,Vitiligo,3,psoriasis,Psoriasis,22,29.333333333333332
+0,acne_vulgaris,Acne Vulgaris,2,molluscum_contagiosum,Molluscum Contagiosum,1,0.38314176245210724
+1,impetigo,Impetigo,0,acne_vulgaris,Acne Vulgaris,1,3.7037037037037033
+1,impetigo,Impetigo,4,urticaria,Urticaria,1,3.7037037037037033
+3,psoriasis,Psoriasis,2,molluscum_contagiosum,Molluscum Contagiosum,1,0.8264462809917356

@@ -1,0 +1,773 @@
+import { useRef, useState } from "react";
+import {
+  Upload,
+  ShieldCheck,
+  Sparkles,
+  Image as ImageIcon,
+  LoaderCircle,
+  AlertCircle,
+} from "lucide-react";
+import "./App.css";
+
+function App() {
+  const fileInputRef = useRef(null);
+
+  const [selectedImage, setSelectedImage] = useState(null);
+  const [previewUrl, setPreviewUrl] = useState("");
+  const [isAnalyzing, setIsAnalyzing] = useState(false);
+  const [result, setResult] = useState(null);
+  const [error, setError] = useState("");
+  const [isGeminiLoading, setIsGeminiLoading] = useState(false);
+  const handleFileChange = (event) => {
+    const file = event.target.files?.[0];
+
+    if (!file) return;
+
+    if (!file.type.startsWith("image/")) {
+      setError("Please select a valid JPG, JPEG or PNG image.");
+      return;
+    }
+
+    setSelectedImage(file);
+    setPreviewUrl(URL.createObjectURL(file));
+
+    setResult(null);
+    setError("");
+  };
+
+  const handleUploadClick = () => {
+    fileInputRef.current?.click();
+  };
+
+  const generateGeminiExplanation = async (
+    prediction,
+    confidence
+  ) => {
+
+    setIsGeminiLoading(true);
+
+    setResult((previousResult) => ({
+      ...previousResult,
+      explanationLoading: true,
+      explanation:
+        "Generating educational explanation with Gemini...",
+    }));
+
+    try {
+
+      console.log(
+        "[AI FRONTEND] Requesting Gemini explanation..."
+      );
+
+      const explanationController =
+        new AbortController();
+
+      const explanationTimeout =
+        setTimeout(() => {
+          explanationController.abort();
+        }, 30000);
+
+      const explanationResponse = await fetch(
+        "/api/explain",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            prediction,
+            confidence,
+          }),
+          signal: explanationController.signal,
+        }
+      );
+
+      clearTimeout(explanationTimeout);
+
+      const explanationText =
+        await explanationResponse.text();
+
+      console.log(
+        "[AI FRONTEND] Gemini response:",
+        explanationText
+      );
+
+      if (!explanationText.trim()) {
+        throw new Error(
+          "Gemini returned an empty response."
+        );
+      }
+
+      let explanationData;
+
+      try {
+        explanationData =
+          JSON.parse(explanationText);
+      } catch {
+        throw new Error(
+          "Gemini returned invalid JSON."
+        );
+      }
+
+      if (!explanationResponse.ok) {
+        throw new Error(
+          explanationData.error ||
+          explanationData.details ||
+          "Gemini explanation unavailable."
+        );
+      }
+
+      setIsGeminiLoading(false);
+
+      setResult((previousResult) => ({
+        ...previousResult,
+        explanation:
+          explanationData.explanation ||
+          explanationData.message ||
+          "No explanation was returned.",
+        explanationLoading: false,
+      }));
+
+      console.log(
+        "[AI FRONTEND] Gemini explanation completed."
+      );
+
+    } catch (geminiError) {
+
+      console.error(
+        "[AI FRONTEND] Gemini explanation error:",
+        geminiError
+      );
+
+      setIsGeminiLoading(false);
+
+      setResult((previousResult) => ({
+        ...previousResult,
+        explanation:
+          "Gemini explanation is temporarily unavailable. The CNN prediction and Grad-CAM analysis were completed successfully.",
+        explanationLoading: false,
+      }));
+    }
+  };
+
+  const handleAnalyze = async () => {
+    if (!selectedImage || isAnalyzing) return;
+
+    setIsAnalyzing(true);
+    setError("");
+    setResult(null);
+
+    try {
+      // =========================================================
+      // STEP 1 ? CNN + GRAD-CAM
+      // =========================================================
+
+      const formData = new FormData();
+      formData.append("image", selectedImage);
+
+      const response = await fetch("/api/analyze", {
+        method: "POST",
+        body: formData,
+      });
+
+      const responseText = await response.text();
+
+      console.log("AI bridge status:", response.status);
+      console.log("AI bridge response:", responseText);
+
+      if (!responseText.trim()) {
+        throw new Error(
+          `AI bridge returned an empty response (HTTP ${response.status}).`
+        );
+      }
+
+      let data;
+
+      try {
+        data = JSON.parse(responseText);
+      } catch {
+        throw new Error(
+          `AI bridge returned invalid JSON: ${responseText.slice(0, 500)}`
+        );
+      }
+
+      if (!response.ok) {
+        throw new Error(
+          data.error ||
+          data.details ||
+          "AI analysis failed."
+        );
+      }
+
+      // Show CNN result immediately.
+      setResult({
+        ...data,
+        explanationLoading: true,
+        explanation:
+          "Generating educational explanation with Gemini...",
+      });
+
+      // CNN is complete, so stop the main analysis spinner.
+      setIsAnalyzing(false);
+      setIsGeminiLoading(true);
+      console.log(
+        "[AI FRONTEND] CNN analysis completed."
+      );
+
+      // =========================================================
+      // =========================================================
+      // STEP 2 ? GEMINI EXPLANATION
+      // =========================================================
+
+      await generateGeminiExplanation(
+        data.prediction,
+        data.confidence
+      );
+
+    } catch (err) {
+
+      console.error(
+        "[AI FRONTEND] AI analysis error:",
+        err
+      );
+
+      setError(
+        err.message ||
+        "Unable to analyze the image."
+      );
+
+      setIsAnalyzing(false);
+    }
+  };
+
+  const handleNewImage = () => {
+    setSelectedImage(null);
+    setPreviewUrl("");
+    setResult(null);
+    setError("");
+
+    if (fileInputRef.current) {
+      fileInputRef.current.value = "";
+    }
+  };
+
+  return (
+    <div className="app">
+
+      <header className="navbar">
+
+        <div className="brand">
+
+          <div className="brand-icon">
+            <Sparkles size={20} />
+          </div>
+
+          <div>
+            <h1>AI Skin Analysis</h1>
+            <span>
+              Preliminary Image Guidance
+            </span>
+          </div>
+
+        </div>
+
+        <div className="status">
+          <span className="status-dot"></span>
+          AI System Ready
+        </div>
+
+      </header>
+
+      <main className="main-content">
+
+        <section className="hero">
+
+          <div className="hero-badge">
+            <ShieldCheck size={16} />
+            AI-Assisted Dermatology Research
+          </div>
+
+          <h2>
+            Understand your skin image
+            <span>
+              {" "}with AI assistance.
+            </span>
+          </h2>
+
+          <p>
+            Upload a skin image to receive a
+            preliminary AI-based classification,
+            visual explanation, and educational
+            guidance.
+          </p>
+
+        </section>
+
+        <section className="analysis-card">
+
+          <div className="card-header">
+
+            <div>
+              <h3>
+                Analyze Skin Image
+              </h3>
+
+              <p>
+                Upload a clear image of the
+                affected skin area.
+              </p>
+            </div>
+
+            <ImageIcon size={24} />
+
+          </div>
+
+          {!previewUrl ? (
+
+            <button
+              className="upload-area"
+              onClick={handleUploadClick}
+              type="button"
+            >
+
+              <div className="upload-icon">
+                <Upload size={28} />
+              </div>
+
+              <strong>
+                Upload a skin image
+              </strong>
+
+              <span>
+                Click to browse your computer
+              </span>
+
+              <small>
+                JPG, JPEG or PNG â€¢ Recommended:
+                clear, well-lit image
+              </small>
+
+            </button>
+
+          ) : (
+
+            <div className="preview-container">
+
+              <img
+                src={previewUrl}
+                alt="Selected skin image"
+                className="image-preview"
+              />
+
+              <div className="preview-info">
+
+                <strong>
+                  {selectedImage?.name}
+                </strong>
+
+                <span>
+                  {(
+                    selectedImage?.size /
+                    1024 /
+                    1024
+                  ).toFixed(2)} MB
+                </span>
+
+                <button
+                  className="secondary-button"
+                  onClick={handleUploadClick}
+                  type="button"
+                  disabled={isAnalyzing}
+                >
+                  Choose another image
+                </button>
+
+              </div>
+
+            </div>
+
+          )}
+
+          <input
+            ref={fileInputRef}
+            type="file"
+            accept="image/png,image/jpeg,image/jpg"
+            onChange={handleFileChange}
+            hidden
+          />
+
+          <div className="analysis-note">
+
+            <ShieldCheck size={17} />
+
+            <span>
+              Your image is analyzed for research
+              and educational purposes. This tool
+              does not provide a medical diagnosis.
+            </span>
+
+          </div>
+
+          {error && (
+
+            <div className="error-message">
+
+              <AlertCircle size={17} />
+
+              <span>
+                {error}
+              </span>
+
+            </div>
+
+          )}
+
+          <button
+            className="analyze-button"
+            disabled={
+              !selectedImage ||
+              isAnalyzing
+            }
+            onClick={handleAnalyze}
+            type="button"
+          >
+
+            {isAnalyzing ? (
+
+              <>
+                <LoaderCircle
+                  size={18}
+                  className="spin"
+                />
+
+                Running AI Analysis...
+              </>
+
+            ) : (
+
+              <>
+                <Sparkles size={18} />
+
+                Analyze Image
+              </>
+
+            )}
+
+          </button>
+
+        </section>
+
+
+        {result && (
+
+          <section className="results-section">
+
+            <div className="results-header">
+
+              <div>
+
+                <span className="result-label">
+                  AI ANALYSIS RESULT
+                </span>
+
+                <h3>
+                  Preliminary Classification
+                </h3>
+
+              </div>
+
+              <button
+                className="secondary-button"
+                onClick={handleNewImage}
+                type="button"
+              >
+                Analyze another image
+              </button>
+
+            </div>
+
+
+            <div className="result-summary">
+
+              <div className="prediction-card">
+
+                <span>
+                  Predicted Condition
+                </span>
+
+                <strong>
+                  {result.display_name}
+                </strong>
+
+                <div className="confidence-row">
+
+                  <div>
+
+                    <small>
+                      CNN Confidence
+                    </small>
+
+                    <b>
+                      {result.confidence_percent.toFixed(2)}%
+                    </b>
+
+                  </div>
+
+                  <span
+                    className={`confidence-badge ${result.confidence_level}`}
+                  >
+                    {result.confidence_level}
+                  </span>
+
+                </div>
+
+              </div>
+
+
+              <div className="disclaimer-card">
+
+                <ShieldCheck size={20} />
+
+                <div>
+
+                  <strong>
+                    Preliminary result
+                  </strong>
+
+                  <p>
+                    {result.medical_disclaimer}
+                  </p>
+
+                </div>
+
+              </div>
+
+            </div>
+
+
+            {result.gradcam_generated && (
+
+              <div className="gradcam-card">
+
+                <div className="result-card-heading">
+
+                  <div>
+
+                    <span className="result-label">
+                      EXPLAINABILITY
+                    </span>
+
+                    <h3>
+                      Grad-CAM Visual Explanation
+                    </h3>
+
+                  </div>
+
+                  <ImageIcon size={22} />
+
+                </div>
+
+                <p className="result-description">
+                  The highlighted regions show areas
+                  that influenced the CNN prediction.
+                  They should not be interpreted as
+                  medically confirmed diagnostic features.
+                </p>
+
+                <div className="gradcam-image-container">
+
+                  <img
+                    src={result.gradcam_url}
+                    alt="Grad-CAM explanation"
+                    className="gradcam-image"
+                  />
+
+                </div>
+
+              </div>
+
+            )}
+
+
+            <div className="explanation-card">
+
+              <div className="result-card-heading">
+
+                <div>
+
+                  <span className="result-label">
+                    EDUCATIONAL GUIDANCE
+                  </span>
+
+                  <h3>
+                    AI Explanation
+                  </h3>
+
+                </div>
+
+                <Sparkles size={22} />
+
+              </div>
+
+              <div className="explanation-text">
+
+                {isGeminiLoading ? (
+                  <div className="gemini-loading">
+                    <LoaderCircle
+                      size={18}
+                      className="spin"
+                    />
+
+                    <span>
+                      Generating educational explanation with Gemini...
+                    </span>
+                  </div>
+                ) : (
+                  <p>
+                    {result.explanation}
+                  </p>
+                )}
+
+              </div>
+
+              {!result.explanationLoading &&
+                !isGeminiLoading &&
+                result.explanation?.includes(
+                  "Gemini explanation is temporarily unavailable"
+                ) && (
+                  <button
+                    className="secondary-button"
+                    onClick={() =>
+                      generateGeminiExplanation(
+                        result.prediction,
+                        result.confidence
+                      )
+                    }
+                    type="button"
+                    disabled={isGeminiLoading}
+                  >
+                    {isGeminiLoading ? (
+                      <>
+                        <LoaderCircle
+                          size={16}
+                          className="spin"
+                        />
+                        Trying Again...
+                      </>
+                    ) : (
+                      <>
+                        <Sparkles size={16} />
+                        Try Again
+                      </>
+                    )}
+                  </button>
+                )}
+
+            </div>
+
+
+            <div className="final-safety">
+
+              <ShieldCheck size={20} />
+
+              <div>
+
+                <strong>
+                  Important Safety Information
+                </strong>
+
+                <p>
+                  This application provides
+                  preliminary educational guidance
+                  only. It cannot replace examination
+                  by a qualified dermatologist or
+                  healthcare professional.
+                </p>
+
+              </div>
+
+            </div>
+
+          </section>
+
+        )}
+
+
+        {!result && (
+
+          <section className="feature-grid">
+
+            <div className="feature-card">
+
+              <div className="feature-icon">
+                <Sparkles size={20} />
+              </div>
+
+              <h4>
+                AI Classification
+              </h4>
+
+              <p>
+                A trained CNN analyzes the uploaded
+                image and provides a preliminary
+                skin-condition classification.
+              </p>
+
+            </div>
+
+
+            <div className="feature-card">
+
+              <div className="feature-icon">
+                <ImageIcon size={20} />
+              </div>
+
+              <h4>
+                Visual Explanation
+              </h4>
+
+              <p>
+                Grad-CAM highlights image regions
+                that influenced the CNN prediction.
+              </p>
+
+            </div>
+
+
+            <div className="feature-card">
+
+              <div className="feature-icon">
+                <ShieldCheck size={20} />
+              </div>
+
+              <h4>
+                Safety First
+              </h4>
+
+              <p>
+                Results are presented as preliminary
+                educational guidance and not as a
+                medical diagnosis.
+              </p>
+
+            </div>
+
+          </section>
+
+        )}
+
+      </main>
+
+
+      <footer>
+        AI-Assisted Symptom Image Analysis and
+        Preliminary Guidance
+        <span>â€¢</span>
+        Research Prototype
+      </footer>
+
+    </div>
+  );
+}
+
+export default App;

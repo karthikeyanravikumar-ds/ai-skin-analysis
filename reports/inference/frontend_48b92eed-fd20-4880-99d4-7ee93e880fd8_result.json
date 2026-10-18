@@ -1,0 +1,93 @@
+{
+    "input_image": "C:\\SEM 5\\AI-Skin-Analysis\\reports\\frontend_uploads\\frontend_48b92eed-fd20-4880-99d4-7ee93e880fd8.jpeg",
+    "prediction": "impetigo",
+    "display_name": "Impetigo",
+    "confidence": 0.984885,
+    "confidence_percent": 98.49,
+    "confidence_level": "high",
+    "top_predictions": [
+        {
+            "class_name": "impetigo",
+            "display_name": "Impetigo",
+            "probability": 0.984885,
+            "probability_percent": 98.49
+        },
+        {
+            "class_name": "warts",
+            "display_name": "Warts",
+            "probability": 0.011822,
+            "probability_percent": 1.18
+        },
+        {
+            "class_name": "molluscum_contagiosum",
+            "display_name": "Molluscum Contagiosum",
+            "probability": 0.001098,
+            "probability_percent": 0.11
+        }
+    ],
+    "uncertainty": {
+        "confidence": 0.98488450050354,
+        "confidence_percent": 98.49,
+        "level": "high",
+        "uncertainty_status": "high_confidence",
+        "requires_caution": true,
+        "message": "The model produced a relatively high-confidence image classification. This is still a preliminary AI prediction and should not be treated as a confirmed medical diagnosis. Minor technical image warnings were detected; interpret with appropriate caution.",
+        "recommended_next_step": "Consider scheduling a routine consultation with a healthcare professional or dermatologist for in-person evaluation.",
+        "quality_impact": "Minor technical image quality warnings were detected."
+    },
+    "image_quality": {
+        "status": "warning",
+        "is_valid": true,
+        "resolution": {
+            "width": 225,
+            "height": 155,
+            "passed": false,
+            "min_width": 224,
+            "min_height": 224
+        },
+        "blur": {
+            "score": 1110.63,
+            "passed": true,
+            "threshold": 50.0
+        },
+        "brightness": {
+            "score": 74.96,
+            "passed": true,
+            "min_threshold": 30.0,
+            "max_threshold": 225.0
+        },
+        "warnings": [
+            "Image resolution (225x155) is below the recommended technical threshold (224x224)."
+        ]
+    },
+    "gradcam_generated": true,
+    "gradcam_heatmap": "C:\\SEM 5\\AI-Skin-Analysis\\reports\\inference\\frontend_48b92eed-fd20-4880-99d4-7ee93e880fd8_heatmap.jpg",
+    "gradcam_overlay": "C:\\SEM 5\\AI-Skin-Analysis\\reports\\inference\\frontend_48b92eed-fd20-4880-99d4-7ee93e880fd8_gradcam.jpg",
+    "symptoms": {},
+    "safety": {
+        "safety_level": "routine",
+        "red_flags": [],
+        "red_flag_count": 0,
+        "attention_flags": [],
+        "recommendation": "Routine dermatological consultation is suggested. Consider scheduling an in-person appointment with a healthcare professional or board-certified dermatologist for a comprehensive skin evaluation.",
+        "disclaimer": "This symptom and safety evaluation provides preliminary educational guidance only. It is not a medical diagnosis, prescription, or treatment plan. Always consult a qualified healthcare professional for any skin condition."
+    },
+    "decision": {
+        "safety_level": "attention",
+        "decision_factors": [
+            "Technical image limitation: Image resolution (225x155) is below the recommended technical threshold (224x224)."
+        ],
+        "red_flags": [],
+        "attention_flags": [
+            "Model classification confidence is high.",
+            "Technical image quality status is warning."
+        ],
+        "recommendation": "The preliminary classification should be interpreted cautiously due to model uncertainty, technical image factors, or reported symptoms. Consider scheduling an in-person evaluation with a board-certified dermatologist or healthcare professional.",
+        "requires_professional_evaluation": true,
+        "is_emergency": false,
+        "disclaimer": "This safety decision provides preliminary educational guidance only. It is not a medical diagnosis, prescription, or treatment plan. Always consult a qualified healthcare professional for medical concerns."
+    },
+    "explanation": "Gemini explanation will be generated separately after the CNN analysis.",
+    "is_preliminary": true,
+    "medical_disclaimer": "This result is for preliminary educational guidance only and is not a medical diagnosis."
+}

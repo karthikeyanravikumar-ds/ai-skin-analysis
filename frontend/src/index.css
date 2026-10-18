@@ -1,0 +1,19 @@
+html {
+  min-width: 320px;
+  background: #f6f8fb;
+}
+
+body {
+  min-width: 320px;
+  margin: 0;
+  background: #f6f8fb;
+}
+
+#root {
+  min-height: 100vh;
+  width: 100%;
+}
+
+* {
+  box-sizing: border-box;
+}

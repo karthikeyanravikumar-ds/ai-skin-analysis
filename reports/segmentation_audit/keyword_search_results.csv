@@ -1,0 +1,32 @@
+file,line,matches,description,snippet
+scratch\audit_segmentation.py,46,"rle, mask, annotation",General reference,"""mask_candidates"": [f for f in files if any(k in f.name.lower() for k in [""mask"", ""seg"", ""annotation"", ""ground_truth"", ""_gt"", "".rle"", "".json"
+scratch\audit_segmentation.py,54,"lesion_mask, segmentation, mask, masks, segmentation_mask",General reference,"""mask"", ""masks"", ""segmentation"", ""lesion_mask"", ""segmentation_mask"","
+scratch\audit_segmentation.py,55,"ground_truth_mask, binary_mask, annotation, unet, u-net",General reference,"""unet"", ""u-net"", ""binary_mask"", ""ground_truth_mask"", ""annotation"","
+scratch\audit_segmentation.py,56,"polygon, annotations, rle",General reference,"""annotations"", ""polygon"", ""rle"""
+scratch\audit_segmentation.py,99,"u-net, segmentation",General reference,"print(""TASK M-S1 — SEGMENTATION DATASET & U-NET FEASIBILITY AUDIT"")"
+scratch\audit_segmentation.py,115,mask,General reference,"print(f""  data/{sub:<12}: Exists={info['exists']}, Total Files={info['total_files']}, Images={len(info['image_files'])}, Mask Candidates={le"
+scratch\audit_segmentation.py,132,segmentation,General reference,# 4. Repo-wide search for segmentation terms
+scratch\audit_segmentation.py,133,segmentation,General reference,"print(""\nSearching entire repository for segmentation keywords..."")"
+scratch\audit_segmentation.py,143,mask,General reference,"desc = ""Grad-CAM heatmap / visualization mask"""
+scratch\audit_segmentation.py,158,mask,General reference,# 5. Mask pairing and quality audit
+scratch\audit_segmentation.py,159,"masks, segmentation",General reference,# Check if ANY ground-truth segmentation masks exist in the dataset
+scratch\audit_segmentation.py,163,mask,General reference,# Check if it is an actual ground-truth mask file (e.g. png/tif/npy) vs csv report or metadata
+scratch\audit_segmentation.py,164,rle,General reference,"if mc.suffix.lower() in ["".png"", "".jpg"", "".tif"", "".tiff"", "".bmp"", "".npy"", "".npz"", "".mat"", "".rle""]:"
+scratch\audit_segmentation.py,201,"masks, mask",General reference,"writer.writerow([""Total Ground Truth Masks Found"", len(all_mask_files), ""No mask files found in repository""])"
+scratch\audit_segmentation.py,202,mask,General reference,"writer.writerow([""Matched Image-Mask Pairs"", 0, ""0 pairs""])"
+scratch\audit_segmentation.py,203,"masks, segmentation",General reference,"writer.writerow([""Images without Masks"", total_images_in_split, ""All images lack segmentation masks""])"
+scratch\audit_segmentation.py,204,mask,General reference,"writer.writerow([""Mask Coverage Percentage"", ""0.0%"", ""Zero mask availability""])"
+scratch\audit_segmentation.py,210,masks,General reference,"writer.writerow([""Total Masks Found"", ""0"", ""None""])"
+scratch\audit_segmentation.py,211,mask,General reference,"writer.writerow([""Mask Format"", ""N/A"", ""No mask files present""])"
+scratch\audit_segmentation.py,212,mask,General reference,"writer.writerow([""Mask DataType"", ""N/A"", ""No mask files present""])"
+scratch\audit_segmentation.py,213,mask,General reference,"writer.writerow([""Min Foreground Area"", ""N/A"", ""No mask files present""])"
+scratch\audit_segmentation.py,214,mask,General reference,"writer.writerow([""Max Foreground Area"", ""N/A"", ""No mask files present""])"
+scratch\audit_segmentation.py,215,mask,General reference,"writer.writerow([""Mean Foreground Area"", ""N/A"", ""No mask files present""])"
+scratch\audit_segmentation.py,216,mask,General reference,"writer.writerow([""Median Foreground Area"", ""N/A"", ""No mask files present""])"
+scratch\audit_segmentation.py,217,masks,General reference,"writer.writerow([""Empty Masks Count"", ""0"", ""N/A""])"
+scratch\audit_segmentation.py,218,masks,General reference,"writer.writerow([""Corrupted Masks Count"", ""0"", ""N/A""])"
+scratch\audit_segmentation.py,228,masks,General reference,"print(f""  Ground-truth masks found : {'YES' if len(all_mask_files) > 0 else 'NO (0 masks)'}"")"
+scratch\audit_segmentation.py,230,mask,General reference,"print(f""  Mask Coverage           : 0.0%"")"
+scratch\audit_segmentation.py,232,segmentation,General reference,"print(f""  Recommended Next Task   : M-S2 — Segmentation Dataset Acquisition"")"
+scratch\train_m2_experiment.py,494,mask,General reference,mask = (y_true == c_idx)
+scratch\train_m2_experiment.py,495,mask,General reference,support = int(np.sum(mask))

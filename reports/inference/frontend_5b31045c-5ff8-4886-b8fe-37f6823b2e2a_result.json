@@ -1,0 +1,91 @@
+{
+    "input_image": "C:\\SEM 5\\AI-Skin-Analysis\\reports\\frontend_uploads\\frontend_5b31045c-5ff8-4886-b8fe-37f6823b2e2a.jpeg",
+    "prediction": "urticaria",
+    "display_name": "Urticaria",
+    "confidence": 0.484842,
+    "confidence_percent": 48.48,
+    "confidence_level": "low",
+    "top_predictions": [
+        {
+            "class_name": "urticaria",
+            "display_name": "Urticaria",
+            "probability": 0.484842,
+            "probability_percent": 48.48
+        },
+        {
+            "class_name": "vitiligo",
+            "display_name": "Vitiligo",
+            "probability": 0.310895,
+            "probability_percent": 31.09
+        },
+        {
+            "class_name": "molluscum_contagiosum",
+            "display_name": "Molluscum Contagiosum",
+            "probability": 0.165672,
+            "probability_percent": 16.57
+        }
+    ],
+    "uncertainty": {
+        "confidence": 0.4848422110080719,
+        "confidence_percent": 48.48,
+        "level": "low",
+        "uncertainty_status": "low_confidence",
+        "requires_caution": true,
+        "message": "The model produced a low-confidence image classification. The image may not contain enough information for a reliable model prediction. Consider using a clearer image and/or seeking professional evaluation.",
+        "recommended_next_step": "Retake a clear, well-lit, in-focus photograph of the skin lesion or consult a qualified healthcare provider directly.",
+        "quality_impact": null
+    },
+    "image_quality": {
+        "status": "good",
+        "is_valid": true,
+        "resolution": {
+            "width": 520,
+            "height": 590,
+            "passed": true,
+            "min_width": 224,
+            "min_height": 224
+        },
+        "blur": {
+            "score": 239.66,
+            "passed": true,
+            "threshold": 50.0
+        },
+        "brightness": {
+            "score": 171.64,
+            "passed": true,
+            "min_threshold": 30.0,
+            "max_threshold": 225.0
+        },
+        "warnings": []
+    },
+    "gradcam_generated": true,
+    "gradcam_heatmap": "C:\\SEM 5\\AI-Skin-Analysis\\reports\\inference\\frontend_5b31045c-5ff8-4886-b8fe-37f6823b2e2a_heatmap.jpg",
+    "gradcam_overlay": "C:\\SEM 5\\AI-Skin-Analysis\\reports\\inference\\frontend_5b31045c-5ff8-4886-b8fe-37f6823b2e2a_gradcam.jpg",
+    "symptoms": {},
+    "safety": {
+        "safety_level": "routine",
+        "red_flags": [],
+        "red_flag_count": 0,
+        "attention_flags": [],
+        "recommendation": "Routine dermatological consultation is suggested. Consider scheduling an in-person appointment with a healthcare professional or board-certified dermatologist for a comprehensive skin evaluation.",
+        "disclaimer": "This symptom and safety evaluation provides preliminary educational guidance only. It is not a medical diagnosis, prescription, or treatment plan. Always consult a qualified healthcare professional for any skin condition."
+    },
+    "decision": {
+        "safety_level": "attention",
+        "decision_factors": [
+            "Model classification confidence is low (48.48%).",
+            "The result should be interpreted with caution."
+        ],
+        "red_flags": [],
+        "attention_flags": [
+            "Model classification confidence is low."
+        ],
+        "recommendation": "The preliminary classification should be interpreted cautiously due to model uncertainty, technical image factors, or reported symptoms. Consider scheduling an in-person evaluation with a board-certified dermatologist or healthcare professional.",
+        "requires_professional_evaluation": true,
+        "is_emergency": false,
+        "disclaimer": "This safety decision provides preliminary educational guidance only. It is not a medical diagnosis, prescription, or treatment plan. Always consult a qualified healthcare professional for medical concerns."
+    },
+    "explanation": "Gemini explanation will be generated separately after the CNN analysis.",
+    "is_preliminary": true,
+    "medical_disclaimer": "This result is for preliminary educational guidance only and is not a medical diagnosis."
+}

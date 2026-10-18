@@ -1,0 +1,14 @@
+{
+    "input_image": "C:\\SEM 5\\AI-Skin-Analysis\\reports\\frontend_uploads\\frontend_61eb9c2d-fb1f-4364-9b6b-0e71763f9dd4.jpeg",
+    "prediction": "impetigo",
+    "display_name": "Impetigo",
+    "confidence": 0.89848,
+    "confidence_percent": 89.85,
+    "confidence_level": "high",
+    "gradcam_generated": true,
+    "gradcam_heatmap": "C:\\SEM 5\\AI-Skin-Analysis\\reports\\inference\\frontend_61eb9c2d-fb1f-4364-9b6b-0e71763f9dd4_heatmap.jpg",
+    "gradcam_overlay": "C:\\SEM 5\\AI-Skin-Analysis\\reports\\inference\\frontend_61eb9c2d-fb1f-4364-9b6b-0e71763f9dd4_gradcam.jpg",
+    "explanation": "Gemini explanation will be generated separately after the CNN analysis.",
+    "is_preliminary": true,
+    "medical_disclaimer": "This result is for preliminary educational guidance only and is not a medical diagnosis."
+}

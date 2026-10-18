@@ -1,0 +1,14 @@
+{
+    "input_image": "C:\\SEM 5\\AI-Skin-Analysis\\data\\split\\test\\warts\\10WartsTransplantPt1006.jpg",
+    "prediction": "warts",
+    "display_name": "Warts",
+    "confidence": 0.999973,
+    "confidence_percent": 100.0,
+    "confidence_level": "high",
+    "gradcam_generated": true,
+    "gradcam_heatmap": "reports\\inference\\10WartsTransplantPt1006_heatmap.jpg",
+    "gradcam_overlay": "reports\\inference\\10WartsTransplantPt1006_gradcam.jpg",
+    "explanation": "### 1. Predicted Condition\n**Warts** (CNN Model Confidence: 100.00%)\n\n### 2. What This Condition Generally Is\nWarts are common, benign (non-cancerous) skin growths. They are caused by an infection in the top layer of the skin by the Human Papillomavirus (HPV), which triggers rapid cell growth.\n\n### 3. Common Visual Characteristics\n* **Texture:** Often rough, grainy, or bumpy to the touch (resembling a cauliflower texture), though some types can be smooth or flat.\n* **Color:** Typically flesh-colored, white, pink, or light brown.\n* **Markings:** They frequently contain tiny clotted blood vessels that look like small black pinpoints or \"seeds.\"\n* *Model Focus:* The Grad-CAM visual heat map indicates the model concentrated on the distinct texture, raised surface, and defined borders within the image to make its prediction.\n\n### 4. General Educational Information\nWarts are contagious and can spread from person to person through direct skin contact or by touching contaminated surfaces (such as locker room floors). They can also spread from one part of the body to another if picked or scratched. While they can appear anywhere, they are most frequently seen on the hands, fingers, and feet.\n\n### 5. Suggested Next Steps\n* **Avoid scratching or picking:** Touching or peeling the growth can cause the virus to spread to other areas of the skin.\n* **Practice good hygiene:** Keep the area clean and wash hands frequently.\n* **Consult a professional:** Schedule an evaluation with a board-certified dermatologist or primary healthcare provider for an accurate in-person assessment and safe management options.\n\n### 6. Safety Note\n*This tool is intended strictly for preliminary educational guidance and research demonstration. It does not provide a medical diagnosis.* Even with a high model confidence score, image classification algorithms can make errors and cannot replace professional clinical judgment. Only a qualified dermatologist or medical provider can definitively diagnose skin conditions or recommend treatments.",
+    "is_preliminary": true,
+    "medical_disclaimer": "This result is for preliminary educational guidance only and is not a medical diagnosis."
+}

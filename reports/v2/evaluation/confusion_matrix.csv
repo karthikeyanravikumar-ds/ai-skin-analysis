@@ -1,0 +1,8 @@
+﻿actual/predicted,acne_vulgaris,impetigo,molluscum_contagiosum,psoriasis,urticaria,vitiligo,warts
+acne_vulgaris,251,2,1,0,2,0,6
+impetigo,2,26,0,0,0,0,0
+molluscum_contagiosum,0,1,19,0,0,0,0
+psoriasis,0,0,0,133,0,0,0
+urticaria,0,0,0,0,107,0,5
+vitiligo,0,0,0,0,0,106,0
+warts,2,0,0,0,1,0,94

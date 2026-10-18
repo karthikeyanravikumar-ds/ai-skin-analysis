@@ -1,0 +1,13 @@
+class_name,split,candidate_file_records,unique_paths,candidate_families
+acne_vulgaris,test,6,6,6
+acne_vulgaris,train,6,6,6
+acne_vulgaris,validation,2,2,2
+impetigo,test,6,6,6
+impetigo,train,10,10,8
+impetigo,validation,2,2,2
+urticaria,test,81,81,55
+urticaria,train,256,256,84
+urticaria,validation,90,90,52
+warts,test,10,10,5
+warts,train,22,22,8
+warts,validation,9,9,5

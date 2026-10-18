@@ -1,0 +1,173 @@
+{
+    "input_image": "C:\\SEM 5\\AI-Skin-Analysis\\reports\\frontend_uploads\\frontend_7d03bf0f-2eef-4ac9-b94d-8b293ace62db.jpg",
+    "status": "completed",
+    "ood_assessment": {
+        "is_ood": false,
+        "status": "supported",
+        "reason_codes": [],
+        "reasons": [],
+        "message": "",
+        "metrics": {
+            "white_fraction": 0.0182,
+            "black_fraction": 0.0098,
+            "mean_channel_diff": 47.32,
+            "color_entropy": 5.014
+        }
+    },
+    "prediction": "warts",
+    "display_name": "Warts",
+    "confidence": 0.366195,
+    "confidence_percent": 36.62,
+    "confidence_level": "low",
+    "top_predictions": [
+        {
+            "class_name": "warts",
+            "display_name": "Warts",
+            "probability": 0.366195,
+            "probability_percent": 36.62
+        },
+        {
+            "class_name": "impetigo",
+            "display_name": "Impetigo",
+            "probability": 0.190054,
+            "probability_percent": 19.01
+        },
+        {
+            "class_name": "acne_vulgaris",
+            "display_name": "Acne Vulgaris",
+            "probability": 0.146446,
+            "probability_percent": 14.64
+        }
+    ],
+    "uncertainty": {
+        "confidence": 0.3661946654319763,
+        "confidence_percent": 36.62,
+        "level": "low",
+        "uncertainty_status": "low_confidence",
+        "requires_caution": true,
+        "message": "The model produced a low-confidence image classification. The image may not contain enough information for a reliable model prediction. Consider using a clearer image and/or seeking professional evaluation.",
+        "recommended_next_step": "Retake a clear, well-lit, in-focus photograph of the skin lesion or consult a qualified healthcare provider directly.",
+        "quality_impact": null
+    },
+    "image_quality": {
+        "status": "good",
+        "is_valid": true,
+        "resolution": {
+            "width": 1280,
+            "height": 720,
+            "passed": true,
+            "min_width": 224,
+            "min_height": 224
+        },
+        "blur": {
+            "score": 81.04,
+            "passed": true,
+            "threshold": 50.0
+        },
+        "brightness": {
+            "score": 104.17,
+            "passed": true,
+            "min_threshold": 30.0,
+            "max_threshold": 225.0
+        },
+        "warnings": []
+    },
+    "gradcam_generated": true,
+    "gradcam_heatmap": "C:\\SEM 5\\AI-Skin-Analysis\\reports\\inference\\frontend_7d03bf0f-2eef-4ac9-b94d-8b293ace62db_heatmap.jpg",
+    "gradcam_overlay": "C:\\SEM 5\\AI-Skin-Analysis\\reports\\inference\\frontend_7d03bf0f-2eef-4ac9-b94d-8b293ace62db_gradcam.jpg",
+    "symptoms": {
+        "duration": "1 year",
+        "location": "back",
+        "spreading": "yes",
+        "itching": "yes",
+        "pain": "no",
+        "burning": "yes",
+        "swelling": "no",
+        "bleeding": "yes",
+        "discharge": "no",
+        "blisters": "no",
+        "fever": "no",
+        "sensitiveArea": "no",
+        "previousOccurrence": "yes",
+        "newExposure": "no"
+    },
+    "safety": {
+        "safety_level": "urgent",
+        "red_flags": [
+            "Active bleeding or skin breakdown requires urgent professional medical assessment."
+        ],
+        "red_flag_count": 1,
+        "attention_flags": [
+            "Rapidly spreading or expanding lesions warrant timely clinical evaluation.",
+            "Intense burning or stinging sensation may indicate acute contact dermatitis or neural irritation."
+        ],
+        "recommendation": "Urgent medical attention is advised. Please consult an emergency department, urgent care center, or a qualified healthcare provider immediately for professional clinical assessment.",
+        "disclaimer": "This symptom and safety evaluation provides preliminary educational guidance only. It is not a medical diagnosis, prescription, or treatment plan. Always consult a qualified healthcare professional for any skin condition."
+    },
+    "decision": {
+        "safety_level": "urgent",
+        "decision_factors": [
+            "Reported warning sign: Active bleeding or skin breakdown requires urgent professional medical assessment."
+        ],
+        "red_flags": [
+            "Active bleeding or skin breakdown requires urgent professional medical assessment."
+        ],
+        "attention_flags": [
+            "Rapidly spreading or expanding lesions warrant timely clinical evaluation.",
+            "Intense burning or stinging sensation may indicate acute contact dermatitis or neural irritation.",
+            "Model classification confidence is low."
+        ],
+        "recommendation": "The reported symptoms include high-risk warning signs that require prompt clinical assessment. Seek emergency care or immediate medical attention from a healthcare professional. If experiencing difficulty breathing, swallowing, or severe rapid swelling, contact emergency services immediately.",
+        "requires_professional_evaluation": true,
+        "is_emergency": true,
+        "disclaimer": "This safety decision provides preliminary educational guidance only. It is not a medical diagnosis, prescription, or treatment plan. Always consult a qualified healthcare professional for medical concerns."
+    },
+    "explanation": "Educational explanation will be generated separately after the CNN analysis.",
+    "symptom_reference": {
+        "class_label": "warts",
+        "class_idx": 6,
+        "disease_name": "Warts",
+        "typical_lesion_features": "Rough or firm raised papules; some may have tiny dark dots; appearance varies by site",
+        "duration": "May persist for months or longer",
+        "location": "Hands, fingers, feet, and other sites",
+        "spreading": "Possible; additional warts may appear",
+        "itching": "Usually absent or mild",
+        "pain": "Variable; plantar warts may hurt with pressure",
+        "burning": "Not characteristic",
+        "swelling": "Not characteristic unless irritated",
+        "bleeding": "Possible if scratched or injured",
+        "discharge": "Not characteristic",
+        "blisters": "Not characteristic",
+        "fever": "Not characteristic",
+        "sensitiveArea": "Genital or mucosal lesions need professional assessment",
+        "previousOccurrence": "Variable; recurrence is possible",
+        "newExposure": "Skin contact or shared surfaces may be relevant",
+        "distinctive_clue": "Rough, firm surface may be a clue; tiny dark dots sometimes occur",
+        "safety_note": "Seek assessment for bleeding, rapid changes, severe pain, facial/genital lesions, or uncertainty",
+        "interpretation_limit": "Some growths can resemble warts; appearance alone is insufficient",
+        "symptom_patterns": {
+            "duration": "May persist for months or longer",
+            "location": "Hands, fingers, feet, and other sites",
+            "spreading": "Possible; additional warts may appear",
+            "itching": "Usually absent or mild",
+            "pain": "Variable; plantar warts may hurt with pressure",
+            "burning": "Not characteristic",
+            "swelling": "Not characteristic unless irritated",
+            "bleeding": "Possible if scratched or injured",
+            "discharge": "Not characteristic",
+            "blisters": "Not characteristic",
+            "fever": "Not characteristic",
+            "sensitiveArea": "Genital or mucosal lesions need professional assessment",
+            "previousOccurrence": "Variable; recurrence is possible",
+            "newExposure": "Skin contact or shared surfaces may be relevant"
+        },
+        "reference_metadata": {
+            "source": "Clinical Reference Database (Educational)",
+            "type": "General typical symptom pattern",
+            "diagnostic_status": "Non-diagnostic educational reference",
+            "caveat": "Typical presentation patterns describe general textbook observations. Individual presentations vary and presence or absence of a symptom does not confirm or exclude any diagnosis."
+        }
+    },
+    "is_preliminary": true,
+    "medical_disclaimer": "This result is for preliminary educational guidance only and is not a medical diagnosis."
+}

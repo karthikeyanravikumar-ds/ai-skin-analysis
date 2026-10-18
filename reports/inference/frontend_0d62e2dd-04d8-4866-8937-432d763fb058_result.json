@@ -1,0 +1,149 @@
+{
+    "input_image": "C:\\SEM 5\\AI-Skin-Analysis\\reports\\frontend_uploads\\frontend_0d62e2dd-04d8-4866-8937-432d763fb058.jpg",
+    "status": "completed",
+    "ood_assessment": {
+        "is_ood": false,
+        "status": "supported",
+        "reason_codes": [],
+        "reasons": [],
+        "message": "",
+        "metrics": {
+            "white_fraction": 0.0026,
+            "black_fraction": 0.0004,
+            "mean_channel_diff": 93.54,
+            "color_entropy": 4.526
+        }
+    },
+    "prediction": "warts",
+    "display_name": "Warts",
+    "confidence": 0.987292,
+    "confidence_percent": 98.73,
+    "confidence_level": "high",
+    "top_predictions": [
+        {
+            "class_name": "warts",
+            "display_name": "Warts",
+            "probability": 0.987292,
+            "probability_percent": 98.73
+        },
+        {
+            "class_name": "acne_vulgaris",
+            "display_name": "Acne Vulgaris",
+            "probability": 0.007956,
+            "probability_percent": 0.8
+        },
+        {
+            "class_name": "molluscum_contagiosum",
+            "display_name": "Molluscum Contagiosum",
+            "probability": 0.002808,
+            "probability_percent": 0.28
+        }
+    ],
+    "uncertainty": {
+        "confidence": 0.9872921705245972,
+        "confidence_percent": 98.73,
+        "level": "high",
+        "uncertainty_status": "high_confidence",
+        "requires_caution": false,
+        "message": "The model produced a relatively high-confidence image classification. This is still a preliminary AI prediction and should not be treated as a confirmed medical diagnosis.",
+        "recommended_next_step": "Consider scheduling a routine consultation with a healthcare professional or dermatologist for in-person evaluation.",
+        "quality_impact": null
+    },
+    "image_quality": {
+        "status": "good",
+        "is_valid": true,
+        "resolution": {
+            "width": 560,
+            "height": 364,
+            "passed": true,
+            "min_width": 224,
+            "min_height": 224
+        },
+        "blur": {
+            "score": 1379.93,
+            "passed": true,
+            "threshold": 50.0
+        },
+        "brightness": {
+            "score": 112.74,
+            "passed": true,
+            "min_threshold": 30.0,
+            "max_threshold": 225.0
+        },
+        "warnings": []
+    },
+    "gradcam_generated": true,
+    "gradcam_heatmap": "C:\\SEM 5\\AI-Skin-Analysis\\reports\\inference\\frontend_0d62e2dd-04d8-4866-8937-432d763fb058_heatmap.jpg",
+    "gradcam_overlay": "C:\\SEM 5\\AI-Skin-Analysis\\reports\\inference\\frontend_0d62e2dd-04d8-4866-8937-432d763fb058_gradcam.jpg",
+    "symptoms": {},
+    "safety": {
+        "safety_level": "routine",
+        "red_flags": [],
+        "red_flag_count": 0,
+        "attention_flags": [],
+        "recommendation": "Routine dermatological consultation is suggested. Consider scheduling an in-person appointment with a healthcare professional or board-certified dermatologist for a comprehensive skin evaluation.",
+        "disclaimer": "This symptom and safety evaluation provides preliminary educational guidance only. It is not a medical diagnosis, prescription, or treatment plan. Always consult a qualified healthcare professional for any skin condition."
+    },
+    "decision": {
+        "safety_level": "routine",
+        "decision_factors": [
+            "No major symptom warning signs were reported.",
+            "Model confidence is high.",
+            "Image quality passed the technical checks."
+        ],
+        "red_flags": [],
+        "attention_flags": [],
+        "recommendation": "Continue to treat this result as preliminary educational guidance. Consider a routine consultation with a dermatologist or healthcare provider if the skin condition persists, changes, or causes concern.",
+        "requires_professional_evaluation": false,
+        "is_emergency": false,
+        "disclaimer": "This safety decision provides preliminary educational guidance only. It is not a medical diagnosis, prescription, or treatment plan. Always consult a qualified healthcare professional for medical concerns."
+    },
+    "explanation": "Educational explanation will be generated separately after the CNN analysis.",
+    "symptom_reference": {
+        "class_label": "warts",
+        "class_idx": 6,
+        "disease_name": "Warts",
+        "typical_lesion_features": "Rough or firm raised papules; some may have tiny dark dots; appearance varies by site",
+        "duration": "May persist for months or longer",
+        "location": "Hands, fingers, feet, and other sites",
+        "spreading": "Possible; additional warts may appear",
+        "itching": "Usually absent or mild",
+        "pain": "Variable; plantar warts may hurt with pressure",
+        "burning": "Not characteristic",
+        "swelling": "Not characteristic unless irritated",
+        "bleeding": "Possible if scratched or injured",
+        "discharge": "Not characteristic",
+        "blisters": "Not characteristic",
+        "fever": "Not characteristic",
+        "sensitiveArea": "Genital or mucosal lesions need professional assessment",
+        "previousOccurrence": "Variable; recurrence is possible",
+        "newExposure": "Skin contact or shared surfaces may be relevant",
+        "distinctive_clue": "Rough, firm surface may be a clue; tiny dark dots sometimes occur",
+        "safety_note": "Seek assessment for bleeding, rapid changes, severe pain, facial/genital lesions, or uncertainty",
+        "interpretation_limit": "Some growths can resemble warts; appearance alone is insufficient",
+        "symptom_patterns": {
+            "duration": "May persist for months or longer",
+            "location": "Hands, fingers, feet, and other sites",
+            "spreading": "Possible; additional warts may appear",
+            "itching": "Usually absent or mild",
+            "pain": "Variable; plantar warts may hurt with pressure",
+            "burning": "Not characteristic",
+            "swelling": "Not characteristic unless irritated",
+            "bleeding": "Possible if scratched or injured",
+            "discharge": "Not characteristic",
+            "blisters": "Not characteristic",
+            "fever": "Not characteristic",
+            "sensitiveArea": "Genital or mucosal lesions need professional assessment",
+            "previousOccurrence": "Variable; recurrence is possible",
+            "newExposure": "Skin contact or shared surfaces may be relevant"
+        },
+        "reference_metadata": {
+            "source": "Clinical Reference Database (Educational)",
+            "type": "General typical symptom pattern",
+            "diagnostic_status": "Non-diagnostic educational reference",
+            "caveat": "Typical presentation patterns describe general textbook observations. Individual presentations vary and presence or absence of a symptom does not confirm or exclude any diagnosis."
+        }
+    },
+    "is_preliminary": true,
+    "medical_disclaimer": "This result is for preliminary educational guidance only and is not a medical diagnosis."
+}

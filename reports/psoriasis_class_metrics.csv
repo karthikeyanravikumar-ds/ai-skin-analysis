@@ -1,0 +1,8 @@
+class_name,precision,recall,specificity,f1_score,support,true_positives,false_positives,false_negatives,true_negatives
+acne_vulgaris,0.9962,0.9962,0.9972,0.9962,261,260,1,1,360
+impetigo,1.0,0.9259,1.0,0.9615,27,25,0,2,595
+molluscum_contagiosum,0.9048,1.0,0.9967,0.95,19,19,2,0,601
+psoriasis,0.8451,0.9917,0.9561,0.9125,121,120,22,1,479
+urticaria,0.9909,1.0,0.9981,0.9954,109,109,1,0,512
+vitiligo,1.0,0.7067,1.0,0.8281,75,53,0,22,547
+warts,1.0,1.0,1.0,1.0,10,10,0,0,612

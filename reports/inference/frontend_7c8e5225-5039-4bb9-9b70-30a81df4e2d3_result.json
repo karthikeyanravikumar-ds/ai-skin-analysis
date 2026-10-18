@@ -1,0 +1,115 @@
+{
+    "input_image": "C:\\SEM 5\\AI-Skin-Analysis\\reports\\frontend_uploads\\frontend_7c8e5225-5039-4bb9-9b70-30a81df4e2d3.jpeg",
+    "prediction": "impetigo",
+    "display_name": "Impetigo",
+    "confidence": 0.89848,
+    "confidence_percent": 89.85,
+    "confidence_level": "high",
+    "top_predictions": [
+        {
+            "class_name": "impetigo",
+            "display_name": "Impetigo",
+            "probability": 0.89848,
+            "probability_percent": 89.85
+        },
+        {
+            "class_name": "psoriasis",
+            "display_name": "Psoriasis",
+            "probability": 0.040132,
+            "probability_percent": 4.01
+        },
+        {
+            "class_name": "warts",
+            "display_name": "Warts",
+            "probability": 0.019199,
+            "probability_percent": 1.92
+        }
+    ],
+    "uncertainty": {
+        "confidence": 0.8984801769256592,
+        "confidence_percent": 89.85,
+        "level": "high",
+        "uncertainty_status": "high_confidence",
+        "requires_caution": true,
+        "message": "The model produced a relatively high-confidence image classification. This is still a preliminary AI prediction and should not be treated as a confirmed medical diagnosis. Minor technical image warnings were detected; interpret with appropriate caution.",
+        "recommended_next_step": "Consider scheduling a routine consultation with a healthcare professional or dermatologist for in-person evaluation.",
+        "quality_impact": "Minor technical image quality warnings were detected."
+    },
+    "image_quality": {
+        "status": "warning",
+        "is_valid": true,
+        "resolution": {
+            "width": 297,
+            "height": 170,
+            "passed": false,
+            "min_width": 224,
+            "min_height": 224
+        },
+        "blur": {
+            "score": 733.14,
+            "passed": true,
+            "threshold": 50.0
+        },
+        "brightness": {
+            "score": 202.62,
+            "passed": true,
+            "min_threshold": 30.0,
+            "max_threshold": 225.0
+        },
+        "warnings": [
+            "Image resolution (297x170) is below the recommended technical threshold (224x224)."
+        ]
+    },
+    "gradcam_generated": true,
+    "gradcam_heatmap": "C:\\SEM 5\\AI-Skin-Analysis\\reports\\inference\\frontend_7c8e5225-5039-4bb9-9b70-30a81df4e2d3_heatmap.jpg",
+    "gradcam_overlay": "C:\\SEM 5\\AI-Skin-Analysis\\reports\\inference\\frontend_7c8e5225-5039-4bb9-9b70-30a81df4e2d3_gradcam.jpg",
+    "symptoms": {
+        "duration": "1 year",
+        "location": "hands",
+        "spreading": "yes",
+        "itching": "no",
+        "pain": "no",
+        "burning": "no",
+        "swelling": "no",
+        "bleeding": "yes",
+        "discharge": "no",
+        "blisters": "no",
+        "fever": "no",
+        "sensitiveArea": "no",
+        "previousOccurrence": "no",
+        "newExposure": "no"
+    },
+    "safety": {
+        "safety_level": "urgent",
+        "red_flags": [
+            "Active bleeding or skin breakdown requires urgent professional medical assessment."
+        ],
+        "red_flag_count": 1,
+        "attention_flags": [
+            "Rapidly spreading or expanding lesions warrant timely clinical evaluation."
+        ],
+        "recommendation": "Urgent medical attention is advised. Please consult an emergency department, urgent care center, or a qualified healthcare provider immediately for professional clinical assessment.",
+        "disclaimer": "This symptom and safety evaluation provides preliminary educational guidance only. It is not a medical diagnosis, prescription, or treatment plan. Always consult a qualified healthcare professional for any skin condition."
+    },
+    "decision": {
+        "safety_level": "urgent",
+        "decision_factors": [
+            "Reported warning sign: Active bleeding or skin breakdown requires urgent professional medical assessment."
+        ],
+        "red_flags": [
+            "Active bleeding or skin breakdown requires urgent professional medical assessment."
+        ],
+        "attention_flags": [
+            "Rapidly spreading or expanding lesions warrant timely clinical evaluation.",
+            "Model classification confidence is high.",
+            "Technical image quality status is warning."
+        ],
+        "recommendation": "The reported symptoms include high-risk warning signs that require prompt clinical assessment. Seek emergency care or immediate medical attention from a healthcare professional. If experiencing difficulty breathing, swallowing, or severe rapid swelling, contact emergency services immediately.",
+        "requires_professional_evaluation": true,
+        "is_emergency": true,
+        "disclaimer": "This safety decision provides preliminary educational guidance only. It is not a medical diagnosis, prescription, or treatment plan. Always consult a qualified healthcare professional for medical concerns."
+    },
+    "explanation": "Gemini explanation will be generated separately after the CNN analysis.",
+    "is_preliminary": true,
+    "medical_disclaimer": "This result is for preliminary educational guidance only and is not a medical diagnosis."
+}

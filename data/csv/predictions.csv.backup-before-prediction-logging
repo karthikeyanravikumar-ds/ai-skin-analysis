@@ -1,0 +1,1 @@
+record_id,timestamp,prediction,display_name,confidence,confidence_percent,confidence_level,top1_probability,top2_prediction,top2_probability,top3_prediction,top3_probability,image_quality_status,safety_level,decision_level,requires_professional_evaluation,is_emergency,is_preliminary

@@ -1,0 +1,128 @@
+.env
+
+# Python environments and caches
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.coverage
+
+# Frontend dependencies and build output
+node_modules/
+dist/
+.vite/
+
+# Secrets and local configuration
+.env
+.env.*
+!.env.example
+
+# Logs and temporary files
+*.log
+tmp/
+temp/
+
+# Local datasets and archives
+skin disease dataset/
+skin disease dataset.zip
+
+# Experimental scratch files
+scratch/
+
+# Local model checkpoints
+models/trained/*.pth
+models/trained/*.pt
+
+# Python environments and caches
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.coverage
+
+# Frontend dependencies and build output
+node_modules/
+dist/
+.vite/
+
+# Secrets and local configuration
+.env
+.env.*
+!.env.example
+
+# Dataset archives and local dataset copies
+skin disease dataset/
+skin disease dataset.zip
+
+# Temporary experiments
+scratch/
+
+# Model checkpoints: keep outside normal Git commits
+models/**/*.pth
+models/**/*.pt
+
+# Generated Python and application logs
+*.log
+
+# Local training and evaluation datasets
+data/raw/
+data/processed/
+data/reprocessed_v2/
+data/sources/
+data/split/
+data/splits_v2/
+data/train/
+data/validation/
+data/test/
+data/experiments/
+
+# Model checkpoints and experiment artifacts
+models/**/*.pth
+models/**/*.pt
+models/**/*.onnx
+
+# Backup and temporary source files
+*.bak
+*.bak.*
+*.backup
+*.backup-*
+*.pre_*
+*.orig
+
+# Generated inference results and uploaded skin images
+reports/frontend_uploads/
+reports/inference/
+
+# Generated visualization artifacts
+reports/e2e_screenshots/
+reports/error_analysis/gradcam/
+reports/error_analysis/montages/
+reports/gradcam/
+reports/error_analysis/disagreement_images/
+
+# Experimental model artifacts
+models/experiments/
+
+# Backup files
+*.bak
+*.bak.*
+*.backup
+*.backup-*
+*.pre_*
+*.orig
+
+# Generated inference results and uploaded images
+reports/frontend_uploads/
+reports/inference/
+reports/e2e_screenshots/
+reports/error_analysis/gradcam/
+reports/error_analysis/montages/
+reports/gradcam/
+reports/error_analysis/disagreement_images/
+
+# Experimental models
+models/experiments/

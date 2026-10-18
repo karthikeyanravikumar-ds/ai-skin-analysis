@@ -1,0 +1,868 @@
+{
+  "task_id": "TR-02B",
+  "timestamp_utc": "2026-10-10T08:00:38.652374+00:00",
+  "manifest_path": "reports\\proposed_group_manifest.csv",
+  "manifest_validation": {
+    "valid": true,
+    "total_records": 4501,
+    "expected_records": 4501,
+    "unique_paths": 4501,
+    "missing_files_count": 0,
+    "missing_files": [],
+    "duplicate_paths_count": 0,
+    "invalid_classes_count": 0,
+    "missing_group_ids_count": 0,
+    "cross_class_conflicts_count": 0,
+    "cross_class_conflicts": [],
+    "size_mismatches_count": 0,
+    "total_unique_groups": 2440,
+    "per_class_images": {
+      "acne_vulgaris": 1747,
+      "impetigo": 188,
+      "molluscum_contagiosum": 134,
+      "psoriasis": 889,
+      "urticaria": 749,
+      "vitiligo": 705,
+      "warts": 89
+    },
+    "per_class_groups": {
+      "acne_vulgaris": 1740,
+      "impetigo": 144,
+      "molluscum_contagiosum": 134,
+      "psoriasis": 35,
+      "urticaria": 312,
+      "vitiligo": 35,
+      "warts": 40
+    },
+    "evidence_images": {
+      "singleton_unknown": 2219,
+      "perceptual_candidate": 117,
+      "probable_source_group": 571,
+      "verified_video_source": 1594
+    },
+    "evidence_groups": {
+      "singleton_unknown": 2219,
+      "perceptual_candidate": 37,
+      "probable_source_group": 114,
+      "verified_video_source": 70
+    }
+  },
+  "perceptual_review_package": {
+    "candidate_groups_count": 37,
+    "candidate_images_count": 117,
+    "contact_sheets_generated": 37,
+    "register_csv": "reports\\perceptual_review\\review_register.csv",
+    "readme_md": "reports\\perceptual_review\\README.md",
+    "by_class": {
+      "acne_vulgaris": 14,
+      "impetigo": 2,
+      "molluscum_contagiosum": 0,
+      "psoriasis": 0,
+      "urticaria": 60,
+      "vitiligo": 0,
+      "warts": 41
+    }
+  },
+  "frame_cap_simulations": {
+    "no_cap": {
+      "scenario_name": "no_cap",
+      "frame_cap": null,
+      "total_retained_images": 4501,
+      "total_groups": 2440,
+      "per_class_images": {
+        "acne_vulgaris": 1747,
+        "impetigo": 188,
+        "molluscum_contagiosum": 134,
+        "psoriasis": 889,
+        "urticaria": 749,
+        "vitiligo": 705,
+        "warts": 89
+      },
+      "per_class_groups": {
+        "acne_vulgaris": 1740,
+        "impetigo": 144,
+        "molluscum_contagiosum": 134,
+        "psoriasis": 35,
+        "urticaria": 312,
+        "vitiligo": 35,
+        "warts": 40
+      },
+      "video_groups_per_class": {
+        "psoriasis": 35,
+        "vitiligo": 35
+      },
+      "non_video_groups_per_class": {
+        "acne_vulgaris": 1740,
+        "impetigo": 144,
+        "molluscum_contagiosum": 134,
+        "urticaria": 312,
+        "warts": 40
+      },
+      "partition": {
+        "train": {
+          "total_images": 3030,
+          "total_groups": 1708,
+          "by_class": {
+            "acne_vulgaris": {
+              "groups": 1218,
+              "images": 1224,
+              "video_groups": 0
+            },
+            "impetigo": {
+              "groups": 100,
+              "images": 124,
+              "video_groups": 0
+            },
+            "molluscum_contagiosum": {
+              "groups": 94,
+              "images": 94,
+              "video_groups": 0
+            },
+            "psoriasis": {
+              "groups": 25,
+              "images": 584,
+              "video_groups": 25
+            },
+            "urticaria": {
+              "groups": 218,
+              "images": 484,
+              "video_groups": 0
+            },
+            "vitiligo": {
+              "groups": 25,
+              "images": 460,
+              "video_groups": 25
+            },
+            "warts": {
+              "groups": 28,
+              "images": 60,
+              "video_groups": 0
+            }
+          }
+        },
+        "validation": {
+          "total_images": 702,
+          "total_groups": 366,
+          "by_class": {
+            "acne_vulgaris": {
+              "groups": 261,
+              "images": 262,
+              "video_groups": 0
+            },
+            "impetigo": {
+              "groups": 22,
+              "images": 28,
+              "video_groups": 0
+            },
+            "molluscum_contagiosum": {
+              "groups": 20,
+              "images": 20,
+              "video_groups": 0
+            },
+            "psoriasis": {
+              "groups": 5,
+              "images": 144,
+              "video_groups": 5
+            },
+            "urticaria": {
+              "groups": 47,
+              "images": 137,
+              "video_groups": 0
+            },
+            "vitiligo": {
+              "groups": 5,
+              "images": 97,
+              "video_groups": 5
+            },
+            "warts": {
+              "groups": 6,
+              "images": 14,
+              "video_groups": 0
+            }
+          }
+        },
+        "test": {
+          "total_images": 769,
+          "total_groups": 366,
+          "by_class": {
+            "acne_vulgaris": {
+              "groups": 261,
+              "images": 261,
+              "video_groups": 0
+            },
+            "impetigo": {
+              "groups": 22,
+              "images": 36,
+              "video_groups": 0
+            },
+            "molluscum_contagiosum": {
+              "groups": 20,
+              "images": 20,
+              "video_groups": 0
+            },
+            "psoriasis": {
+              "groups": 5,
+              "images": 161,
+              "video_groups": 5
+            },
+            "urticaria": {
+              "groups": 47,
+              "images": 128,
+              "video_groups": 0
+            },
+            "vitiligo": {
+              "groups": 5,
+              "images": 148,
+              "video_groups": 5
+            },
+            "warts": {
+              "groups": 6,
+              "images": 15,
+              "video_groups": 0
+            }
+          }
+        }
+      }
+    },
+    "cap_10": {
+      "scenario_name": "cap_10",
+      "frame_cap": 10,
+      "total_retained_images": 3567,
+      "total_groups": 2440,
+      "per_class_images": {
+        "acne_vulgaris": 1747,
+        "impetigo": 188,
+        "molluscum_contagiosum": 134,
+        "psoriasis": 347,
+        "urticaria": 749,
+        "vitiligo": 313,
+        "warts": 89
+      },
+      "per_class_groups": {
+        "acne_vulgaris": 1740,
+        "impetigo": 144,
+        "molluscum_contagiosum": 134,
+        "psoriasis": 35,
+        "urticaria": 312,
+        "vitiligo": 35,
+        "warts": 40
+      },
+      "video_groups_per_class": {
+        "psoriasis": 35,
+        "vitiligo": 35
+      },
+      "non_video_groups_per_class": {
+        "acne_vulgaris": 1740,
+        "impetigo": 144,
+        "molluscum_contagiosum": 134,
+        "urticaria": 312,
+        "warts": 40
+      },
+      "partition": {
+        "train": {
+          "total_images": 2453,
+          "total_groups": 1708,
+          "by_class": {
+            "acne_vulgaris": {
+              "groups": 1218,
+              "images": 1224,
+              "video_groups": 0
+            },
+            "impetigo": {
+              "groups": 100,
+              "images": 124,
+              "video_groups": 0
+            },
+            "molluscum_contagiosum": {
+              "groups": 94,
+              "images": 94,
+              "video_groups": 0
+            },
+            "psoriasis": {
+              "groups": 25,
+              "images": 247,
+              "video_groups": 25
+            },
+            "urticaria": {
+              "groups": 218,
+              "images": 484,
+              "video_groups": 0
+            },
+            "vitiligo": {
+              "groups": 25,
+              "images": 220,
+              "video_groups": 25
+            },
+            "warts": {
+              "groups": 28,
+              "images": 60,
+              "video_groups": 0
+            }
+          }
+        },
+        "validation": {
+          "total_images": 557,
+          "total_groups": 366,
+          "by_class": {
+            "acne_vulgaris": {
+              "groups": 261,
+              "images": 262,
+              "video_groups": 0
+            },
+            "impetigo": {
+              "groups": 22,
+              "images": 28,
+              "video_groups": 0
+            },
+            "molluscum_contagiosum": {
+              "groups": 20,
+              "images": 20,
+              "video_groups": 0
+            },
+            "psoriasis": {
+              "groups": 5,
+              "images": 50,
+              "video_groups": 5
+            },
+            "urticaria": {
+              "groups": 47,
+              "images": 137,
+              "video_groups": 0
+            },
+            "vitiligo": {
+              "groups": 5,
+              "images": 46,
+              "video_groups": 5
+            },
+            "warts": {
+              "groups": 6,
+              "images": 14,
+              "video_groups": 0
+            }
+          }
+        },
+        "test": {
+          "total_images": 557,
+          "total_groups": 366,
+          "by_class": {
+            "acne_vulgaris": {
+              "groups": 261,
+              "images": 261,
+              "video_groups": 0
+            },
+            "impetigo": {
+              "groups": 22,
+              "images": 36,
+              "video_groups": 0
+            },
+            "molluscum_contagiosum": {
+              "groups": 20,
+              "images": 20,
+              "video_groups": 0
+            },
+            "psoriasis": {
+              "groups": 5,
+              "images": 50,
+              "video_groups": 5
+            },
+            "urticaria": {
+              "groups": 47,
+              "images": 128,
+              "video_groups": 0
+            },
+            "vitiligo": {
+              "groups": 5,
+              "images": 47,
+              "video_groups": 5
+            },
+            "warts": {
+              "groups": 6,
+              "images": 15,
+              "video_groups": 0
+            }
+          }
+        }
+      }
+    },
+    "cap_5": {
+      "scenario_name": "cap_5",
+      "frame_cap": 5,
+      "total_retained_images": 3252,
+      "total_groups": 2440,
+      "per_class_images": {
+        "acne_vulgaris": 1747,
+        "impetigo": 188,
+        "molluscum_contagiosum": 134,
+        "psoriasis": 175,
+        "urticaria": 749,
+        "vitiligo": 170,
+        "warts": 89
+      },
+      "per_class_groups": {
+        "acne_vulgaris": 1740,
+        "impetigo": 144,
+        "molluscum_contagiosum": 134,
+        "psoriasis": 35,
+        "urticaria": 312,
+        "vitiligo": 35,
+        "warts": 40
+      },
+      "video_groups_per_class": {
+        "psoriasis": 35,
+        "vitiligo": 35
+      },
+      "non_video_groups_per_class": {
+        "acne_vulgaris": 1740,
+        "impetigo": 144,
+        "molluscum_contagiosum": 134,
+        "urticaria": 312,
+        "warts": 40
+      },
+      "partition": {
+        "train": {
+          "total_images": 2231,
+          "total_groups": 1708,
+          "by_class": {
+            "acne_vulgaris": {
+              "groups": 1218,
+              "images": 1224,
+              "video_groups": 0
+            },
+            "impetigo": {
+              "groups": 100,
+              "images": 124,
+              "video_groups": 0
+            },
+            "molluscum_contagiosum": {
+              "groups": 94,
+              "images": 94,
+              "video_groups": 0
+            },
+            "psoriasis": {
+              "groups": 25,
+              "images": 125,
+              "video_groups": 25
+            },
+            "urticaria": {
+              "groups": 218,
+              "images": 484,
+              "video_groups": 0
+            },
+            "vitiligo": {
+              "groups": 25,
+              "images": 120,
+              "video_groups": 25
+            },
+            "warts": {
+              "groups": 28,
+              "images": 60,
+              "video_groups": 0
+            }
+          }
+        },
+        "validation": {
+          "total_images": 511,
+          "total_groups": 366,
+          "by_class": {
+            "acne_vulgaris": {
+              "groups": 261,
+              "images": 262,
+              "video_groups": 0
+            },
+            "impetigo": {
+              "groups": 22,
+              "images": 28,
+              "video_groups": 0
+            },
+            "molluscum_contagiosum": {
+              "groups": 20,
+              "images": 20,
+              "video_groups": 0
+            },
+            "psoriasis": {
+              "groups": 5,
+              "images": 25,
+              "video_groups": 5
+            },
+            "urticaria": {
+              "groups": 47,
+              "images": 137,
+              "video_groups": 0
+            },
+            "vitiligo": {
+              "groups": 5,
+              "images": 25,
+              "video_groups": 5
+            },
+            "warts": {
+              "groups": 6,
+              "images": 14,
+              "video_groups": 0
+            }
+          }
+        },
+        "test": {
+          "total_images": 510,
+          "total_groups": 366,
+          "by_class": {
+            "acne_vulgaris": {
+              "groups": 261,
+              "images": 261,
+              "video_groups": 0
+            },
+            "impetigo": {
+              "groups": 22,
+              "images": 36,
+              "video_groups": 0
+            },
+            "molluscum_contagiosum": {
+              "groups": 20,
+              "images": 20,
+              "video_groups": 0
+            },
+            "psoriasis": {
+              "groups": 5,
+              "images": 25,
+              "video_groups": 5
+            },
+            "urticaria": {
+              "groups": 47,
+              "images": 128,
+              "video_groups": 0
+            },
+            "vitiligo": {
+              "groups": 5,
+              "images": 25,
+              "video_groups": 5
+            },
+            "warts": {
+              "groups": 6,
+              "images": 15,
+              "video_groups": 0
+            }
+          }
+        }
+      }
+    },
+    "cap_3": {
+      "scenario_name": "cap_3",
+      "frame_cap": 3,
+      "total_retained_images": 3116,
+      "total_groups": 2440,
+      "per_class_images": {
+        "acne_vulgaris": 1747,
+        "impetigo": 188,
+        "molluscum_contagiosum": 134,
+        "psoriasis": 105,
+        "urticaria": 749,
+        "vitiligo": 104,
+        "warts": 89
+      },
+      "per_class_groups": {
+        "acne_vulgaris": 1740,
+        "impetigo": 144,
+        "molluscum_contagiosum": 134,
+        "psoriasis": 35,
+        "urticaria": 312,
+        "vitiligo": 35,
+        "warts": 40
+      },
+      "video_groups_per_class": {
+        "psoriasis": 35,
+        "vitiligo": 35
+      },
+      "non_video_groups_per_class": {
+        "acne_vulgaris": 1740,
+        "impetigo": 144,
+        "molluscum_contagiosum": 134,
+        "urticaria": 312,
+        "warts": 40
+      },
+      "partition": {
+        "train": {
+          "total_images": 2135,
+          "total_groups": 1708,
+          "by_class": {
+            "acne_vulgaris": {
+              "groups": 1218,
+              "images": 1224,
+              "video_groups": 0
+            },
+            "impetigo": {
+              "groups": 100,
+              "images": 124,
+              "video_groups": 0
+            },
+            "molluscum_contagiosum": {
+              "groups": 94,
+              "images": 94,
+              "video_groups": 0
+            },
+            "psoriasis": {
+              "groups": 25,
+              "images": 75,
+              "video_groups": 25
+            },
+            "urticaria": {
+              "groups": 218,
+              "images": 484,
+              "video_groups": 0
+            },
+            "vitiligo": {
+              "groups": 25,
+              "images": 74,
+              "video_groups": 25
+            },
+            "warts": {
+              "groups": 28,
+              "images": 60,
+              "video_groups": 0
+            }
+          }
+        },
+        "validation": {
+          "total_images": 491,
+          "total_groups": 366,
+          "by_class": {
+            "acne_vulgaris": {
+              "groups": 261,
+              "images": 262,
+              "video_groups": 0
+            },
+            "impetigo": {
+              "groups": 22,
+              "images": 28,
+              "video_groups": 0
+            },
+            "molluscum_contagiosum": {
+              "groups": 20,
+              "images": 20,
+              "video_groups": 0
+            },
+            "psoriasis": {
+              "groups": 5,
+              "images": 15,
+              "video_groups": 5
+            },
+            "urticaria": {
+              "groups": 47,
+              "images": 137,
+              "video_groups": 0
+            },
+            "vitiligo": {
+              "groups": 5,
+              "images": 15,
+              "video_groups": 5
+            },
+            "warts": {
+              "groups": 6,
+              "images": 14,
+              "video_groups": 0
+            }
+          }
+        },
+        "test": {
+          "total_images": 490,
+          "total_groups": 366,
+          "by_class": {
+            "acne_vulgaris": {
+              "groups": 261,
+              "images": 261,
+              "video_groups": 0
+            },
+            "impetigo": {
+              "groups": 22,
+              "images": 36,
+              "video_groups": 0
+            },
+            "molluscum_contagiosum": {
+              "groups": 20,
+              "images": 20,
+              "video_groups": 0
+            },
+            "psoriasis": {
+              "groups": 5,
+              "images": 15,
+              "video_groups": 5
+            },
+            "urticaria": {
+              "groups": 47,
+              "images": 128,
+              "video_groups": 0
+            },
+            "vitiligo": {
+              "groups": 5,
+              "images": 15,
+              "video_groups": 5
+            },
+            "warts": {
+              "groups": 6,
+              "images": 15,
+              "video_groups": 0
+            }
+          }
+        }
+      }
+    },
+    "cap_1": {
+      "scenario_name": "cap_1",
+      "frame_cap": 1,
+      "total_retained_images": 2977,
+      "total_groups": 2440,
+      "per_class_images": {
+        "acne_vulgaris": 1747,
+        "impetigo": 188,
+        "molluscum_contagiosum": 134,
+        "psoriasis": 35,
+        "urticaria": 749,
+        "vitiligo": 35,
+        "warts": 89
+      },
+      "per_class_groups": {
+        "acne_vulgaris": 1740,
+        "impetigo": 144,
+        "molluscum_contagiosum": 134,
+        "psoriasis": 35,
+        "urticaria": 312,
+        "vitiligo": 35,
+        "warts": 40
+      },
+      "video_groups_per_class": {
+        "psoriasis": 35,
+        "vitiligo": 35
+      },
+      "non_video_groups_per_class": {
+        "acne_vulgaris": 1740,
+        "impetigo": 144,
+        "molluscum_contagiosum": 134,
+        "urticaria": 312,
+        "warts": 40
+      },
+      "partition": {
+        "train": {
+          "total_images": 2036,
+          "total_groups": 1708,
+          "by_class": {
+            "acne_vulgaris": {
+              "groups": 1218,
+              "images": 1224,
+              "video_groups": 0
+            },
+            "impetigo": {
+              "groups": 100,
+              "images": 124,
+              "video_groups": 0
+            },
+            "molluscum_contagiosum": {
+              "groups": 94,
+              "images": 94,
+              "video_groups": 0
+            },
+            "psoriasis": {
+              "groups": 25,
+              "images": 25,
+              "video_groups": 25
+            },
+            "urticaria": {
+              "groups": 218,
+              "images": 484,
+              "video_groups": 0
+            },
+            "vitiligo": {
+              "groups": 25,
+              "images": 25,
+              "video_groups": 25
+            },
+            "warts": {
+              "groups": 28,
+              "images": 60,
+              "video_groups": 0
+            }
+          }
+        },
+        "validation": {
+          "total_images": 471,
+          "total_groups": 366,
+          "by_class": {
+            "acne_vulgaris": {
+              "groups": 261,
+              "images": 262,
+              "video_groups": 0
+            },
+            "impetigo": {
+              "groups": 22,
+              "images": 28,
+              "video_groups": 0
+            },
+            "molluscum_contagiosum": {
+              "groups": 20,
+              "images": 20,
+              "video_groups": 0
+            },
+            "psoriasis": {
+              "groups": 5,
+              "images": 5,
+              "video_groups": 5
+            },
+            "urticaria": {
+              "groups": 47,
+              "images": 137,
+              "video_groups": 0
+            },
+            "vitiligo": {
+              "groups": 5,
+              "images": 5,
+              "video_groups": 5
+            },
+            "warts": {
+              "groups": 6,
+              "images": 14,
+              "video_groups": 0
+            }
+          }
+        },
+        "test": {
+          "total_images": 470,
+          "total_groups": 366,
+          "by_class": {
+            "acne_vulgaris": {
+              "groups": 261,
+              "images": 261,
+              "video_groups": 0
+            },
+            "impetigo": {
+              "groups": 22,
+              "images": 36,
+              "video_groups": 0
+            },
+            "molluscum_contagiosum": {
+              "groups": 20,
+              "images": 20,
+              "video_groups": 0
+            },
+            "psoriasis": {
+              "groups": 5,
+              "images": 5,
+              "video_groups": 5
+            },
+            "urticaria": {
+              "groups": 47,
+              "images": 128,
+              "video_groups": 0
+            },
+            "vitiligo": {
+              "groups": 5,
+              "images": 5,
+              "video_groups": 5
+            },
+            "warts": {
+              "groups": 6,
+              "images": 15,
+              "video_groups": 0
+            }
+          }
+        }
+      }
+    }
+  }
+}
